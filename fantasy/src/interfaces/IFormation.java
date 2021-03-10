@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package interfaces;
+package testpi.newpackage;
+
+import java.util.List;
 
 /**
  *
@@ -11,7 +13,8 @@ package interfaces;
  */
 public interface IFormation<I,K,R> {
      public void creeFormation(R a);
-     public void ajouterJoueurauFormation(I f, K j);
-     public void supprimerJoueurduFormation(I f, K j);
+     public void ajouterJoueurauFormation(R a,I f, K j);//quand l'Adherent fait un achat d'un joueur
+     public void supprimerJoueurduFormation(R a, K j);
      public void supprimerJoueurduFormation2(K j); // quand un joueur est supprimer de la BD
+     public List<K> displayJoueurdeFormation(R a);
 }

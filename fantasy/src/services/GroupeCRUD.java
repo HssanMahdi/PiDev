@@ -3,18 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package services;
+package testpi.newpackage;
 
-import entites.Adherent;
-import entites.Groupe;
-import interfaces.IGroupe;
-import tools.MyConnection;
+
+import testpi.newpackage.MyConnection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
 
 /**
  *
@@ -32,28 +31,26 @@ public class GroupeCRUD implements IGroupe<Groupe,Adherent>{
                     .prepareStatement(requete);
             pst.setString(1, g.getNom());
             pst.executeUpdate();
-          //  System.out.println("Groupe Crée");  
             
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-        }
-        try {
- 
-           String requete= "INSERT INTO groupeuser(id_groupe,id_user)"
+            String requete2 = "SELECT id_groupe FROM groupe WHERE nom_groupe="+g.getNom()+";";
+            Statement st1 = MyConnection.getInstance().getCnx()
+                    .createStatement();
+            ResultSet rs = st1.executeQuery(requete2);
+            if(rs.next()){
+           
+                String requete3= "INSERT INTO groupeuser(id_groupe,id_user)"
                     + "VALUES (?,?)";
-            PreparedStatement pst = MyConnection.getInstance().getCnx()
-                    .prepareStatement(requete);
-            pst.setInt(1, g.getId());
-            pst.setInt(2, u.getId_user());
-            pst.executeUpdate();
-           // System.out.println("worked ");  
+            PreparedStatement pst1 = MyConnection.getInstance().getCnx()
+                    .prepareStatement(requete3);
+            pst1.setInt(1, rs.getInt("id_groupe"));
+            pst1.setInt(2, u.getId_user());
+            pst1.executeUpdate();}
             
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         } 
          
     }
-    
     
     @Override
     public void ajouterAdherentauGroupe(Groupe g, Adherent u) {
@@ -181,8 +178,8 @@ public class GroupeCRUD implements IGroupe<Groupe,Adherent>{
                     .createStatement();
                 rs1 = st1.executeQuery(requete1);
                 while(rs1.next()){
-                System.out.println(rs1.getInt("id_user"));
-               System.out.println(rs1.getString("nom_user"));
+//                System.out.println(rs1.getInt("id_user"));
+//               System.out.println(rs1.getString("nom_user"));
                 Adherent u = new Adherent();
                 u.setId_user(rs1.getInt("id_user"));
                 u.setNom_user(rs1.getString("nom_user"));
@@ -202,6 +199,5 @@ public class GroupeCRUD implements IGroupe<Groupe,Adherent>{
     }
 
     
-
-    
+       
 }

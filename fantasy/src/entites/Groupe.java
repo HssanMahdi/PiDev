@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package entites;
+package testpi.newpackage;
+
 
 /**
  *
@@ -19,6 +20,10 @@ public class Groupe {
 
     public Groupe(int id, String nom) {
         this.id = id;
+        this.nom = nom;
+    }
+
+    public Groupe(String nom) {
         this.nom = nom;
     }
     
