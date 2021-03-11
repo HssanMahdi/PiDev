@@ -5,10 +5,21 @@
  */
 package services;
 
+import entities.Produit;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
- * @author Mahdi
+ * @author mhamdi iheb
  */
 public class ServicePanier {
+    
+    List<Produit> ListProduit = new ArrayList();
+    void ajouterProduitPanier(Produit p)
+    {
+        
+    }
+    
     
 }

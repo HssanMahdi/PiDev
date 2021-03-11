@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fantasy.GestionFXMLController">
+   <children>
+      <Button layoutX="154.0" layoutY="167.0" mnemonicParsing="false" onAction="#gestionProduitButton" text="gestion produit" />
+      <Button layoutX="380.0" layoutY="167.0" mnemonicParsing="false" onAction="#gestionCategorieButton" prefHeight="25.0" prefWidth="108.0" text="gestion categorie" />
+   </children>
+</AnchorPane>

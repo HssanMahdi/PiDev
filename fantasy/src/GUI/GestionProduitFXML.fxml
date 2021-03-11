@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="581.0" prefWidth="668.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fantasy.GestionProduitFXMLController">
+   <children>
+      <Button layoutX="47.0" layoutY="288.0" mnemonicParsing="false" onAction="#addProductButton" text="ajouter" />
+      <TextField fx:id="tfImageP" layoutX="160.0" layoutY="187.0" promptText="URL image" />
+      <TextField fx:id="tfQuantiteP" layoutX="160.0" layoutY="150.0" promptText="quantite" />
+      <TextField fx:id="tfPrixUnitaire" layoutX="160.0" layoutY="115.0" promptText="prix unitaire" />
+      <TextField fx:id="tfNomProduit" layoutX="160.0" layoutY="81.0" promptText="name" />
+      <Label layoutX="39.0" layoutY="85.0" text="nom de produit" />
+      <Label layoutX="39.0" layoutY="119.0" text="prix unitaire" />
+      <Label layoutX="30.0" layoutY="231.0" text="description" />
+      <Label layoutX="39.0" layoutY="154.0" text="quantite" />
+      <TextField fx:id="tfDescriptionP" layoutX="160.0" layoutY="227.0" promptText="description" />
+      <Button layoutX="96.0" layoutY="535.0" mnemonicParsing="false" onAction="#updateProductButton" text="modifier" />
+      <Button layoutX="14.0" layoutY="535.0" mnemonicParsing="false" onAction="#deleteProductButton" text="supprimer" />
+      <Button layoutX="586.0" layoutY="423.0" mnemonicParsing="false" onAction="#displayProductButton" text="afficher" />
+      <ComboBox fx:id="idCategorieCom" layoutX="154.0" layoutY="38.0" onAction="#selectIdCategorieCombobox" prefWidth="150.0" promptText="id categorie" />
+      <ComboBox fx:id="idProdCombo" layoutX="16.0" layoutY="498.0" onAction="#selectIdProduitCombobox" prefWidth="150.0" promptText="id produit" />
+      <Button layoutX="28.0" layoutY="187.0" mnemonicParsing="false" onAction="#addImageButton" text="select image" />
+      <ImageView fx:id="ImageView" fitHeight="214.0" fitWidth="224.0" layoutX="135.0" layoutY="271.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>

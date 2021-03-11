@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="415.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fantasy.AfficherProduitFXMLController">
+   <children>
+      <TableView fx:id="tableProduit" layoutX="-67.0" prefHeight="368.0" prefWidth="775.0" AnchorPane.bottomAnchor="47.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columns>
+          <TableColumn fx:id="CoImage" prefWidth="200.0" text="Image" />
+          <TableColumn fx:id="CoIdProduit" prefWidth="51.0" text="Id de produit" />
+            <TableColumn fx:id="CoIdCategorie" prefWidth="53.0" text="Id de catégorie" />
+            <TableColumn fx:id="CoNomProduit" prefWidth="128.0" text="nom de produit" />
+            <TableColumn fx:id="CoPrixUnitaire" prefWidth="76.0" text="prix unitaire" />
+            <TableColumn fx:id="CoQuantite" prefWidth="57.0" text="Quantité" />
+            <TableColumn fx:id="CoDescription" prefWidth="209.0" text="Description" />
+        </columns>
+      </TableView>
+      <Button layoutX="103.0" layoutY="376.0" mnemonicParsing="false" onAction="#statisticPrductGtegorie" text="Statistic Produit" />
+      <Button layoutX="281.0" layoutY="376.0" mnemonicParsing="false" onAction="#exportListProduitButton" text="export exel" />
+   </children>
+</AnchorPane>

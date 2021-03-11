@@ -5,10 +5,28 @@
  */
 package interfaces;
 
+import entities.Categorie;
+import entities.Produit;
+
+import java.util.List;
+
 /**
  *
- * @author Mahdi
+ * @author mhamdi iheb
  */
 public interface IProduit {
+    
+    public void ajouterProduit(Produit c);
+
+    
+    public void supprimmerProduit(int idSupp);
+      public void modifierProduit(Produit p, int idMod);
+       
+    /**
+     *
+     * @return
+     */
+    public List<Produit> displayProduit();
+    public List<Produit> displayProduit2();
     
 }
