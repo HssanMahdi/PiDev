@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="main" prefHeight="717.0" prefWidth="1085.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="testpi.AddEventController">
+   <children>
+      <ImageView fitHeight="693.0" fitWidth="722.0" layoutX="1.0" layoutY="25.0" opacity="0.25" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../uploads/Image174.jpg" />
+         </image>
+      </ImageView>
+      <ComboBox fx:id="tfEquipeA" layoutX="68.0" layoutY="372.0" prefHeight="36.0" prefWidth="251.0" promptText="Equipe A" stylesheets="@../CSS/style.css" />
+      <ComboBox fx:id="tfEquipeB" layoutX="70.0" layoutY="465.0" prefHeight="36.0" prefWidth="251.0" promptText="Equipe B" stylesheets="@../CSS/style.css" />
+      <TextField fx:id="tfTitre" layoutX="68.0" layoutY="288.0" prefHeight="36.0" prefWidth="251.0" promptText="Titre" stylesheets="@../CSS/style.css">
+         <font>
+            <Font name="Baskerville Old Face" size="19.0" />
+         </font></TextField>
+      <DatePicker fx:id="tfDate" layoutX="70.0" layoutY="544.0" prefHeight="36.0" prefWidth="251.0" promptText="Date Match" style="-fx-border-color: black;" />
+      <Button fx:id="AjouterMath" layoutX="116.0" layoutY="633.0" mnemonicParsing="false" onAction="#Ajouter" prefHeight="38.0" prefWidth="134.0" style="-fx-background-color: black; -fx-background-radius: 5em; -fx-border-radius: 5em;" text="Ajouter" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman" size="20.0" />
+         </font></Button>
+      <ScrollPane fx:id="scrol" hbarPolicy="NEVER" layoutX="425.0" layoutY="153.0" prefHeight="516.0" prefWidth="643.0" style="-fx-border-color: #ec2525;" stylesheets="@../CSS/style.css">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <content>
+            <VBox fx:id="Container" prefWidth="640.0" spacing="10.0">
+               <padding>
+                  <Insets left="10.0" right="15.0" top="10.0" />
+               </padding>
+            </VBox>
+         </content>
+      </ScrollPane>
+      <ImageView fitHeight="107.0" fitWidth="1101.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../uploads/pane.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="179.0" layoutY="76.0" text="Dashboard" textFill="#c00909">
+         <font>
+            <Font name="Times New Roman Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="352.0" layoutY="76.0" text="Les Equipes">
+         <font>
+            <Font name="Times New Roman Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="528.0" layoutY="76.0" text="Les Joueurs">
+         <font>
+            <Font name="Times New Roman Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="710.0" layoutY="76.0" text="Les Statistiques">
+         <font>
+            <Font name="Times New Roman Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="901.0" layoutY="76.0" text="Store">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font>
+      </Label>
+      <FontAwesomeIconView fill="#c00909" glyphName="TELEVISION" layoutX="160.0" layoutY="91.0" />
+      <FontAwesomeIconView glyphName="CART_PLUS" layoutX="882.0" layoutY="91.0" />
+      <FontAwesomeIconView glyphName="GAMEPAD" layoutX="333.0" layoutY="91.0" />
+      <FontAwesomeIconView glyphName="SOCCER_BALL_ALT" layoutX="510.0" layoutY="91.0" />
+      <FontAwesomeIconView glyphName="LINE_CHART" layoutX="692.0" layoutY="91.0" />
+      <Label layoutX="1014.0" layoutY="76.0" text="Logout">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font>
+      </Label>
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="214.0" layoutY="80.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="388.0" layoutY="80.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="564.0" layoutY="80.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="759.0" layoutY="80.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="915.0" layoutY="80.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="1039.0" layoutY="80.0" />
+      <FontAwesomeIconView glyphName="SIGN_OUT" layoutX="996.0" layoutY="91.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="223.0" layoutY="72.0" rotate="-90.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="397.0" layoutY="72.0" rotate="-90.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="573.0" layoutY="72.0" rotate="-90.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="768.0" layoutY="72.0" rotate="-90.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="924.0" layoutY="72.0" rotate="-90.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="1048.0" layoutY="72.0" rotate="-90.0" />
+      <Pane layoutY="98.0" prefHeight="3.0" prefWidth="1101.0" style="-fx-background-color: #c40a0a;" />
+      <Pane layoutX="1.0" layoutY="194.0" opacity="0.74" prefHeight="74.0" prefWidth="390.0" style="-fx-background-color: e7e7e7;">
+         <children>
+            <Pane layoutX="-5.0" layoutY="-1.0" prefHeight="3.0" prefWidth="394.0" style="-fx-background-color: de9595;" />
+            <FontAwesomeIconView glyphName="CALENDAR_ALT" layoutX="49.0" layoutY="41.0" size="19" />
+         </children>
+      </Pane>
+      <Pane layoutX="-1.0" layoutY="266.0" prefHeight="3.0" prefWidth="390.0" style="-fx-background-color: de9595;" />
+      <Label layoutX="80.0" layoutY="215.0" text="Nouvelle Evènement">
+         <font>
+            <Font name="Times New Roman Bold" size="26.0" />
+         </font>
+      </Label>
+      <FontAwesomeIconView glyphName="PENCIL" layoutX="48.0" layoutY="310.0" size="16" />
+      <FontAwesomeIconView glyphName="SOCCER_BALL_ALT" layoutX="42.0" layoutY="394.0" size="16" />
+      <FontAwesomeIconView glyphName="SOCCER_BALL_ALT" layoutX="42.0" layoutY="488.0" size="16" />
+      <FontAwesomeIconView glyphName="CALENDAR" layoutX="49.0" layoutY="566.0" size="16" />
+      <Button fx:id="refrbtn" layoutX="1059.0" layoutY="32.0" mnemonicParsing="false" onAction="#Actualiser" prefHeight="27.0" prefWidth="31.0" style="-fx-background-color: black;">
+         <graphic>
+            <FontAwesomeIconView fill="#c72a2a" glyphName="ROTATE_LEFT" size="18" />
+         </graphic>
+      </Button>
+      <FontAwesomeIconView fill="WHITE" glyphName="CHECK_SQUARE_ALT" layoutX="132.0" layoutY="660.0" size="15" />
+   </children>
+</AnchorPane>
