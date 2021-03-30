@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Services;
+package services;
 
 import Tools.MyConnection;
 import entities.Equipe;
@@ -14,16 +14,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import Interface.IServiceEquipe;
-import entities.Joueur;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import javafx.scene.image.Image;
@@ -100,6 +93,10 @@ public class ServiceEquipe implements IServiceEquipe {
             pst.setInt(1, e.getId());
             pst.executeUpdate();
             System.out.println("Equipe supprimée");
+            String requete1 = "DELETE FROM Joueur where id_equipe=?";
+            PreparedStatement pst1 = cnx.prepareStatement(requete1);
+            pst1.setInt(1, e.getId());
+            pst1.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
@@ -131,6 +128,7 @@ public class ServiceEquipe implements IServiceEquipe {
 
                 Eq.setIdG(rst.getInt("id_equipe"));
                 Eq.setNom(rst.getString("nom_equipe"));
+                Eq.setLogo_equipe(rst.getString("logo_equipe"));
 
             }
             return Eq;
@@ -140,7 +138,7 @@ public class ServiceEquipe implements IServiceEquipe {
         }
 
     }
-
+@Override
     public Equipe getByName(String name) {
         try {
             Statement stm = cnx.createStatement();
@@ -161,6 +159,7 @@ public class ServiceEquipe implements IServiceEquipe {
             return null;
         }
     }
+    @Override
    public List<Equipe> SearchTeam(String character) {
         List<Equipe> ListEquipe = new ArrayList<>();
         try {
