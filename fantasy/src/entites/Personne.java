@@ -10,8 +10,7 @@ package entites;
  * @author MediaStudio
  */
 public class Personne {
-
-    private int id_user;
+     private int id_user;
     private String nom_user;
     private String email;
     private String password;
@@ -74,5 +73,6 @@ public class Personne {
         return "Personne{" + "Id_user=" + id_user + ", Nom_user=" + nom_user + ", Email=" + email
                 + ", Password=" + password + ", Type_user=" + type_user + '}';
     }
+    
 
 }
