@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package testpi.newpackage;
+package entites;
 
 
 /**
@@ -14,6 +14,7 @@ public class Groupe {
   
     private int id;
     private String nom;
+    int owner;
 
     public Groupe() {
     }
@@ -43,9 +44,19 @@ public class Groupe {
     public int getId() {
         return id;
     }
-    
- @Override
-    public String toString() {
-        return "Groupe {nom= " + nom +"ID= "+id+'}';
+
+    public int getOwner() {
+        return owner;
     }
+
+    public void setOwner(int owner) {
+        this.owner = owner;
+    }
+
+    @Override
+    public String toString() {
+        return "Groupe{" + "id=" + id + ", nom=" + nom + ", owner=" + owner + '}';
+    }
+    
+
 }
