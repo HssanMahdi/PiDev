@@ -9,6 +9,7 @@ import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import entites.AdminSysteme;
 
+
 import java.io.IOException;
 import java.net.URL;
 import java.sql.PreparedStatement;
@@ -46,7 +47,8 @@ import javafx.scene.text.Font;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import services.AdminSystemeCRUD;
-import test.ExportPdf;
+import tools.ExportPdfAdmin;
+
 import tools.Mail;
 
 /**
@@ -424,7 +426,7 @@ public class AdminSystemeController implements Initializable {
 
     @FXML
     private void pdfActionBtn(MouseEvent event) {
-        ExportPdf exp = new ExportPdf();
+        ExportPdfAdmin exp = new ExportPdfAdmin();
         exp.pdfs();
     }
 
