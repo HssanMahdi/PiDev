@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package entities;
+package entites;
 
 import javafx.scene.image.ImageView;
 
@@ -23,6 +23,7 @@ public class Joueur {
     private int idG;
     private String nomEquipe;
     private ImageView logoimage ;
+
 
     public void setLogoimage(ImageView logoimage) {
         this.logoimage = logoimage;
