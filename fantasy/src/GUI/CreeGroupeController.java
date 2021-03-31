@@ -26,7 +26,8 @@ import javafx.stage.Stage;
  * @author Mahdi
  */
 public class CreeGroupeController implements Initializable {
-
+    FXMLLoginController log= new FXMLLoginController();
+    Adherent u = log.user;
     @FXML
     private TextField nom;
     @FXML
@@ -40,7 +41,7 @@ public class CreeGroupeController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         btnCree.setOnAction((e)->{
             if(ctrlsaisie()){
-           Adherent u = new Adherent(1,1,"Mahdi","Mahdi","mahdi.hssan@esprit.tn","Mahdi",10000,0);
+           
           Groupe g = new Groupe(nom.getText());
           gcd.creeGroupe(g, u);
           btnCree.getScene().getWindow().hide();

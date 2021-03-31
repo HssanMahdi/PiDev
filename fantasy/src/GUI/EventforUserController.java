@@ -204,10 +204,21 @@ public void afficher(List<MatchEvent> lsMatch) {
 
     @FXML
     private void interfaceEquipe(ActionEvent event) {
-    }
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(EventforUserController.this.getClass().getResource("EquipeUserInt.fxml"));
+        btn_equipe.getScene().getWindow().hide();
+        try {
 
-    @FXML
-    private void interfaceJoueur(ActionEvent event) {
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
     }
 
     @FXML
@@ -216,6 +227,21 @@ public void afficher(List<MatchEvent> lsMatch) {
 
     @FXML
     private void interfaceHighls(ActionEvent event) {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(EventforUserController.this.getClass().getResource("HighlsUser.fxml"));
+        btn_equipe.getScene().getWindow().hide();
+        try {
+
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
     }
 
     @FXML
@@ -320,6 +346,28 @@ public void afficher(List<MatchEvent> lsMatch) {
     @FXML
     private void logEntr(MouseEvent event) {
         lbdecnx.setVisible(true);
+    }
+
+    @FXML
+    private void lbgroupe1111action(MouseEvent event) {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(EventforUserController.this.getClass().getResource("GestionUser.fxml"));
+        lbGroupe1111.getScene().getWindow().hide();
+        try {
+
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
+    }
+
+    @FXML
+    private void interfaceJoueur(ActionEvent event) {
     }
     
 }

@@ -12,6 +12,8 @@ import java.net.URL;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -42,6 +44,8 @@ public class AdherentController implements Initializable {
     private TextField tfNom;
     @FXML
     private Button btnBack;
+    @FXML
+    private Button btnaj;
 
     /**
      * Initializes the controller class.
@@ -60,23 +64,30 @@ public class AdherentController implements Initializable {
         
     if(validerChamps()){
         
-         String mdp =encrypt(tfMotdepasse.getText()) ;
-        a.setNom_user(tfNom.getText());
-        a.setEmail(tfEmail.getText());
-       a.setPassword(mdp);
-       ad.ajouterAdherent(a);
-         
-         
+        
+             String mdp =encrypt(tfMotdepasse.getText()) ;
+             a.setNom_user(tfNom.getText());
+             a.setEmail(tfEmail.getText());
+             a.setPassword(mdp);
+             ad.ajouterAdherent(a);
+             
+             
 //         Password md = new Password();
 //          String mdpCrypte1 = Password.hashPassword(tfMotdepasse.getText());
-        
+
 
         Mail mail = new Mail();
         mail.envoyer1(tfEmail.getText(),tfNom.getText() ,tfMotdepasse.getText());
-        
-//        EncryptionPassword en = new EncryptionPassword();
-//        en.MD5(tfMotdepasse.getText());
-
+         try {
+        btnaj.getScene().getWindow().hide();
+        Parent root = FXMLLoader.load(getClass().getResource("GestionUser.fxml"));
+        Scene scene = new Scene(root);
+        Stage mainStage= new Stage();
+        mainStage.setScene(scene);
+        mainStage.show();
+         } catch (IOException ex) {
+             Logger.getLogger(AdherentController.class.getName()).log(Level.SEVERE, null, ex);
+         }
         
         
 

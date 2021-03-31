@@ -41,8 +41,8 @@ import services.GroupeCRUD;
  * @author Mahdi
  */
 public class DisplaylesGroupedeAdherent implements Initializable {
-    
-    Adherent u = new Adherent(2,1,"Mahdi","Mahdi","mahdi.hssan@esprit.tn","Mahdi",10000,0);
+    FXMLLoginController log= new FXMLLoginController();
+    Adherent u = log.user;
     GroupeCRUD gcd = new GroupeCRUD();
     Groupe g=new Groupe();
     @FXML

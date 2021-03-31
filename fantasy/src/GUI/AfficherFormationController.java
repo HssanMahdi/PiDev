@@ -49,6 +49,8 @@ import org.controlsfx.control.textfield.TextFields;
 import entites.Adherent;
 import entites.Joueur;
 import services.FormationCRUD;
+import tools.ExportExcel;
+import tools.ExportPdf;
 import tools.MyConnection;
 
 
@@ -65,7 +67,8 @@ public class AfficherFormationController implements Initializable {
     @FXML
     private Label lb;
     FormationCRUD fcd = new FormationCRUD();
-    Adherent u = new Adherent(2, 1, "Mahdi", "Mahdi", "mahdi.hssan@esprit.tn", "Mahdi", 10000, 0);
+    FXMLLoginController log= new FXMLLoginController();
+    Adherent u = log.user;
     @FXML
     private Button btnpdf;
     @FXML

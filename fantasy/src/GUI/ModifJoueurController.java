@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javafxapplication;
+package GUI;
 
-import Services.ServiceEquipe;
-import Services.ServiceJoueur;
-import Tools.MyConnection;
-import entities.Joueur;
+import services.ServiceEquipe;
+import services.ServiceJoueur;
+import tools.MyConnection;
+import entites.Joueur;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -167,7 +167,7 @@ public class ModifJoueurController implements Initializable {
             rs.close();
             return option;
         } catch (SQLException ex) {
-            Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex);
             return null;
         }
     }

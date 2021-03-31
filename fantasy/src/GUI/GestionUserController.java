@@ -6,7 +6,7 @@
 package GUI;
 
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
-import entities.Adherent;
+import entites.Adherent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Base64;

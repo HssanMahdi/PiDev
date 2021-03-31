@@ -10,13 +10,14 @@ package tools;
  * @author Mahdi
  */
 
+import entites.Adherent;
+import entites.Groupe;
+import entites.ManagerFootball;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.PasswordAuthentication;
@@ -53,7 +54,7 @@ public class Mail {
             throw new RuntimeException(e);
         }
     }
-    public void envoyer1(String email) {
+    public void envoyer1(String email,String login,String pwd) {
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
@@ -70,7 +71,7 @@ public class Mail {
             message.setFrom(new InternetAddress("ligue1fantasy@gmail.com"));
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
             message.setSubject("Hi");
-            message.setText("Welcome to Fantasy ligue1,\n  account activation!");
+            message.setText("Welcome to Fantasy ligue1,\n Username = "+login+" Password = "+pwd);
             Transport.send(message);
             System.out.println("message envoyé");
         } catch (MessagingException e) {

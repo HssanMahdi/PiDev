@@ -40,7 +40,8 @@ import entites.Groupe;
  */
 public class AfficherlesAdherentdeGroupeController implements Initializable {
 
-    Adherent u = new Adherent(2,1,"Mahdi","Mahdi","mahdi.hssan@esprit.tn","Mahdi",10000,0);
+    FXMLLoginController log= new FXMLLoginController();
+    Adherent u = log.user;
     private Button btnback;
     @FXML
     private ScrollPane Co;

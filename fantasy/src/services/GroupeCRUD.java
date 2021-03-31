@@ -215,7 +215,7 @@ public class GroupeCRUD implements IGroupe<Groupe,Adherent>{
 //                System.out.println(rs1.getInt("id_user"));
 //               System.out.println(rs1.getString("nom_user"));
                 Adherent u = new Adherent();
-                u.setId_user(rs1.getInt("id_user"));
+                u.setIduser(rs1.getInt("id_user"));
                 u.setNom_user(rs1.getString("nom_user"));
 //                System.out.println("2");
                  AdherentList.add(u);

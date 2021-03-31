@@ -17,6 +17,7 @@ import javafx.scene.input.MouseEvent;
 import org.controlsfx.control.textfield.TextFields;
 import entites.Adherent;
 import entites.Groupe;
+import services.AdherentCRUD;
 import services.GroupeCRUD;
 import tools.Mail;
 
@@ -27,7 +28,8 @@ import tools.Mail;
  */
 public class AjoutAdherentauGroupeController implements Initializable {
 
-    Adherent u1 = new Adherent(2,1,"Mahdi","Mahdi","mahdi.hssan@esprit.tn","Mahdi",10000,0);
+    FXMLLoginController log= new FXMLLoginController();
+    Adherent u1 = log.user;
     Adherent u=new Adherent();
     @FXML
     private TextField email;
@@ -42,11 +44,11 @@ public class AjoutAdherentauGroupeController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
          GroupeCRUD gcd = new GroupeCRUD();
-         Adherent u3= new Adherent();
-         TextFields.bindAutoCompletion(email, u1.sugg());
+         AdherentCRUD acd = new AdherentCRUD();
+         TextFields.bindAutoCompletion(email, acd.sugg());
         btnajt.setOnAction((e)->{
             if(ctrlsaisie()){
-              u=u3.byemail(email.getText());
+              u=acd.byemail(email.getText());
             if(gcd.verifonentry(g1, u)){  
                if (gcd.verifexist(g1, u)){
             gcd.ajouterAdherentauGroupe(g1, u);

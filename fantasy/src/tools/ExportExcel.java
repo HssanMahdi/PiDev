@@ -5,6 +5,8 @@
  */
 package tools;
 
+import entites.Adherent;
+import entites.Joueur;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -67,7 +69,7 @@ public void exelm(Adherent u){
                                 .createStatement();
                         rs2 = st2.executeQuery(requete2);
                         while (rs2.next()) {
-
+                            
                             Joueur j = new Joueur();
                             XSSFRow row = sheet.createRow(index);
                             row.createCell(0).setCellValue(rs2.getString("nom_joueur"));

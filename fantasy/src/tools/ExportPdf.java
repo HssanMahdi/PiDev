@@ -12,6 +12,7 @@ import com.itextpdf.text.Phrase;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
+import entites.Adherent;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.sql.Connection;
@@ -97,7 +98,7 @@ public void pdfsM(String filename,Adherent u) throws Exception {
         }
     }
 
-public void pdfs(String filename) {
+public void pdfs() {
 
 try {
             Document my_pdf_report = new Document(PageSize.LETTER);
