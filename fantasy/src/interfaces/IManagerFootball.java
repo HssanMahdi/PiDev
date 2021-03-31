@@ -5,10 +5,26 @@
  */
 package interfaces;
 
+
+import entites.ManagerFootball;
+import java.util.List;
+
 /**
  *
- * @author Mahdi
+ * @author MediaStudio
  */
-public interface IManagerFootball {
-    
+public interface IManagerFootball<user> {
+
+    public void ajouterManagerFootball(ManagerFootball m);
+
+    public void supprimerManagerFootball(ManagerFootball m);
+
+    public void updateManagerFootball(ManagerFootball m);
+
+    public List<ManagerFootball> displayManagerFootball();
+
+    public ManagerFootball connecter(int id);
+
+    public List<ManagerFootball> Rechercher(String s);
+
 }

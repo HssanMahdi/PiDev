@@ -5,10 +5,24 @@
  */
 package interfaces;
 
+
+import entites.Adherent;
+import java.util.List;
+
 /**
  *
- * @author Mahdi
+ * @author MediaStudio
  */
-public interface IAdherent {
-    
+public interface IAdherent<user> {
+
+    public void ajouterAdherent(Adherent a);
+
+    public void supprimerAdherent(Adherent a);
+
+    public void updateAdherent(Adherent a);
+
+    public Adherent connecter(int id);
+
+    public List displayAdherent();
+
 }
