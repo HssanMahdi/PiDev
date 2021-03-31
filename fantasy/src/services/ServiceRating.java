@@ -5,9 +5,10 @@
  */
 package services;
 
-import Interface.IServiceRating;
-import Tools.MyConnection;
-import entities.RatingJoueur;
+import entites.RatingJoueur;
+import interfaces.IServiceRating;
+import tools.MyConnection;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -143,5 +144,7 @@ public class ServiceRating implements IServiceRating {
         return test;
 
     }
+
+   
 
 }

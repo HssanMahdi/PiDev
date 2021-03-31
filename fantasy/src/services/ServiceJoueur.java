@@ -5,9 +5,9 @@
  */
 package services;
 
-import Interface.IServiceJoueur;
-import Tools.MyConnection;
-import entities.Joueur;
+import entites.Joueur;
+import interfaces.IServiceJoueur;
+import tools.MyConnection;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.sql.Connection;
@@ -32,9 +32,9 @@ public class ServiceJoueur implements IServiceJoueur {
     Connection cnx = MyConnection.getInstance().getCnx();
 
     
-    @Override
+     @Override
     public void addJoueur(Joueur j) {
-        try {
+               try {
             String requete = "INSERT INTO joueur (nom_joueur,prenom_joueur,position,score_joueur,logo_joueur,prix_joueur,id_equipe)"
                     + "VALUES ('" + j.getNomJoueur() + "','" + j.getPrenomJoueur() + "','" + j.getPosition()+"','"+0+"','" + j.getLogoJoueur() +"','" + j.getPrixJoueur() + "','" + j.getIdG() + "')";
             Statement st = cnx.createStatement();
@@ -89,6 +89,8 @@ public class ServiceJoueur implements IServiceJoueur {
         return ListJoueur;
     }
 
+   
+
     @Override
     public void deleteJoueur(Joueur j) {
         try {
@@ -104,7 +106,7 @@ public class ServiceJoueur implements IServiceJoueur {
 
     @Override
     public void updateJoueur(Joueur j) {
-        try {
+       try {
 
             Statement stm = cnx.createStatement();
             String query = "UPDATE joueur SET nom_joueur= '" + j.getNomJoueur() + "', prenom_joueur= '" + j.getPrenomJoueur() + "', position= '" + j.getPosition() + "',score_joueur= '" +0+ "', logo_joueur= '" + j.getLogoJoueur() + "', prix_joueur= '" + j.getPrixJoueur() + "', id_equipe= '" + j.getIdG() + "' WHERE Id_joueur='" + j.getIdJoueur() + "'";
@@ -114,7 +116,8 @@ public class ServiceJoueur implements IServiceJoueur {
             System.out.println(ex.getMessage());
         }
     }
-
+     
+    
     @Override
     public List<Joueur> getJoueurEquipe(int id) {
         List<Joueur> ListJoueur = new ArrayList<>();
@@ -362,5 +365,6 @@ public class ServiceJoueur implements IServiceJoueur {
 
         }
         return option;
-    }
-}
+    }}
+
+

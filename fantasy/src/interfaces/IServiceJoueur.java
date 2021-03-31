@@ -3,11 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Interface;
+package interfaces;
 
-import entities.Joueur;
-import java.sql.SQLException;
+
+import entites.Joueur;
 import java.util.List;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -22,9 +23,17 @@ public interface IServiceJoueur {
     public void deleteJoueur(Joueur j);
 
     public void updateJoueur(Joueur j);
-    
-     public List<Joueur> getJoueurEquipe(int id);
-     
-     public List<Joueur> SearchPlayer(String character);
- 
+
+    public List<Joueur> getJoueurEquipe(int id);
+
+    public List<Joueur> SearchPlayer(String character, int id);
+
+    public List<Joueur> Search(String character);
+
+    public List<Joueur> Trier(int i);
+
+    public List<Joueur> TrierPlayer(int i, int id);
+
+    public ObservableList FillCombo();
+
 }

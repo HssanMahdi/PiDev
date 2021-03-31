@@ -5,8 +5,10 @@
  */
 package services;
 
-import Tools.MyConnection;
-import entities.Equipe;
+import entites.Equipe;
+import interfaces.IServiceEquipe;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -16,19 +18,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import Interface.IServiceEquipe;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import tools.MyConnection;
 
 /**
  *
  * @author PC
- */
-/**
- *
- * @author Ghada HJ
  */
 public class ServiceEquipe implements IServiceEquipe {
 

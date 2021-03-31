@@ -1,7 +1,7 @@
-package Interface;
+package interfaces;
 
-import entities.Equipe;
-import java.sql.SQLException;
+
+import entites.Equipe;
 import java.util.List;
 
 /*
@@ -17,14 +17,16 @@ public interface IServiceEquipe {
 
     public void addEquipe(Equipe e);
 
-    public List<Equipe> getEquipes() ;
+    public List<Equipe> getEquipes();
 
     public void deleteEquipe(Equipe p);
 
+    public Equipe getByName(String name);
 
     public void updateEquipe(Equipe p);
-    
+
     public Equipe getById(int id);
     
+    public List<Equipe> SearchTeam(String character);
 
 }

@@ -5,9 +5,10 @@
  */
 package services;
 
-import Interface.IPubService;
-import Tools.MyConnection;
-import entities.Publication;
+import entites.Publication;
+import interfaces.IPubService;
+import tools.MyConnection;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -184,5 +185,7 @@ public class PubService implements IPubService{
             System.out.println(ex.getMessage());
         }
     }
+
+
 
 }
