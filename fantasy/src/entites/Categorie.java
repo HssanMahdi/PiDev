@@ -11,7 +11,7 @@ package entities;
  */
 public class Categorie {
     
-    private int idCategorie;
+        private int idCategorie;
     private String nomCategorie;
 
     public Categorie() {
@@ -42,7 +42,6 @@ public class Categorie {
     public String toString() {
         return "Categorie{" + "idCategorie=" + idCategorie + ", nomCategorie=" + nomCategorie + "}\n";
     }
-    
     
     
 }
