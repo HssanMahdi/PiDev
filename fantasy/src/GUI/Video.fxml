@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="747.0" prefWidth="1216.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.VideoController">
+   <children>
+      <Pane layoutX="107.0" layoutY="319.0" prefHeight="197.0" prefWidth="426.0" style="-fx-background-color: #f2eded;">
+         <children>
+            <Pane layoutY="-1.0" prefHeight="3.0" prefWidth="155.0" style="-fx-background-color: black;" />
+            <Pane layoutX="255.0" layoutY="196.0" prefHeight="3.0" prefWidth="150.0" style="-fx-background-color: black;" />
+            <Label layoutX="139.0" layoutY="60.0" text="Highlights" textFill="#c82626">
+               <font>
+                  <Font name="Baskerville Old Face" size="43.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="54.0" fitWidth="55.0" layoutX="73.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../uploads/video.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="511.0" layoutY="181.0" prefHeight="500.0" prefWidth="679.0" style="-fx-background-color: black;">
+         <children>
+            <MediaView fx:id="MP" fitHeight="455.0" fitWidth="682.0" layoutY="50.0" />
+            <Label fx:id="nomPub" alignment="CENTER" contentDisplay="CENTER" layoutX="2.0" layoutY="6.0" prefHeight="36.0" prefWidth="679.0" text="Label" textFill="WHITE">
+               <font>
+                  <Font name="Times New Roman Italic" size="24.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="32.0" layoutY="426.0" prefHeight="65.0" prefWidth="600.0">
+               <children>
+                  <Button fx:id="stopbtn" layoutX="261.0" layoutY="17.0" mnemonicParsing="false" onAction="#Stop" prefHeight="43.0" prefWidth="55.0" style="-fx-background-color: black;" text="| |" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="play_btn" layoutX="316.0" layoutY="12.0" mnemonicParsing="false" onAction="#PlayV" prefHeight="31.0" prefWidth="38.0" style="-fx-background-color: black;" text="▶" textFill="WHITE">
+                     <font>
+                        <Font name="Baskerville Old Face" size="28.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </Pane>
+      <ImageView fitHeight="116.0" fitWidth="1216.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../uploads/pane.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="105.0" layoutY="99.0" prefHeight="3.0" prefWidth="1110.0" style="-fx-background-color: #dacece;" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="210.0" layoutY="72.0" rotate="-90.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="384.0" layoutY="72.0" rotate="-90.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="560.0" layoutY="72.0" rotate="-90.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="730.0" layoutY="72.0" rotate="-90.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="885.0" layoutY="72.0" rotate="-90.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="1035.0" layoutY="72.0" rotate="-90.0" />
+      <BorderPane layoutX="120.0" layoutY="70.0" prefHeight="27.0" prefWidth="971.0">
+         <center>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="50.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="138.0" style="-fx-background-color: white;" styleClass="dash" stylesheets="@../CSS/style.css" text="Dashboard" textFill="#c00909">
+                     <graphic>
+                        <FontAwesomeIconView fill="#c00909" glyphName="TELEVISION" />
+                     </graphic>
+                     <font>
+                        <Font name="Times New Roman Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn_equipe" mnemonicParsing="false" onAction="#interfaceEquipe" prefHeight="26.0" prefWidth="123.0" style="-fx-background-color: white;" styleClass="eq" stylesheets="@../CSS/style.css" text=" Equipe">
+                     <font>
+                        <Font name="Times New Roman Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="GAMEPAD" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btn_joueur" mnemonicParsing="false" onAction="#interfaceJoueur" prefHeight="26.0" prefWidth="122.0" style="-fx-background-color: white;" styleClass="eq" stylesheets="@../CSS/style.css" text=" Joueur">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="SOCCER_BALL_ALT" />
+                     </graphic>
+                     <font>
+                        <Font name="Times New Roman" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn_stat" mnemonicParsing="false" onAction="#interfaceStat" prefHeight="26.0" prefWidth="120.0" style="-fx-background-color: white;" styleClass="eq" stylesheets="@../CSS/style.css" text=" Statistique">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="LINE_CHART" />
+                     </graphic>
+                     <font>
+                        <Font name="Times New Roman Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn_stotr" mnemonicParsing="false" prefHeight="26.0" prefWidth="111.0" style="-fx-background-color: white;" styleClass="eq" stylesheets="@../CSS/style.css" text=" Store">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="CART_PLUS" />
+                     </graphic>
+                     <font>
+                        <Font name="Times New Roman Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn_highls" mnemonicParsing="false" onAction="#interfaceHighls" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: white;" styleClass="eq" stylesheets="@../CSS/style.css" text=" Highlights">
+                     <font>
+                        <Font name="Times New Roman Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="FILM" />
+                     </graphic>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+            </HBox>
+         </center>
+      </BorderPane>
+      <Pane layoutX="105.2" layoutY="99.0" prefHeight="648.0" prefWidth="2.7" style="-fx-background-color: #c00909;" />
+      <Button fx:id="backbtn" layoutX="38.0" layoutY="674.0" mnemonicParsing="false" onAction="#back" onMouseEntered="#backEntred" onMouseExited="#backExit" prefHeight="27.0" prefWidth="31.0" style="-fx-background-color: white;">
+         <graphic>
+            <FontAwesomeIconView fill="#c72a2a" glyphName="ANGLE_DOUBLE_LEFT" size="25" />
+         </graphic>
+         <effect>
+            <Reflection />
+         </effect>
+      </Button>
+      <Label fx:id="lb1" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="708.0" prefHeight="23.0" prefWidth="68.0" style="-fx-background-color: #ffe7e7; -fx-background-radius: 3em; -fx-border-radius: 3em;" text="Précedent" visible="false">
+         <font>
+            <Font name="Times New Roman Bold" size="13.0" />
+         </font>
+      </Label>
+      <BorderPane layoutX="14.0" layoutY="110.0" prefHeight="550.0" prefWidth="79.0">
+         <center>
+            <VBox prefHeight="560.0" prefWidth="79.0" spacing="54.0" BorderPane.alignment="CENTER">
+               <padding>
+                  <Insets top="45.0" />
+               </padding>
+               <children>
+                  <FontAwesomeIconView fx:id="btn_highInt" fill="#c22d2d" glyphName="FILM" onMouseClicked="#actionHighls" onMouseEntered="#highlsEntred" onMouseExited="#highlsExit" size="25">
+                     <VBox.margin>
+                        <Insets left="30.0" />
+                     </VBox.margin>
+                     <effect>
+                        <Reflection />
+                     </effect>
+                  </FontAwesomeIconView>
+                  <Label fx:id="lbHL" alignment="CENTER" prefHeight="16.0" prefWidth="84.0" style="-fx-background-color: ffe7e7; -fx-background-radius: 3em;" text="Highlights" visible="false">
+                     <font>
+                        <Font name="Times New Roman Bold" size="13.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="-50.0" />
+                     </VBox.margin>
+                  </Label>
+                  <FontAwesomeIconView fx:id="btn_matchEv" fill="#c22d2d" glyphName="CALENDAR_PLUS_ALT" onMouseClicked="#eventActionInterface" onMouseEntered="#EventEntred" onMouseExited="#EventExit" size="25">
+                     <VBox.margin>
+                        <Insets left="30.0" />
+                     </VBox.margin>
+                     <effect>
+                        <Reflection />
+                     </effect>
+                  </FontAwesomeIconView>
+                  <Label fx:id="lbMatch" alignment="CENTER" prefHeight="16.0" prefWidth="82.0" style="-fx-background-color: ffe7e7; -fx-background-radius: 3em;" text="Match" visible="false">
+                     <font>
+                        <Font name="Times New Roman Bold" size="13.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="-50.0" />
+                     </VBox.margin>
+                  </Label>
+                  <FontAwesomeIconView fx:id="btn_statH" fill="#c22d2d" glyphName="SIGNAL" onMouseClicked="#statActionInterface" onMouseEntered="#statEntred" onMouseExited="#statExit" size="25">
+                     <VBox.margin>
+                        <Insets left="30.0" />
+                     </VBox.margin>
+                     <effect>
+                        <Reflection />
+                     </effect>
+                  </FontAwesomeIconView>
+                  <Label fx:id="lblStats" alignment="CENTER" prefHeight="19.0" prefWidth="88.0" style="-fx-background-color: ffe7e7; -fx-background-radius: 3em;" text="Statistique" visible="false" wrapText="true">
+                     <font>
+                        <Font name="Times New Roman Bold" size="13.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="-50.0" />
+                     </VBox.margin>
+                  </Label>
+                  <FontAwesomeIconView fill="#c22d2d" glyphName="USER" onMouseClicked="#userProfileInt" onMouseEntered="#userEnred" onMouseExited="#userExit" size="25">
+                     <VBox.margin>
+                        <Insets left="30.0" />
+                     </VBox.margin>
+                     <effect>
+                        <Reflection />
+                     </effect>
+                  </FontAwesomeIconView>
+                  <Label fx:id="lblProfile" alignment="CENTER" prefHeight="21.0" prefWidth="84.0" style="-fx-background-color: ffe7e7; -fx-background-radius: 3em;" text="Profile" visible="false">
+                     <font>
+                        <Font name="Times New Roman Bold" size="13.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="-50.0" />
+                     </VBox.margin>
+                  </Label>
+                  <FontAwesomeIconView fill="#c22d2d" glyphName="SIGN_OUT" onMouseClicked="#LogoutInt" onMouseEntered="#logEntred" onMouseExited="#logExit" size="25">
+                     <effect>
+                        <Reflection />
+                     </effect>
+                     <VBox.margin>
+                        <Insets left="30.0" />
+                     </VBox.margin>
+                  </FontAwesomeIconView>
+                  <Label fx:id="lblLogout" alignment="CENTER" prefHeight="23.0" prefWidth="84.0" style="-fx-background-color: ffe7e7; -fx-background-radius: 3em;" text="Logout" visible="false">
+                     <font>
+                        <Font name="Times New Roman Bold" size="13.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="-50.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

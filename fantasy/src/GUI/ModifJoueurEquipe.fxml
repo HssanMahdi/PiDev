@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="707.0" prefWidth="524.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ModifJoueurEquipeController">
+   <children>
+      <TextField fx:id="tfNom" layoutX="100.0" layoutY="128.0" prefHeight="36.0" prefWidth="294.0" promptText="Nom" stylesheets="@../CSS/style.css">
+         <font>
+            <Font name="Baskerville Old Face" size="17.0" />
+         </font></TextField>
+      <TextField fx:id="tfPrenom" layoutX="100.0" layoutY="212.0" prefHeight="36.0" prefWidth="294.0" promptText="Prenom" stylesheets="@../CSS/style.css">
+         <font>
+            <Font name="Baskerville Old Face" size="17.0" />
+         </font></TextField>
+      <ComboBox fx:id="combo" layoutX="100.0" layoutY="468.0" prefHeight="35.0" prefWidth="294.0" promptText="Equipe" stylesheets="@../CSS/style.css" />
+      <TextField fx:id="tfPrix" layoutX="100.0" layoutY="380.0" prefHeight="36.0" prefWidth="294.0" promptText="Prix" stylesheets="@../CSS/style.css">
+         <font>
+            <Font name="Baskerville Old Face" size="17.0" />
+         </font></TextField>
+      <ComboBox fx:id="positionComoBox" layoutX="100.0" layoutY="303.0" prefHeight="35.0" prefWidth="294.0" promptText="Position" stylesheets="@../CSS/style.css" />
+      <Button fx:id="modif" layoutX="170.0" layoutY="635.0" mnemonicParsing="false" onAction="#ModifierPl" prefHeight="42.0" prefWidth="154.0" style="-fx-background-color: #E51313; -fx-border-radius: 5em; -fx-background-radius: 5em;" text="Modifier" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="19.0" />
+         </font>
+      </Button>
+      <Label layoutX="175.0" layoutY="30.0" text="Modifier Joueur" textFill="#e51313">
+         <font>
+            <Font name="Times New Roman Bold" size="31.0" />
+         </font>
+      </Label>
+      <Pane layoutY="87.0" prefHeight="10.0" prefWidth="524.0" style="-fx-background-color: #E51313;" />
+      <FontAwesomeIconView fill="#e51313" glyphName="EDIT" layoutX="125.0" layoutY="58.0" size="30" />
+      <FontAwesomeIconView fill="WHITE" glyphName="CHECK" layoutX="184.0" layoutY="663.0" size="20" />
+      <Button fx:id="browse" layoutX="100.0" layoutY="556.0" mnemonicParsing="false" onAction="#Browse" prefHeight="20.0" prefWidth="30.0" style="-fx-background-color: #E51313;" textFill="#ffffff">
+         <font>
+            <Font name="Verdana Bold" size="14.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="IMAGE" size="16" />
+         </graphic>
+      </Button>
+      <TextField fx:id="tfLogo" layoutX="100.0" layoutY="556.0" prefHeight="35.0" prefWidth="339.0" promptText="Logo" stylesheets="@../CSS/style.css" visible="false" />
+      <Label layoutX="149.0" layoutY="558.0" text="Image ">
+         <font>
+            <Font name="Baskerville Old Face" size="19.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="imgView" fitHeight="76.0" fitWidth="114.0" layoutX="247.0" layoutY="532.0" pickOnBounds="true" preserveRatio="true" />
+      <FontAwesomeIconView glyphName="USER" layoutX="82.0" layoutY="236.0" size="18" />
+      <FontAwesomeIconView glyphName="USER" layoutX="82.0" layoutY="152.0" size="18" />
+      <FontAwesomeIconView glyphName="USD" layoutX="85.0" layoutY="404.0" size="19" />
+      <FontAwesomeIconView glyphName="DEVIANTART" layoutX="82.0" layoutY="327.0" size="18" />
+      <FontAwesomeIconView glyphName="SOCCER_BALL_ALT" layoutX="80.0" layoutY="492.0" size="17" text="" />
+   </children>
+</AnchorPane>

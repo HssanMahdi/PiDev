@@ -1,0 +1,240 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 9 mars 2021, 17:05:52
+    Author     : PC
+*/
+
+
+.bodyb{
+
+    -fx-background-image: url("file:/C:/wamp/www/PIProjet/img.jpg");
+    -fx-background-repeat: stretch;   
+
+    -fx-background-position: center center;
+
+}
+.panefoot{
+
+    -fx-background-image: url("file:/C:/wamp/www/PIProjet/immft.png");
+    -fx-background-repeat: stretch;   
+
+    -fx-background-position: center center;
+
+}
+.pansoccer{
+
+    -fx-background-image: url("file:/C:/wamp/www/PIProjet/ball.png");
+    -fx-background-repeat: stretch;   
+
+    -fx-background-position: center center;
+
+}
+
+.panehighlis{
+
+    -fx-background-image: url("file:/C:/wamp/www/PIProjet/imgvideo.png");
+    -fx-background-repeat: stretch;   
+
+    -fx-background-position: center center;
+
+}
+
+
+.bodyb1
+{
+
+    -fx-background-image: url("file:/C:/wamp/www/PIProjet/imgeq.png");
+    -fx-background-repeat: stretch;   
+
+    -fx-background-position: center center;
+
+}
+.pnstat
+{
+
+    -fx-background-image: url("file:/C:/wamp/www/PIProjet/image11.png");
+    -fx-background-repeat: stretch;   
+
+    -fx-background-position: center center;
+
+}
+
+
+.panescr
+{
+
+    -fx-background-image: url("file:/C:/wamp/www/PIProjet/soccr.png");
+    -fx-background-repeat: stretch;   
+
+    -fx-background-position: center center;
+
+}
+
+.bodypan
+{
+
+    -fx-background-image: url("file:/C:/wamp/www/PIProjet/pane.png");
+    -fx-background-repeat: stretch;   
+
+    -fx-background-position: center center;
+
+}
+
+
+.bodyjr
+{
+
+    -fx-background-image: url("file:/C:/wamp/www/PIProjet/jr2.png");
+    -fx-background-repeat: stretch;   
+
+    -fx-background-position: center center;
+
+}
+.panelogo
+{
+
+    -fx-background-image: url("file:/C:/wamp/www/PIProjet/logo.png");
+    -fx-background-repeat: stretch;   
+
+    -fx-background-position: center center;
+
+}
+.text-field {
+
+    -fx-border-color: black;
+    -fx-border-width: 0 0 1.5 0; 
+    -fx-background-color: transparent;
+    -fx-prompt-text-fill: #474747;
+}
+.text-field:focused {
+    -fx-background-color: red, -fx-background ;
+}
+.combo-box .list-cell 
+{
+    -fx-background: white;
+    -fx-background-color: transparent;
+    -fx-text-fill: -fx-text-base-color;
+    -fx-padding: 3 0 2 7;
+    -fx-cell-size: 1.66667em; 
+}
+
+.combo-box-popup .list-view 
+{
+    -fx-background-color: white, white;
+    -fx-background-insets: 0, 1;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 8, 0.0 , 0 , 0 );
+}    
+
+.combo-box-popup .list-view .list-cell 
+{
+    -fx-padding: 4 0 4 5;
+
+    /* No alternate highlighting */
+    -fx-background-color: white;
+}
+
+.combo-box-popup .list-view .list-cell:filled:selected, .combo-box-popup .list-view .list-cell:filled:selected:hover 
+{
+    -fx-background: -fx-accent;
+    -fx-background-color: -fx-selection-bar;
+    -fx-text-fill: -fx-selection-bar-text;
+}
+
+.combo-box-popup .list-view .list-cell:filled:hover 
+{
+    -fx-background-color: white;
+    -fx-text-fill: -fx-text-inner-color;
+}
+
+.combo-box-base  
+{
+
+    -fx-background-radius: 5, 5, 4, 3;
+    -fx-border-color: black;
+    -fx-border-width: 1.5 1.5 1.5 1.5; 
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+    -fx-padding: 0;
+}
+
+
+
+.combo-box-base:focused {
+   
+    -fx-background-color: red, -fx-outer-border, -fx-inner-border, -fx-body-color;
+    -fx-background-radius: 6.4, 4, 5, 3;
+    -fx-background-insets: -1.4, 0, 1, 2;
+}
+
+.scroll-pane
+{
+/*     -fx-border-color:#dacece;
+    -fx-border-width: 1 0 0 0;*/
+    -fx-background-color : Transparent;
+
+   -fx-border-color: derive(gray, 120%);
+    -fx-padding: 0.3px;
+}
+
+.scroll-pane .scroll-bar:vertical
+{
+
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+
+}
+
+.scroll-pane .scroll-bar:vertical .track
+{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0em;
+    -fx-border-radius: 2em;
+}
+
+.scroll-pane .scroll-bar:horizontal .decrement-button
+{
+    -fx-background-color: transparent;
+    -fx-background-radius: 0em;
+    -fx-padding: 0 0 10 0;
+
+}
+
+.scroll-pane .scroll-bar:vertical .decrement-button
+{
+
+    -fx-background-color: transparent;
+    -fx-background-radius: 0em;
+    -fx-padding: 0 10 0 0;
+}
+
+.scroll-pane .scroll-bar .increment-arrow,
+.scroll-pane .scroll-bar .decrement-arrow
+{
+    -fx-padding: -2;
+
+
+}
+
+.scroll-pane .scroll-bar:vertical .thumb
+{
+    -fx-background-color: derive(#ec2525,100%);
+    -fx-background-insets: 2, 0, 0;
+    -fx-background-radius: 2em;
+}
+
+.dash:hover{
+    
+    -fx-border-color: #e02e2e;
+    -fx-border-width: 0px 0px 3.5px 0px;
+}
+.eq:hover{
+    
+    -fx-border-color: black;
+    -fx-border-width: 0px 0px 3.5px 0px;
+}
+
+
