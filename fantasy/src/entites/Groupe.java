@@ -5,6 +5,7 @@
  */
 package entites;
 
+
 /**
  *
  * @author Mahdi
@@ -13,12 +14,17 @@ public class Groupe {
   
     private int id;
     private String nom;
+    int owner;
 
     public Groupe() {
     }
 
     public Groupe(int id, String nom) {
         this.id = id;
+        this.nom = nom;
+    }
+
+    public Groupe(String nom) {
         this.nom = nom;
     }
     
@@ -38,9 +44,19 @@ public class Groupe {
     public int getId() {
         return id;
     }
-    
- @Override
-    public String toString() {
-        return "Groupe {nom= " + nom +"ID= "+id+'}';
+
+    public int getOwner() {
+        return owner;
     }
+
+    public void setOwner(int owner) {
+        this.owner = owner;
+    }
+
+    @Override
+    public String toString() {
+        return "Groupe{" + "id=" + id + ", nom=" + nom + ", owner=" + owner + '}';
+    }
+    
+
 }

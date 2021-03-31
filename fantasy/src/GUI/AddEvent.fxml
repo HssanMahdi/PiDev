@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="main" prefHeight="747.0" prefWidth="1216.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AddEventController">
+   <children>
+      <ImageView fitHeight="115.0" fitWidth="1216.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../uploads/pane.png" />
+         </image>
+      </ImageView>
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="214.0" layoutY="80.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="388.0" layoutY="80.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="564.0" layoutY="80.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="759.0" layoutY="80.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="915.0" layoutY="80.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="1039.0" layoutY="80.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="223.0" layoutY="72.0" rotate="-90.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="397.0" layoutY="72.0" rotate="-90.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="573.0" layoutY="72.0" rotate="-90.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="740.0" layoutY="72.0" rotate="-90.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="890.0" layoutY="72.0" rotate="-90.0" />
+      <Button fx:id="refrbtn" layoutX="1172.0" layoutY="72.0" mnemonicParsing="false" onAction="#Actualiser" prefHeight="27.0" prefWidth="31.0" style="-fx-background-color: WHITEblack;">
+         <graphic>
+            <FontAwesomeIconView fill="#c72a2a" glyphName="ROTATE_LEFT" size="18" />
+         </graphic>
+      </Button>
+      <ImageView fitHeight="652.0" fitWidth="369.0" layoutX="110.0" layoutY="100.0" opacity="0.25" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../uploads/Image174.jpg" />
+         </image>
+      </ImageView>
+      <ComboBox fx:id="tfEquipeA" layoutX="183.0" layoutY="405.0" prefHeight="36.0" prefWidth="251.0" promptText="Equipe A" stylesheets="@../CSS/style.css" />
+      <ComboBox fx:id="tfEquipeB" layoutX="185.0" layoutY="498.0" prefHeight="36.0" prefWidth="251.0" promptText="Equipe B" stylesheets="@../CSS/style.css" />
+      <TextField fx:id="tfTitre" layoutX="183.0" layoutY="321.0" prefHeight="36.0" prefWidth="251.0" promptText="Titre" stylesheets="@../CSS/style.css">
+         <font>
+            <Font name="Baskerville Old Face" size="19.0" />
+         </font>
+      </TextField>
+      <DatePicker fx:id="tfDate" layoutX="185.0" layoutY="577.0" prefHeight="36.0" prefWidth="251.0" promptText="Date Match" style="-fx-border-color: black;" />
+      <Button fx:id="AjouterMath" layoutX="231.0" layoutY="666.0" mnemonicParsing="false" onAction="#Ajouter" prefHeight="38.0" prefWidth="134.0" style="-fx-background-color: black; -fx-background-radius: 5em; -fx-border-radius: 5em;" text="Ajouter" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman" size="20.0" />
+         </font>
+      </Button>
+      <ScrollPane fx:id="scrol" hbarPolicy="NEVER" layoutX="540.0" layoutY="186.0" prefHeight="516.0" prefWidth="643.0" style="-fx-border-color: #ec2525;" stylesheets="@../CSS/style.css">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <content>
+            <VBox fx:id="Container" prefWidth="640.0" spacing="10.0">
+               <padding>
+                  <Insets left="10.0" right="15.0" top="10.0" />
+               </padding>
+            </VBox>
+         </content>
+      </ScrollPane>
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="1163.0" layoutY="105.0" />
+      <Pane layoutX="110.0" layoutY="225.0" opacity="0.74" prefHeight="74.0" prefWidth="367.0" style="-fx-background-color: e7e7e7;">
+         <children>
+            <FontAwesomeIconView glyphName="CALENDAR_ALT" layoutX="49.0" layoutY="41.0" size="19" />
+            <Pane prefHeight="3.0" prefWidth="367.0" style="-fx-background-color: de9595;" />
+            <Pane layoutY="71.0" prefHeight="3.0" prefWidth="367.0" style="-fx-background-color: de9595;" />
+            <Pane prefHeight="3.0" prefWidth="367.0" style="-fx-background-color: de9595;" />
+         </children>
+      </Pane>
+      <Label layoutX="195.0" layoutY="248.0" text="Nouvelle Evènement">
+         <font>
+            <Font name="Times New Roman Bold" size="26.0" />
+         </font>
+      </Label>
+      <FontAwesomeIconView glyphName="PENCIL" layoutX="163.0" layoutY="343.0" size="16" />
+      <FontAwesomeIconView glyphName="SOCCER_BALL_ALT" layoutX="157.0" layoutY="427.0" size="16" />
+      <FontAwesomeIconView glyphName="SOCCER_BALL_ALT" layoutX="157.0" layoutY="521.0" size="16" />
+      <FontAwesomeIconView glyphName="CALENDAR" layoutX="164.0" layoutY="599.0" size="16" />
+      <FontAwesomeIconView fill="WHITE" glyphName="CHECK_SQUARE_ALT" layoutX="247.0" layoutY="693.0" size="15" />
+      <Pane layoutX="477.0" layoutY="100.0" prefHeight="3.0" prefWidth="740.0" style="-fx-background-color: #dacece;" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="223.0" layoutY="108.0" rotate="90.0" />
+      <BorderPane layoutX="127.0" layoutY="72.0" prefHeight="27.0" prefWidth="971.0">
+         <center>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="50.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="138.0" style="-fx-background-color: white;" styleClass="dash" stylesheets="@../CSS/style.css" text="Dashboard" textFill="#c00909">
+                     <graphic>
+                        <FontAwesomeIconView fill="#c00909" glyphName="TELEVISION" />
+                     </graphic>
+                     <font>
+                        <Font name="Times New Roman Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn_equipe" mnemonicParsing="false" onAction="#interfaceEquipe" prefHeight="26.0" prefWidth="123.0" style="-fx-background-color: white;" styleClass="eq" stylesheets="@../CSS/style.css" text=" Equipe">
+                     <font>
+                        <Font name="Times New Roman Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="GAMEPAD" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btn_stat" mnemonicParsing="false" onAction="#interfaceStat" prefHeight="26.0" prefWidth="120.0" style="-fx-background-color: white;" styleClass="eq" stylesheets="@../CSS/style.css" text=" Statistique">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="LINE_CHART" />
+                     </graphic>
+                     <font>
+                        <Font name="Times New Roman Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn_joueur" mnemonicParsing="false" onAction="#interfaceJoueur" prefHeight="26.0" prefWidth="122.0" style="-fx-background-color: white;" styleClass="eq" stylesheets="@../CSS/style.css" text="Formation">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="SOCCER_BALL_ALT" />
+                     </graphic>
+                     <font>
+                        <Font name="Times New Roman" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn_stotr" mnemonicParsing="false" prefHeight="26.0" prefWidth="111.0" style="-fx-background-color: white;" styleClass="eq" stylesheets="@../CSS/style.css" text=" Store">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="CART_PLUS" />
+                     </graphic>
+                     <font>
+                        <Font name="Times New Roman Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn_highls" mnemonicParsing="false" onAction="#interfaceHighls" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: white;" styleClass="eq" stylesheets="@../CSS/style.css" text=" Highlights">
+                     <font>
+                        <Font name="Times New Roman Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="FILM" />
+                     </graphic>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+            </HBox>
+         </center>
+      </BorderPane>
+      <BorderPane layoutX="12.0" layoutY="137.0" prefHeight="562.0" prefWidth="84.0">
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="90.0" BorderPane.alignment="CENTER">
+               <children>
+                  <FontAwesomeIconView fx:id="grp_btn" fill="#c22d2d" glyphName="USERS" onMouseClicked="#GroupeInt" onMouseEntered="#grpRntred" onMouseExited="#grpExist" size="25">
+                     <VBox.margin>
+                        <Insets left="30.0" />
+                     </VBox.margin>
+                     <effect>
+                        <Reflection />
+                     </effect>
+                  </FontAwesomeIconView>
+                  <FontAwesomeIconView fx:id="form_btn" fill="#c22d2d" glyphName="SOCCER_BALL_ALT" onMouseClicked="#formationInt" onMouseEntered="#formEnt" onMouseExited="#formExi" size="25">
+                     <VBox.margin>
+                        <Insets left="30.0" />
+                     </VBox.margin>
+                     <effect>
+                        <Reflection />
+                     </effect>
+                  </FontAwesomeIconView>
+                  <FontAwesomeIconView fx:id="event_btn" fill="#c22d2d" glyphName="CALENDAR_ALT" onMouseClicked="#EventAct" onMouseEntered="#evnEntr" onMouseExited="#evnExit" size="25">
+                     <VBox.margin>
+                        <Insets left="30.0" />
+                     </VBox.margin>
+                     <effect>
+                        <Reflection />
+                     </effect>
+                  </FontAwesomeIconView>
+                  <FontAwesomeIconView fill="#c22d2d" glyphName="USER" onMouseEntered="#actionentred" onMouseExited="#actionExit" size="25">
+                     <VBox.margin>
+                        <Insets left="30.0" />
+                     </VBox.margin>
+                     <effect>
+                        <Reflection />
+                     </effect>
+                  </FontAwesomeIconView>
+                  <FontAwesomeIconView fill="#c22d2d" glyphName="SHARE_SQUARE_ALT" onMouseEntered="#logEntr" onMouseExited="#logExit" size="25">
+                     <effect>
+                        <Reflection />
+                     </effect>
+                     <VBox.margin>
+                        <Insets left="30.0" />
+                     </VBox.margin>
+                  </FontAwesomeIconView>
+               </children>
+               <padding>
+                  <Insets top="45.0" />
+               </padding>
+            </VBox>
+         </center>
+      </BorderPane>
+      <Pane layoutX="107.0" layoutY="100.0" prefHeight="652.0" prefWidth="2.7" style="-fx-background-color: #c00909;" />
+      <Pane layoutX="1160.0" layoutY="70.0" prefHeight="30.0" prefWidth="3.0" style="-fx-background-color: #dacece;" />
+      <Label fx:id="lbGroupe" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="240.0" prefHeight="23.0" prefWidth="68.0" style="-fx-background-color: #ffe7e7; -fx-background-radius: 3em; -fx-border-radius: 3em;" text="Groupe" visible="false">
+         <font>
+            <Font name="Times New Roman Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbForm" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="359.0" prefHeight="23.0" prefWidth="68.0" style="-fx-background-color: #ffe7e7; -fx-background-radius: 3em; -fx-border-radius: 3em;" text="Formation" visible="false">
+         <font>
+            <Font name="Times New Roman Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbMatch" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="483.0" prefHeight="23.0" prefWidth="68.0" style="-fx-background-color: #ffe7e7; -fx-background-radius: 3em; -fx-border-radius: 3em;" text="Match" visible="false">
+         <font>
+            <Font name="Times New Roman Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbdecnx" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="690.0" prefHeight="23.0" prefWidth="68.0" style="-fx-background-color: #ffe7e7; -fx-background-radius: 3em; -fx-border-radius: 3em;" text="Logout" visible="false">
+         <font>
+            <Font name="Times New Roman Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbGroupe1111" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="589.0" prefHeight="23.0" prefWidth="68.0" style="-fx-background-color: #ffe7e7; -fx-background-radius: 3em; -fx-border-radius: 3em;" text="Groupe" visible="false">
+         <font>
+            <Font name="Times New Roman Bold" size="13.0" />
+         </font>
+      </Label>
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="1043.0" layoutY="71.0" rotate="-90.0" />
+   </children>
+</AnchorPane>

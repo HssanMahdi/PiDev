@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="396.0" prefWidth="510.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AjoutAdherentauGroupeController">
+   <children>
+      <TextField fx:id="email" layoutX="108.0" layoutY="186.0" prefHeight="46.0" prefWidth="294.0" promptText=" Email" stylesheets="@../CSS/style.css">
+         <font>
+            <Font name="Baskerville Old Face" size="22.0" />
+         </font></TextField>
+      <Button fx:id="btnajt" layoutX="192.0" layoutY="300.0" mnemonicParsing="false" onMouseEntered="#mouseentered" onMouseExited="#mouseexited" prefHeight="36.0" prefWidth="146.0" style="-fx-background-color: #E51313; -fx-border-radius: 5em; -fx-background-radius: 5em;" text="  Ajouter" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font></Button>
+      <Label layoutX="153.0" layoutY="42.0" text="Ajouter Membre" textFill="#e51313">
+         <font>
+            <Font name="Times New Roman Bold" size="31.0" />
+         </font>
+      </Label>
+      <Pane layoutY="95.0" prefHeight="14.0" prefWidth="510.0" style="-fx-background-color: #E51313;" />
+      <FontAwesomeIconView fill="#e51313" glyphName="EDIT" layoutX="110.0" layoutY="70.0" size="30" />
+      <FontAwesomeIconView fill="WHITE" glyphName="CHECK" layoutX="211.0" layoutY="325.0" size="20" />
+      <Label fx:id="l1" layoutX="154.0" layoutY="254.0" prefHeight="30.0" prefWidth="225.0" textAlignment="CENTER" />
+   </children>
+</AnchorPane>
