@@ -359,7 +359,7 @@ public class ManagerFootballController implements Initializable {
     @FXML
     private void AfficherStat(MouseEvent event) throws IOException {
          lb3.getScene().getWindow().hide();
-        Parent root = FXMLLoader.load(getClass().getResource("Statistique.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("StatistiqueNbrUser.fxml"));
         Stage mainStage = new Stage();
         Scene scene = new Scene(root);
         mainStage.setScene(scene);

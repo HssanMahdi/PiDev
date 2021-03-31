@@ -349,7 +349,7 @@ public class AdminSystemeController implements Initializable {
     @FXML
     private void AfficherStat(MouseEvent event) throws IOException {
                 btn_stat.getScene().getWindow().hide();
-        Parent root = FXMLLoader.load(getClass().getResource("Statistique.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("StatistiqueNbrUser.fxml"));
         Stage mainStage = new Stage();
         Scene scene = new Scene(root);
         mainStage.setScene(scene);
