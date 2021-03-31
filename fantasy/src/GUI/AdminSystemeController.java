@@ -47,7 +47,7 @@ import javafx.scene.text.Font;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import services.AdminSystemeCRUD;
-import tools.ExportPdfAdmin;
+import tools.ExportPdf;
 
 import tools.Mail;
 
@@ -426,8 +426,8 @@ public class AdminSystemeController implements Initializable {
 
     @FXML
     private void pdfActionBtn(MouseEvent event) {
-        ExportPdfAdmin exp = new ExportPdfAdmin();
-        exp.pdfs();
+        ExportPdf exp = new ExportPdf();
+        exp.pdfsG();
     }
 
 }
