@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javafxapplication;
+package GUI;
 
-import entities.Adherent;
+
+import entites.Adherent;
 import java.io.IOException;
 import java.net.URL;
 import java.security.NoSuchAlgorithmException;
@@ -24,7 +25,6 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import services.AdherentCRUD;
-import tools.EncryptionPassword;
 import tools.Mail;
 
 /**

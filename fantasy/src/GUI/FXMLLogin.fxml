@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLLoginController">
+   <children>
+      <Pane prefHeight="600.0" prefWidth="390.0" style="-fx-background-color: #c00909;">
+         <children>
+            <ImageView fitHeight="400.0" fitWidth="900.0" layoutX="-161.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/dada1.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="390.0" layoutY="-1.0" prefHeight="600.0" prefWidth="362.0" style="-fx-background-color: white;">
+         <children>
+            <Label fx:id="label" layoutX="146.0" layoutY="137.0" text="Login">
+               <font>
+                  <Font name="Bell MT" size="48.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="96.0" fitWidth="117.0" layoutX="42.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/login.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="tfNom" alignment="CENTER" layoutX="82.0" layoutY="275.0" prefHeight="30.0" prefWidth="229.0" promptText="Entrer votre nom" stylesheets="@../CSS/style.css">
+               <font>
+                  <Font name="Baskerville Old Face" size="15.0" />
+               </font>
+            </TextField>
+            <PasswordField fx:id="tfMotdepasse" alignment="CENTER" layoutX="82.0" layoutY="352.0" prefHeight="25.0" prefWidth="229.0" promptText=" Entrer votre mot de passe" stylesheets="@../CSS/style.css">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </PasswordField>
+            <Button fx:id="btnok" layoutX="238.0" layoutY="448.0" mnemonicParsing="false" onAction="#login" style="-fx-background-color: red; -fx-background-radius: 5em; -fx-border-radius: 5em;" text="Connexion" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="btncreer" layoutX="115.0" layoutY="448.0" mnemonicParsing="false" onAction="#CreateAccount" style="-fx-background-color: red; -fx-background-radius: 5em; -fx-border-radius: 5em;" text="Créer Compte" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </Button>
+            <FontAwesomeIconView glyphName="KEY" layoutX="55.0" layoutY="377.0" size="20" text="" />
+            <FontAwesomeIconView glyphName="PENCIL_SQUARE_ALT" layoutX="54.0" layoutY="299.0" size="22" text="" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
