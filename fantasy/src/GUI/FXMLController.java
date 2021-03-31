@@ -3,22 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javafxapplication;
+package GUI;
 
-import Services.ServiceEquipe;
-import Services.ServiceJoueur;
-import Tools.MyConnection;
+import services.ServiceEquipe;
+import services.ServiceJoueur;
+import tools.MyConnection;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.PageSize;
 import com.itextpdf.text.Phrase;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
+import entites.Joueur;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
-import entities.Joueur;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -266,7 +266,7 @@ public class FXMLController implements Initializable {
             loader.load();
 
         } catch (IOException ex) {
-            Logger.getLogger(ListeEquipeController.class.getName()).log(Level.SEVERE, null, ex);
+         //   Logger.getLogger(ListeEquipeController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         ModifJoueurEquipeController modifJoueur = loader.getController();

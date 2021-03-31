@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javafxapplication;
+package GUI;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -16,16 +16,24 @@ import javafx.stage.Stage;
  * @author PC
  */
 public class JavaFXApplication extends Application {
-    
+
     @Override
     public void start(Stage stage) throws Exception {
-   // Parent root = FXMLLoader.load(getClass().getResource("ModifJoueur.fxml"));
-   // Parent root = FXMLLoader.load(getClass().getResource("ListeEquipe.fxml"));
-   //Parent root = FXMLLoader.load(getClass().getResource("DisplayEquipeUser.fxml"));
-//    Parent root = FXMLLoader.load(getClass().getResource("FXML.fxml"));
-    Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+
+        //Parent root = FXMLLoader.load(getClass().getResource("JoueurUserInt.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("EquipeUserInt.fxml"));
+      //  Parent root = FXMLLoader.load(getClass().getResource("DisplayEquipe.fxml"));
+      //   Parent root = FXMLLoader.load(getClass().getResource("DisplayPlayer.fxml"));
+      //   Parent root = FXMLLoader.load(getClass().getResource("DisplayHighls.fxml"));
+//Parent root = FXMLLoader.load(getClass().getResource("JoueurEquipe.fxml"));
+// Parent root = FXMLLoader.load(getClass().getResource("AddHighlights.fxml"));
+        //  Parent root = FXMLLoader.load(getClass().getResource("AddEvent.fxml"));
+
         Scene scene = new Scene(root);
-      
+//        stage.initStyle(StageStyle.TRANSPARENT);
+//
+//        scene.setFill(Color.TRANSPARENT);
+
         stage.setScene(scene);
         stage.show();
     }
@@ -36,5 +44,5 @@ public class JavaFXApplication extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    
+
 }

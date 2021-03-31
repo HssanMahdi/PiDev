@@ -3,18 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javafxapplication;
+package GUI;
 
-import Services.ServiceEquipe;
-import Services.ServiceJoueur;
-import Tools.MyConnection;
-import entities.Joueur;
+import entites.Joueur;
+import services.ServiceEquipe;
+import services.ServiceJoueur;
+import tools.MyConnection;
+import tools.UploadImage;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.FileNotFoundException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -22,16 +20,17 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -41,7 +40,8 @@ import javafx.stage.Stage;
  * @author PC
  */
 public class ModifJoueurEquipeController implements Initializable {
-
+    File f;
+    String logoPath;
     int JoueurId;
     @FXML
     private TextField tfNom;
@@ -51,8 +51,7 @@ public class ModifJoueurEquipeController implements Initializable {
     private Button browse;
     @FXML
     private ComboBox<String> combo;
-    @FXML
-    private TextField tfScore;
+    
     @FXML
     private TextField tfLogo;
     @FXML
@@ -67,6 +66,8 @@ public class ModifJoueurEquipeController implements Initializable {
     ServiceEquipe SE = new ServiceEquipe();
     ServiceJoueur SJ = new ServiceJoueur();
     Joueur j = new Joueur();
+    @FXML
+    private ImageView imgView;
 
     /**
      * Initializes the controller class.
@@ -80,70 +81,74 @@ public class ModifJoueurEquipeController implements Initializable {
 
     void setTextField(int id, String nom, String prenom, int score, String logo, int prix) {
         JoueurId = id;
+        logoPath =logo;
         tfNom.setText(nom);
         tfPrenom.setText(prenom);
-        tfScore.setText("" + score);
         tfLogo.setText(logo);
+        String url = "file:" + logo;
+        Image image;
+        image = new Image(url);
+        imgView.setImage(image);
+        imgView.setPreserveRatio(true);
         tfPrix.setText("" + prix);
 
     }
 
     @FXML
     private void Browse(ActionEvent event) {
-               final FileChooser fileChooser = new FileChooser();
-        final Stage stage = null;
+      try {
+            final FileChooser fileChooser = new FileChooser();
+            final Stage stage = null;
 
-        File file = fileChooser.showOpenDialog(stage);
-        if (file != null) {
-            String s = file.getName();
-//            tfLogo.setText(s);
-            InputStream inStream = null;
-            OutputStream outStream = null;
-            File Copyfile = new File("C:\\wamp\\www\\PIProjet\\" + s);
-            try {
-
-                inStream = new FileInputStream(file);
-                outStream = new FileOutputStream(Copyfile);
-
-                byte[] buffer = new byte[(int) file.length()];
-
-                int length;
-                //copy the file content in bytes 
-                while ((length = inStream.read(buffer)) > 0) {
-
-                    outStream.write(buffer, 0, length);
-
-                }
-
-                inStream.close();
-                outStream.close();
-
-            } catch (IOException e) {
-                e.printStackTrace();
+            f = fileChooser.showOpenDialog(stage);
+            if (f != null) {
+                String file = f.toURI().getPath();
+                Image image;
+                image = new Image(new FileInputStream(file));
+                imgView.setImage(image);
+                imgView.setPreserveRatio(true);
+                String url = "C:\\wamp\\www\\PIProjet\\" + f.getName();
+                tfLogo.setText(file);
             }
-
-            String f = Copyfile.toURI().toString();
-            tfLogo.setText(f);
+        } catch (FileNotFoundException ex) {
+            System.out.println(ex.getMessage());
         }
     }
 
     @FXML
     private void ModifierPl(ActionEvent event) {
-         j.setIdJoueur(JoueurId);
-      
-//        if(validateFields()){
+        j.setIdJoueur(JoueurId);
+        if (!logoPath.equals(tfLogo.getText())) {
+            UploadImage ui = new UploadImage();
+            String path = ui.saveFile(f);
+            tfLogo.setText(path);
+        }
+        if(validateFields()){
         j.setNomJoueur(tfNom.getText());
         j.setPrenomJoueur(tfPrenom.getText());
 
-        j.setPosition(positionComoBox.getSelectionModel().getSelectedItem().toString());
-        j.setScoreJoueur(Integer.parseInt(tfScore.getText()));
+        j.setPosition(positionComoBox.getSelectionModel().getSelectedItem());
         j.setLogoJoueur(tfLogo.getText());
         j.setPrixJoueur(Integer.parseInt(tfPrix.getText()));
 
 //
         int i = SE.getByName(combo.getValue()).getId();
         j.setIdG(i);
-       SJ.updateJoueur(j);
+        SJ.updateJoueur(j);
+    }}
+        private boolean validateFields() {
+        if (positionComoBox.getSelectionModel().isEmpty() | combo.getSelectionModel().isEmpty() | tfNom.getText().isEmpty() | tfPrenom.getText().isEmpty()
+                | tfLogo.getText().isEmpty() | tfPrix.getText().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("valider les champs");
+            alert.setHeaderText(null);
+            alert.setContentText("Veuillez saisir les champs");
+            alert.showAndWait();
+
+            return false;
+        } else {
+        }
+        return true;
     }
 
     public void ComboBoxEquipe(String nom) {
@@ -170,7 +175,7 @@ public class ModifJoueurEquipeController implements Initializable {
             rs.close();
             return option;
         } catch (SQLException ex) {
-            Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex);
             return null;
         }
     }
