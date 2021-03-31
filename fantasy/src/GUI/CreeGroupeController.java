@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package testpi;
+package GUI;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -11,12 +11,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import testpi.newpackage.Adherent;
-import testpi.newpackage.Groupe;
-import testpi.newpackage.GroupeCRUD;
+import entites.Adherent;
+import entites.Groupe;
+import services.GroupeCRUD;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 
 /**
@@ -38,25 +39,41 @@ public class CreeGroupeController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         btnCree.setOnAction((e)->{
-           Adherent u = new Adherent(2,5,"Mahdi","Mahdi","mahdi.hssan@esprit.tn","Mahdi",10000,0);
+            if(ctrlsaisie()){
+           Adherent u = new Adherent(1,1,"Mahdi","Mahdi","mahdi.hssan@esprit.tn","Mahdi",10000,0);
           Groupe g = new Groupe(nom.getText());
           gcd.creeGroupe(g, u);
           btnCree.getScene().getWindow().hide();
           FXMLLoader loader = new FXMLLoader();
-          loader.setLocation(getClass().getResource("AfficherlesGroupedeAdherentController.fxml"));
+          loader.setLocation(getClass().getResource("DisplaylesGroupedeAdherent.fxml"));
           try {
             loader.load();
-          AfficherlesGroupedeAdherentControllerController fxmlcontroller = loader.getController();
+          DisplaylesGroupedeAdherent fxmlcontroller = loader.getController();
           Parent parent = loader.getRoot();
           Stage stage = new Stage();
           stage.setScene(new Scene(parent));
           stage.show();
           } catch (IOException ex) {
             System.out.println(ex);
-        }
+        }}
+     
           
     });    
     
 }
+    
+   private boolean ctrlsaisie() {
+        if (nom.getText().isEmpty()  ) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Probleme");
+            alert.setHeaderText("Champ Vide");
+            alert.setContentText("Ecrire le nom de groupe");
+            alert.showAndWait();
+            
+            return false;
+
+        }
+        return true;
+    }
     
 }

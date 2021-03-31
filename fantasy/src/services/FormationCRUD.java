@@ -3,9 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package testpi.newpackage;
+package services;
 
-import testpi.newpackage.MyConnection;
+import entites.Adherent;
+import entites.Formation;
+import entites.Joueur;
+import interfaces.IFormation;
+import tools.MyConnection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -65,6 +69,8 @@ public class FormationCRUD implements IFormation<Formation,Joueur,Adherent>{
         } 
     }
 
+    
+// ki yetfasakh joueur mel base
     @Override
     public void supprimerJoueurduFormation(Adherent u, Joueur j) {
         try {
@@ -138,6 +144,7 @@ public class FormationCRUD implements IFormation<Formation,Joueur,Adherent>{
                         j.setPrenomJoueur(rs2.getString("prenom_joueur"));
                         j.setPosition(rs2.getString("position"));
                         j.setPrixJoueur(rs2.getInt("prix_joueur"));
+                        j.setLogoJoueur(rs2.getString("logo_joueur"));
 //                System.out.println("2");
                         JoueurList.add(j);
                     }
@@ -150,7 +157,27 @@ public class FormationCRUD implements IFormation<Formation,Joueur,Adherent>{
         return JoueurList;
     }
 
- 
+     
+    @Override
+    public Formation getFormation(Adherent a) {
+        Formation f=new Formation();
+        try {
+            String requete = "SELECT id_formation FROM formation WHERE id_user='"+a.getId_user()+"';";
+            Statement st = MyConnection.getInstance().getCnx()
+                    .createStatement();
+            ResultSet rs = st.executeQuery(requete);
+            if (rs.next()){
+                f.setId(rs.getInt("id_formation"));
+                f.setIdAdherent(a.getId_user());
+                System.out.println("111");
+            }
+             } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return f;
+    }
+
+
 
 
    

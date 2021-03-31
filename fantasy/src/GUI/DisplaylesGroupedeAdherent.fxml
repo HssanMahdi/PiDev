@@ -2,13 +2,9 @@
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -19,81 +15,64 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="main" prefHeight="747.0" prefWidth="1216.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AddEventController">
-   <children>
-      <ImageView fitHeight="115.0" fitWidth="1216.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+<AnchorPane id="AnchorPane" prefHeight="747.0" prefWidth="1216.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.DisplaylesGroupedeAdherent">
+    <children>
+      <ImageView fitHeight="221.0" fitWidth="406.0" layoutX="253.0" layoutY="535.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../uploads/pane.png" />
+            <Image url="@../uploads/teaam.png" />
          </image>
       </ImageView>
-      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="214.0" layoutY="80.0" />
-      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="388.0" layoutY="80.0" />
-      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="564.0" layoutY="80.0" />
-      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="759.0" layoutY="80.0" />
-      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="915.0" layoutY="80.0" />
-      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="1039.0" layoutY="80.0" />
-      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="223.0" layoutY="72.0" rotate="-90.0" />
-      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="397.0" layoutY="72.0" rotate="-90.0" />
-      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="573.0" layoutY="72.0" rotate="-90.0" />
-      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="740.0" layoutY="72.0" rotate="-90.0" />
-      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="890.0" layoutY="72.0" rotate="-90.0" />
-      <Button fx:id="refrbtn" layoutX="1172.0" layoutY="72.0" mnemonicParsing="false" onAction="#Actualiser" prefHeight="27.0" prefWidth="31.0" style="-fx-background-color: WHITEblack;">
-         <graphic>
-            <FontAwesomeIconView fill="#c72a2a" glyphName="ROTATE_LEFT" size="18" />
-         </graphic>
-      </Button>
-      <ImageView fitHeight="652.0" fitWidth="369.0" layoutX="110.0" layoutY="100.0" opacity="0.25" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="196.0" fitWidth="186.0" layoutX="296.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../uploads/Image174.jpg" />
+            <Image url="@../uploads/Untitled.png" />
          </image>
       </ImageView>
-      <ComboBox fx:id="tfEquipeA" layoutX="183.0" layoutY="405.0" prefHeight="36.0" prefWidth="251.0" promptText="Equipe A" stylesheets="@../CSS/style.css" />
-      <ComboBox fx:id="tfEquipeB" layoutX="185.0" layoutY="498.0" prefHeight="36.0" prefWidth="251.0" promptText="Equipe B" stylesheets="@../CSS/style.css" />
-      <TextField fx:id="tfTitre" layoutX="183.0" layoutY="321.0" prefHeight="36.0" prefWidth="251.0" promptText="Titre" stylesheets="@../CSS/style.css">
+      <ImageView fitHeight="232.0" fitWidth="406.0" layoutX="638.0" layoutY="535.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../uploads/teaam%20-%20Copy.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="196.0" fitWidth="186.0" layoutX="875.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true" rotate="1800.0">
+         <image>
+            <Image url="@../uploads/1111.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lbusr" layoutX="726.0" layoutY="7.0" prefHeight="106.0" prefWidth="154.0" />
+      <Label layoutX="189.0" layoutY="329.0" text="VOS" textFill="#c00909">
          <font>
-            <Font name="Baskerville Old Face" size="19.0" />
+            <Font name="Times New Roman Bold" size="35.0" />
          </font>
-      </TextField>
-      <DatePicker fx:id="tfDate" layoutX="185.0" layoutY="577.0" prefHeight="36.0" prefWidth="251.0" promptText="Date Match" style="-fx-border-color: black;" />
-      <Button fx:id="AjouterMath" layoutX="231.0" layoutY="666.0" mnemonicParsing="false" onAction="#Ajouter" prefHeight="38.0" prefWidth="134.0" style="-fx-background-color: black; -fx-background-radius: 5em; -fx-border-radius: 5em;" text="Ajouter" textFill="WHITE">
+      </Label>
+      <Label layoutX="993.0" layoutY="329.0" text="GROUPES">
          <font>
-            <Font name="Times New Roman" size="20.0" />
+            <Font name="Times New Roman Bold" size="35.0" />
          </font>
-      </Button>
-      <ScrollPane fx:id="scrol" hbarPolicy="NEVER" layoutX="540.0" layoutY="186.0" prefHeight="516.0" prefWidth="643.0" style="-fx-border-color: #ec2525;" stylesheets="@../CSS/style.css">
-         <cursor>
-            <Cursor fx:constant="DEFAULT" />
-         </cursor>
+      </Label>
+      <ScrollPane hbarPolicy="NEVER" layoutX="385.0" layoutY="156.0" prefHeight="166.0" prefWidth="504.0" style="-fx-border-color: #d43e3e;" stylesheets="@../CSS/style.css">
          <content>
-            <VBox fx:id="Container" prefWidth="640.0" spacing="10.0">
+            <VBox fx:id="ContainerForm" prefWidth="495.0" spacing="10.0">
                <padding>
                   <Insets left="10.0" right="15.0" top="10.0" />
                </padding>
             </VBox>
          </content>
       </ScrollPane>
-      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="1163.0" layoutY="105.0" />
-      <Pane layoutX="110.0" layoutY="225.0" opacity="0.74" prefHeight="74.0" prefWidth="367.0" style="-fx-background-color: e7e7e7;">
-         <children>
-            <FontAwesomeIconView glyphName="CALENDAR_ALT" layoutX="49.0" layoutY="41.0" size="19" />
-            <Pane prefHeight="3.0" prefWidth="367.0" style="-fx-background-color: de9595;" />
-            <Pane layoutY="71.0" prefHeight="3.0" prefWidth="367.0" style="-fx-background-color: de9595;" />
-            <Pane prefHeight="3.0" prefWidth="367.0" style="-fx-background-color: de9595;" />
-         </children>
-      </Pane>
-      <Label layoutX="195.0" layoutY="248.0" text="Nouvelle Evènement">
-         <font>
-            <Font name="Times New Roman Bold" size="26.0" />
-         </font>
-      </Label>
-      <FontAwesomeIconView glyphName="PENCIL" layoutX="163.0" layoutY="343.0" size="16" />
-      <FontAwesomeIconView glyphName="SOCCER_BALL_ALT" layoutX="157.0" layoutY="427.0" size="16" />
-      <FontAwesomeIconView glyphName="SOCCER_BALL_ALT" layoutX="157.0" layoutY="521.0" size="16" />
-      <FontAwesomeIconView glyphName="CALENDAR" layoutX="164.0" layoutY="599.0" size="16" />
-      <FontAwesomeIconView fill="WHITE" glyphName="CHECK_SQUARE_ALT" layoutX="247.0" layoutY="693.0" size="15" />
-      <Pane layoutX="477.0" layoutY="100.0" prefHeight="3.0" prefWidth="740.0" style="-fx-background-color: #dacece;" />
-      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="223.0" layoutY="108.0" rotate="90.0" />
-      <BorderPane layoutX="127.0" layoutY="72.0" prefHeight="27.0" prefWidth="971.0">
+      <ScrollPane fx:id="Co" hbarPolicy="NEVER" layoutX="385.0" layoutY="322.0" prefHeight="270.0" prefWidth="504.0" style="-fx-border-color: #d43e3e;" stylesheets="@../CSS/style.css">
+         <content>
+            <VBox fx:id="ContainerForm1" prefWidth="495.0" spacing="10.0">
+               <padding>
+                  <Insets left="10.0" right="15.0" top="10.0" />
+               </padding>
+            </VBox>
+         </content>
+      </ScrollPane>
+      <ImageView fitHeight="106.0" fitWidth="1216.0" layoutX="2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../uploads/pane.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="110.0" layoutY="99.0" prefHeight="3.0" prefWidth="1108.0" style="-fx-background-color: #dacece;" />
+      <BorderPane layoutX="132.0" layoutY="72.0" prefHeight="27.0" prefWidth="971.0">
          <center>
             <HBox prefHeight="100.0" prefWidth="200.0" spacing="50.0" BorderPane.alignment="CENTER">
                <children>
@@ -152,7 +131,8 @@
             </HBox>
          </center>
       </BorderPane>
-      <BorderPane layoutX="12.0" layoutY="137.0" prefHeight="562.0" prefWidth="84.0">
+      <Pane layoutX="107.0" layoutY="99.0" prefHeight="650.0" prefWidth="2.7" style="-fx-background-color: #c00909;" />
+      <BorderPane layoutX="14.0" layoutY="136.0" prefHeight="562.0" prefWidth="84.0">
          <center>
             <VBox prefHeight="200.0" prefWidth="100.0" spacing="90.0" BorderPane.alignment="CENTER">
                <children>
@@ -203,33 +183,36 @@
             </VBox>
          </center>
       </BorderPane>
-      <Pane layoutX="107.0" layoutY="100.0" prefHeight="652.0" prefWidth="2.7" style="-fx-background-color: #c00909;" />
-      <Pane layoutX="1160.0" layoutY="70.0" prefHeight="30.0" prefWidth="3.0" style="-fx-background-color: #dacece;" />
-      <Label fx:id="lbGroupe" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="240.0" prefHeight="23.0" prefWidth="68.0" style="-fx-background-color: #ffe7e7; -fx-background-radius: 3em; -fx-border-radius: 3em;" text="Groupe" visible="false">
+      <Label fx:id="lbGroupe" alignment="CENTER" contentDisplay="CENTER" layoutX="27.0" layoutY="239.0" prefHeight="23.0" prefWidth="68.0" style="-fx-background-color: #ffe7e7; -fx-background-radius: 3em; -fx-border-radius: 3em;" text="Groupe" visible="false">
          <font>
             <Font name="Times New Roman Bold" size="13.0" />
          </font>
       </Label>
-      <Label fx:id="lbForm" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="359.0" prefHeight="23.0" prefWidth="68.0" style="-fx-background-color: #ffe7e7; -fx-background-radius: 3em; -fx-border-radius: 3em;" text="Formation" visible="false">
+      <Label fx:id="lbForm" alignment="CENTER" contentDisplay="CENTER" layoutX="27.0" layoutY="358.0" prefHeight="23.0" prefWidth="68.0" style="-fx-background-color: #ffe7e7; -fx-background-radius: 3em; -fx-border-radius: 3em;" text="Formation" visible="false">
          <font>
             <Font name="Times New Roman Bold" size="13.0" />
          </font>
       </Label>
-      <Label fx:id="lbMatch" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="483.0" prefHeight="23.0" prefWidth="68.0" style="-fx-background-color: #ffe7e7; -fx-background-radius: 3em; -fx-border-radius: 3em;" text="Match" visible="false">
+      <Label fx:id="lbMatch" alignment="CENTER" contentDisplay="CENTER" layoutX="27.0" layoutY="482.0" prefHeight="23.0" prefWidth="68.0" style="-fx-background-color: #ffe7e7; -fx-background-radius: 3em; -fx-border-radius: 3em;" text="Match" visible="false">
          <font>
             <Font name="Times New Roman Bold" size="13.0" />
          </font>
       </Label>
-      <Label fx:id="lbdecnx" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="690.0" prefHeight="23.0" prefWidth="68.0" style="-fx-background-color: #ffe7e7; -fx-background-radius: 3em; -fx-border-radius: 3em;" text="Logout" visible="false">
+      <Label fx:id="lbdecnx" alignment="CENTER" contentDisplay="CENTER" layoutX="27.0" layoutY="689.0" prefHeight="23.0" prefWidth="68.0" style="-fx-background-color: #ffe7e7; -fx-background-radius: 3em; -fx-border-radius: 3em;" text="Logout" visible="false">
          <font>
             <Font name="Times New Roman Bold" size="13.0" />
          </font>
       </Label>
-      <Label fx:id="lbGroupe1111" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="589.0" prefHeight="23.0" prefWidth="68.0" style="-fx-background-color: #ffe7e7; -fx-background-radius: 3em; -fx-border-radius: 3em;" text="Groupe" visible="false">
+      <Label fx:id="lbGroupe1111" alignment="CENTER" contentDisplay="CENTER" layoutX="27.0" layoutY="588.0" prefHeight="23.0" prefWidth="68.0" style="-fx-background-color: #ffe7e7; -fx-background-radius: 3em; -fx-border-radius: 3em;" text="Groupe" visible="false">
          <font>
             <Font name="Times New Roman Bold" size="13.0" />
          </font>
       </Label>
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="223.0" layoutY="71.0" rotate="-90.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="397.0" layoutY="71.0" rotate="-90.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="573.0" layoutY="71.0" rotate="-90.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="734.0" layoutY="71.0" rotate="-90.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="890.0" layoutY="71.0" rotate="-90.0" />
       <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="1043.0" layoutY="71.0" rotate="-90.0" />
    </children>
 </AnchorPane>

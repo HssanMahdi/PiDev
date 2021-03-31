@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="369.0" prefWidth="500.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="testpi.ModifGroupeController">
+<AnchorPane id="AnchorPane" prefHeight="369.0" prefWidth="500.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ModifGroupeController">
    <children>
-      <TextField fx:id="nom" layoutX="101.0" layoutY="160.0" prefHeight="54.0" prefWidth="314.0" promptText="Nouveau Nom" stylesheets="@style.css">
+      <TextField fx:id="nom" layoutX="101.0" layoutY="160.0" prefHeight="54.0" prefWidth="314.0" promptText="Nouveau Nom" stylesheets="@../CSS/style.css">
          <font>
             <Font name="Baskerville Old Face" size="20.0" />
          </font></TextField>
