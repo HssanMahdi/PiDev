@@ -3,10 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package entities;
+package entites;
 
 import javafx.scene.image.ImageView;
-
 
 /**
  *
@@ -14,12 +13,13 @@ import javafx.scene.image.ImageView;
  */
 public class Produit {
     
-    private int idProduit;
+       private int idProduit;
     private int idCategorie;
+    private String nomCategorie;
     private String nomProduit;
     private float prixUnitaire;
     private int quantite;
-    private ImageView imagedisplay ;
+    private ImageView imagedisplay ;//AFFICHAGE
     
        private String image ;
     private String description;
@@ -139,11 +139,7 @@ public class Produit {
         this.description = description;
     }
 
-    @Override
-    public String toString() {
-        return "Produit{" + "idProduit=" + idProduit + ", idCategorie=" + idCategorie + ", nomProduit=" + nomProduit + ", prixUnitaire=" + prixUnitaire + ", quantite=" + quantite + ", image=" + image + ", description=" + description + "}\n";
-    }
-
+   
    
 
     public int getIdCategorie() {
@@ -152,6 +148,56 @@ public class Produit {
 
     public void setIdCategorie(int idCategorie) {
         this.idCategorie = idCategorie;
+    }
+
+    public String getNomCategorie() {
+        return nomCategorie;
+    }
+
+    public void setNomCategorie(String nomCategorie) {
+        this.nomCategorie = nomCategorie;
+    }
+
+    public Produit(int idProduit, int idCategorie, String nomCategorie, String nomProduit, float prixUnitaire, int quantite, String image, String description) {
+        this.idProduit = idProduit;
+        this.idCategorie = idCategorie;
+        this.nomCategorie = nomCategorie;
+        this.nomProduit = nomProduit;
+        this.prixUnitaire = prixUnitaire;
+        this.quantite = quantite;
+        
+        this.image = image;
+        this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return "Produit{" + "idProduit=" + idProduit + ", idCategorie=" + idCategorie + ", nomCategorie=" + nomCategorie + ", nomProduit=" + nomProduit + ", prixUnitaire=" + prixUnitaire + ", quantite=" + quantite + ", imagedisplay=" + imagedisplay + ", image=" + image + ", description=" + description + '}';
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 79 * hash + this.idProduit;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Produit other = (Produit) obj;
+        if (this.idProduit != other.idProduit) {
+            return false;
+        }
+        return true;
     }
 
     
