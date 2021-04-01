@@ -5,9 +5,7 @@
  */
 package services;
 
-import entities.Produit;
-
-import interfaces.IProduit;
+import entites.Produit;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.sql.PreparedStatement;
@@ -26,24 +24,25 @@ import tools.MyConnection;
  *
  * @author mhamdi iheb
  */
-public class ServiceProduit implements IProduit {
-
-    @Override
+public class ServiceProduit {
+    
+    
     public void ajouterProduit(Produit p) {
         
         try {
             
-        String requete= "INSERT INTO produit (id_categorie, nom_produit, prix_unitaire, quantite, image, description ) "
-               + "VALUES (?,?,?,?,?,?)  ";
+        String requete= "INSERT INTO produit (id_categorie, nom_produit, nom_categorie, prix_unitaire, quantite, image, description ) "
+               + "VALUES (?,?,?,?,?,?,?) ";
         
             PreparedStatement pst = MyConnection.getInstance().getCnx().prepareStatement(requete);
             
             pst.setInt(1, p.getIdCategorie());
             pst.setString(2, p.getNomProduit());
-            pst.setFloat(3,p.getPrixUnitaire());
-            pst.setInt(4, p.getQuantite());
-            pst.setString(5, p.getImage());
-            pst.setString(6, p.getDescription());
+            pst.setString(3, p.getNomCategorie());
+            pst.setFloat(4,p.getPrixUnitaire());
+            pst.setInt(5, p.getQuantite());
+            pst.setString(6, p.getImage());
+            pst.setString(7, p.getDescription());
             
              pst.executeUpdate();
            
@@ -54,11 +53,12 @@ public class ServiceProduit implements IProduit {
 
     }
 
-    @Override
+    
     public void supprimmerProduit(int idSupp) {
         
              try {
             String requete = "DELETE FROM produit where id_produit='"+idSupp+"'";
+            //DELETE produit, rating FROM produit INNER JOIN rating ON produit.id_produit=rating.id_produit  WHERE produit.id_produit='"+idSupp+"'"
             PreparedStatement pst = MyConnection.getInstance().getCnx()
                     .prepareStatement(requete);
            
@@ -70,7 +70,7 @@ public class ServiceProduit implements IProduit {
 
     }
 
-    @Override
+    
     public void modifierProduit(Produit p, int idMod) {
         
              try {
@@ -97,7 +97,7 @@ public class ServiceProduit implements IProduit {
      *
      * @return
      */
-    @Override
+   
     public List<Produit> displayProduit() {
         
                List<Produit> prodsList = new ArrayList<>();
@@ -114,7 +114,10 @@ public class ServiceProduit implements IProduit {
                 try {
                     image = new Image(new FileInputStream((rs.getString("image"))));
                       img.setImage(image);
-                  img.setPreserveRatio(true);
+                  
+                    img.setFitWidth(250);
+                    
+                img.setFitHeight(200);
                  
                   
                   
@@ -128,11 +131,12 @@ public class ServiceProduit implements IProduit {
                p.setIdProduit(rs.getInt("id_produit"));
                 p.setIdCategorie(rs.getInt("id_categorie"));
                 p.setNomProduit(rs.getString("nom_produit"));
+                p.setNomCategorie(rs.getString("nom_categorie"));
                 p.setPrixUnitaire(rs.getFloat("prix_unitaire"));
                 p.setQuantite(rs.getInt("quantite"));
                 p.setImagedisplay(img);
                 p.setDescription(rs.getString("description"));
-                
+                p.setImage(rs.getString("image"));
               
               prodsList.add(p);
             }
@@ -144,7 +148,7 @@ public class ServiceProduit implements IProduit {
     }
     
     
-    @Override
+   
         public List<Produit> displayProduit2() {
         
                List<Produit> prodsList = new ArrayList<>();
@@ -188,4 +192,43 @@ public class ServiceProduit implements IProduit {
         return prodsList;
 
     }
+        
+          public List<Produit> displayProduit3() {
+        
+               List<Produit> prodsList = new ArrayList<>();
+        try {
+            String requete = "SELECT * FROM produit";
+            Statement st = MyConnection.getInstance().getCnx()
+                    .createStatement();
+            ResultSet rs =  st.executeQuery(requete);
+            while(rs.next()){
+               Produit p = new Produit();
+              
+                
+          
+        
+               
+             
+             
+           
+              
+               p.setIdProduit(rs.getInt("id_produit"));
+                p.setIdCategorie(rs.getInt("id_categorie"));
+                p.setNomProduit(rs.getString("nom_produit"));
+                p.setNomCategorie(rs.getString("nom_categorie"));
+                p.setPrixUnitaire(rs.getFloat("prix_unitaire"));
+                p.setQuantite(rs.getInt("quantite"));
+            
+                p.setDescription(rs.getString("description"));
+                p.setImage(rs.getString("image"));
+              
+              prodsList.add(p);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return prodsList;
+
+    }
+    
 }

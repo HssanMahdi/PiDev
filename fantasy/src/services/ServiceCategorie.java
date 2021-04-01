@@ -5,8 +5,7 @@
  */
 package services;
 
-import entities.Categorie;
-import interfaces.ICategorie;
+import entites.Categorie;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,9 +18,9 @@ import tools.MyConnection;
  *
  * @author mhamdi iheb
  */
-public class ServiceCategorie implements ICategorie {
-
-    @Override
+public class ServiceCategorie {
+    
+      
     public void ajouterCategorie(Categorie c) {
   try {
             
@@ -39,11 +38,12 @@ public class ServiceCategorie implements ICategorie {
         }    
     }
 
-    @Override
+    
     public void supprimmerCategorie(int idSupp) {
         
          try {
-            String requete = "DELETE FROM categorie where id_categorie='"+idSupp+"'";
+            String requete = "DELETE categorie, produit FROM categorie INNER JOIN produit ON produit.id_categorie=categorie.id_categorie  WHERE categorie.id_categorie='"+idSupp+"'";
+ 
             PreparedStatement pst = MyConnection.getInstance().getCnx()
                     .prepareStatement(requete);
            
@@ -55,14 +55,16 @@ public class ServiceCategorie implements ICategorie {
 
     }
 
-    @Override
+    
     public void modifierCategorie(Categorie c, int idMod) {
         
            try {
-            String requete = "UPDATE categorie SET nom_categorie=? WHERE id_categorie='"+idMod+"'";
+            String requete ="UPDATE categorie INNER JOIN produit ON categorie.id_categorie=produit.id_categorie  SET categorie.nom_categorie=?, produit.nom_categorie=? WHERE categorie.id_categorie= '"+idMod+"' ";//'"+idMod+"'
+            //
             PreparedStatement pst = MyConnection.getInstance().getCnx()
                     .prepareStatement(requete);
             pst.setString(1, c.getNomCategorie());
+            pst.setString(2, c.getNomCategorie());
             
             pst.executeUpdate();
             System.out.println("categorie modifiée");
@@ -72,7 +74,7 @@ public class ServiceCategorie implements ICategorie {
 
     }
 
-    @Override
+   
     public List<Categorie> displayCategorie() {
         
             List<Categorie> catsList = new ArrayList<>();
@@ -93,11 +95,5 @@ public class ServiceCategorie implements ICategorie {
         }
         return catsList;
     }
-
-    }
-
-
-
-
     
-
+}
