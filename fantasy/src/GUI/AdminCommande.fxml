@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="747.0" prefWidth="1216.0" styleClass="Applicationlkol" stylesheets="@Styles.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="GUI.AdminCommandeController">
+   <children>
+      <Pane layoutX="526.0" layoutY="274.0" prefHeight="200.0" prefWidth="200.0" styleClass="pageApplication" stylesheets="@Styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TableView fx:id="orderTableAdmin" layoutX="16.0" layoutY="161.0" prefHeight="459.0" prefWidth="1130.0">
+               <columns>
+                  <TableColumn fx:id="idCommandeAdmin" prefWidth="47.666664123535156" text="ID" />
+                  <TableColumn fx:id="IdUser" prefWidth="78.0" text="ID USER" />
+                  <TableColumn fx:id="AdresseLaivriasonAdmin" prefWidth="194.0" text="Adresse laivriason" />
+                  <TableColumn fx:id="CountryAdmin" prefWidth="85.33334350585938" text="Ville" />
+                  <TableColumn fx:id="postCodeAmin" prefWidth="77.66665649414062" text="post code" />
+                  <TableColumn fx:id="DateCommandeAdmin" prefWidth="184.0" text="date" />
+                  <TableColumn fx:id="totalePriceCommandeAdmin" prefWidth="111.0" text="totale price" />
+                  <TableColumn fx:id="StatusCommandeAdmin" prefWidth="133.0" text="status" />
+                  <TableColumn fx:id="productListCommandeAdmin" prefWidth="288.0" text="product list" />
+               </columns>
+            </TableView>
+            <JFXButton layoutX="156.0" layoutY="645.0" onAction="#returnPageProduit" prefHeight="41.0" prefWidth="156.0" styleClass="btn" stylesheets="@Styles.css" text="Page Précedente" />
+         </children>
+      </Pane>
+      <Pane layoutX="11.0" layoutY="129.0" prefHeight="409.0" prefWidth="50.0" styleClass="Navicon" stylesheets="@Styles.css" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1155.0" AnchorPane.topAnchor="100.0" />
+      <ImageView fitHeight="102.0" fitWidth="1116.0" layoutX="83.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/159405890_151210190203123_6477601702546764981_n.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

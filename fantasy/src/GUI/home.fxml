@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="747.0" prefWidth="1216.0" styleClass="Applicationlkol" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.HomeController">
+   <children>
+      <Pane layoutX="65.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="747.0" prefWidth="1106.0" styleClass="pageApplication" stylesheets="@Styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TableView fx:id="tableProduit" layoutX="22.0" layoutY="140.0" prefHeight="469.0" prefWidth="1089.0" stylesheets="@Styles.css">
+              <columns>
+                <TableColumn fx:id="CoIdProduit" prefWidth="29.0" text="ID" />
+                <TableColumn fx:id="CoIdCategorie" prefWidth="57.33332824707031" text="ID CATEGORIE" />
+                  <TableColumn fx:id="CoNomProduit" prefWidth="115.33334350585938" text="nom produit" />
+                  <TableColumn fx:id="CoNomCategorie" prefWidth="132.0" text="nom categorie" />
+                  <TableColumn fx:id="CoQuantite" prefWidth="45.333343505859375" text="quantité" />
+                  <TableColumn fx:id="CoPrixUnitaire" prefWidth="48.0" text="prix unitaire" />
+                  <TableColumn fx:id="CoImage" prefWidth="284.0" text="image produit" />
+                  <TableColumn fx:id="CoIDescriptopn" prefWidth="241.0" text="  Description" />
+                  <TableColumn fx:id="CoIAction" prefWidth="120.0" text="Action" />
+              </columns>
+            </TableView>
+            <ImageView fitHeight="104.0" fitWidth="1102.0" layoutX="28.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/159405890_151210190203123_6477601702546764981_n.png" />
+               </image>
+            </ImageView>
+            <HBox alignment="CENTER" layoutX="296.0" layoutY="642.0" prefHeight="100.0" prefWidth="453.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#ajouterProduitButton" prefHeight="48.0" prefWidth="142.0" styleClass="btn" stylesheets="@Styles.css" text="ajouter produit" />
+                  <JFXButton onAction="#consulterCommandeButton" prefHeight="47.0" prefWidth="158.0" styleClass="btn" stylesheets="@Styles.css" text="Comande" />
+                  <JFXButton onAction="#consulterCategorieButton" prefHeight="48.0" prefWidth="149.0" styleClass="btn" stylesheets="@Styles.css" text="Categorie" />
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+      <Pane fx:id="navicon" layoutX="14.0" layoutY="96.0" onMouseClicked="#navicon" prefHeight="547.0" prefWidth="61.0" styleClass="Navicon" stylesheets="@../../../../../Desktop/reserveeeeee/reserve6/FantasyLigue1/src/fantasyligue1/Styles.css" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1153.0" AnchorPane.topAnchor="100.0">
+         <children>
+            <Button layoutX="4.0" layoutY="196.0" mnemonicParsing="false" text="back" />
+         </children>
+      </Pane>
+   </children>
+   <stylesheets>
+      <URL value="@Styles.css" />
+      <URL value="@Styles.css" />
+   </stylesheets>
+</AnchorPane>

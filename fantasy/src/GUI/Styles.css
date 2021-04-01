@@ -1,0 +1,198 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.Applicationlkol{
+-fx-background-color:transparent;
+-fx-background-radius: 3em;
+}
+
+.pageApplication{
+   -fx-background-color:#FFFFFF; 
+   -fx-background-radius: 50px 50px 50px 50px;
+}
+.pageScrool{
+    
+       -fx-background-color:#FFFFFF; 
+   -fx-background-radius: 50;
+}
+.btn{
+    -fx-background-color: #FF4B2B;
+    -fx-background-radius: 5em;    
+    -fx-text-fill:#FFFFFF;
+}
+
+.btnnavPan{
+    -fx-background-color:white;
+    -fx-background-radius: 5em;    
+    -fx-text-fill:black;
+}
+.jfx-combo-box {
+	-fx-background-color:   #FF4B2B;
+}
+
+.jfx-combo-box .label {
+	-fx-background-color:  WHITE;
+	-fx-text-fill: white;
+}
+.jfx-combo-box .cell:selected {
+    -fx-text-fill:white;
+}
+
+.table-view{
+    -fx-background-color: transparent;
+}
+
+.table-view:focused{
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header-background{
+    -fx-background-color:#FFFFFF;
+    -fx-border-color: #005797;
+    -fx-border-width: 0px 0px 1px 0px ;
+    -fx-border-style: solid;
+}
+.table-view:row-selection .column-header-background .filler{
+    -fx-background-color:#FFFFFF;
+}
+.table-view:row-selection .column-header-background .show-hide-columns-button{
+    -fx-background-color:#e0e0e0;
+}
+
+.table-view .column-header-background .label{
+    -fx-background-color: transparent;
+    -fx-text-fill: #005797;
+    -fx-font-weight:bold;
+    -fx-font-size:16px;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-pref-height:50px;
+}
+.table-view  .table-column{
+    -fx-padding: 18 0 0 10;
+    -fx-border-width: 0px 0px 0px 0px ;
+}
+
+.table-view > .virtual-flow > .scroll-bar:vertical,
+.table-view > .virtual-flow > .scroll-bar:vertical > .track,
+.table-view > .virtual-flow > .scroll-bar:vertical > .track-background, 
+.table-view > .virtual-flow > .scroll-bar:horizontal,
+.table-view > .virtual-flow > .scroll-bar:horizontal > .track,
+.table-view > .virtual-flow > .scroll-bar:horizontal > .track-background {
+    -fx-background-color: transparent;
+}
+
+.table-view > .virtual-flow > .scroll-bar > .increment-button, 
+.table-view > .virtual-flow > .scroll-bar > .decrement-button {
+    -fx-opacity: 0;
+}
+
+.table-view .table-row-cell{
+    -fx-background-color:#FFF;
+    -fx-font-size:14px;
+/*    -fx-pref-height:50px;*/
+    -fx-border-width: 0px 0px 1px 0px ;
+    -fx-border-color:#e0e0e0; 
+}
+
+.table-view .table-row-cell:hover {
+    -fx-background-color:#e0e0e0;
+} 
+
+.table-view .table-row-cell:selected{
+    -fx-background-color: #005797;
+} 
+.table-view:row-selection .virtual-flow .scroll-bar:vertical .thumb{
+    -fx-background-color:#e0e0e0;
+    -fx-border-color:#262626;
+}
+.table-view .table-row-cell:empty{
+    -fx-background-color:#FFFFFF;
+     -fx-border-color:#FFFFFF;
+} 
+
+.Navicon{
+    -fx-background-color:  linear-gradient(to right top, #9D0909 , #FF4B2B);
+    -fx-background-radius: 50px 50px 50px 50px;
+}
+
+.sidebare{
+    -fx-background-color:  linear-gradient(to right top, #9D0909 , #FF4B2B
+);
+    -fx-background-radius: 20px 30px 20px 20px;
+}
+
+.icon {
+               -fx-cursor: hand ;
+                -glyph-size:28px;
+               -fx-fill:#00E676;
+}
+
+.search-box{
+    -fx-background-color:#FFFFFF;
+    -fx-background-radius: 100;
+}
+
+.transparent{
+    -fx-background-color: rgba(0,0,0,0);
+    
+}
+.transparent2{
+  -fx-background-color:#FFFFFF;
+}
+.search-button{
+    -fx-background-color: #828282;
+    -fx-background-radius: 30;
+}
+
+.right-bar{
+    -fx-background-color: #D3D3D3;
+        -fx-background-radius: 50px 0px 0px 50px; 
+        /*-fx-background-radius: 50;*/
+}
+.midlle-bar{
+ 
+        -fx-background-radius: 0px 50px 50px 0px; 
+        /*-fx-background-radius: 50;*/
+}
+.shadow{
+    -fx-effect: dropShadow(three-pass-box,rgba(0,0,0,0.1), 10.0 , 0.0 , 0.0 ,10.0);
+}
+
+.chosen-fruit-card{
+    -fx-background-color: #F16C31;
+    -fx-background-radius: 30;
+}
+
+.comboBox{
+    -fx-background-color: rgba(255,255,255,0.3);
+    -fx-background-radius: 30;
+}
+
+.add-btn{
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 100;
+}
+
+.free-delivery-card{
+    -fx-background-color: #D3D3D3;
+    -fx-background-radius: 30;
+}
+
+.shopping-online-card{
+    -fx-background-color: #BAEAC3;
+    -fx-background-radius: 30;
+}
+
+.fruit-item{
+    -fx-background-color: #FFFFFF;
+        -fx-background-radius: 30;
+}
+
+.btn_routeur{
+    
+     -fx-text-fill: #9D0909;
+}

@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane id="AnchorPane" prefHeight="463.0" prefWidth="520.0" styleClass="Applicationlkol" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fantasyligue1.AddUpdateFXMLController">
+<AnchorPane id="AnchorPane" prefHeight="463.0" prefWidth="520.0" styleClass="Applicationlkol" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AddUpdateFXMLController">
    <children>
       <Pane layoutX="38.0" layoutY="1.0" prefHeight="462.0" prefWidth="448.0" styleClass="pageApplication" stylesheets="@Styles.css">
          <children>
@@ -27,7 +27,6 @@
                   <Reflection topOpacity="0.3" />
                </effect>
             </Button>
-            <JFXTextField fx:id="tfImageP" layoutX="28.0" layoutY="254.0" />
             <JFXTextField fx:id="tfDescriptionP" focusColor="#ff4b2b" layoutX="236.0" layoutY="99.0" prefHeight="79.0" prefWidth="160.0" promptText="description e produit" />
             <Button layoutX="196.0" layoutY="364.0" mnemonicParsing="false" onAction="#saveProductButton" prefHeight="35.0" prefWidth="80.0" styleClass="btn" stylesheets="@Styles.css" text="Save">
                <effect>
