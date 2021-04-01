@@ -25,6 +25,8 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -89,7 +91,8 @@ public class JoueurEquipeController implements Initializable {
     private TextField tfLogo;
     ServiceEquipe SE = new ServiceEquipe();
     File f;
-    ManagerFootball mn = new ManagerFootball(1, "Ghada", "ghada.hajjaji@esprit.tn", "azz", "MF");
+    FXMLLoginController log= new FXMLLoginController();
+    ManagerFootball mn = log.manager;
     @FXML
     private Button backbtn;
     @FXML
@@ -134,6 +137,8 @@ public class JoueurEquipeController implements Initializable {
     private Label lblProfile;
     @FXML
     private Label lblLogout;
+    @FXML
+    private FontAwesomeIconView btnlog_out;
 
     /**
      * Initializes the controller class.
@@ -153,7 +158,7 @@ public class JoueurEquipeController implements Initializable {
                 "Prix"
         );
         sortcombo.getItems().addAll(options);
-        ObservableList<String> list = FXCollections.observableArrayList("mil", "Att", "Des", "G");
+        ObservableList<String> list = FXCollections.observableArrayList("MIL", "ATT", "DEF", "G");
         positionComoBox.setItems(list);
 
         //Liste des equipes
@@ -376,7 +381,7 @@ public class JoueurEquipeController implements Initializable {
                 imgView.setImage(image);
                 imgView.setPreserveRatio(true);
                 String s = f.getName();
-                String ur = "C:\\wamp\\www\\PIProjet\\" + s;
+                String ur = "C:\\wamp64\\www\\PIProjet\\" + s;
                 tfLogo.setText(ur);
             }
         } catch (FileNotFoundException ex) {
@@ -493,11 +498,11 @@ public class JoueurEquipeController implements Initializable {
         stage.show();
     }
 
-    @FXML
+   @FXML
     private void interfaceEquipe(ActionEvent event) {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(JoueurEquipeController.this.getClass().getResource("DisplayEquipe.fxml"));
-        btn_highls.getScene().getWindow().hide();
+        btn_equipe.getScene().getWindow().hide();
         try {
 
             loader.load();
@@ -516,7 +521,7 @@ public class JoueurEquipeController implements Initializable {
     private void interfaceJoueur(ActionEvent event) {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(JoueurEquipeController.this.getClass().getResource("DisplayPlayer.fxml"));
-        btn_highls.getScene().getWindow().hide();
+        btn_joueur.getScene().getWindow().hide();
         try {
 
             loader.load();
@@ -530,7 +535,10 @@ public class JoueurEquipeController implements Initializable {
         stage.setScene(new Scene(parent));
         stage.show();
     }
-@FXML
+
+
+
+    @FXML
     private void highlsExit(MouseEvent event) {
         lbHL.setVisible(false);
     }
@@ -557,17 +565,31 @@ public class JoueurEquipeController implements Initializable {
         Stage stage = new Stage();
         stage.setScene(new Scene(parent));
         stage.show();
-        
-    }
 
+    }
 
     @FXML
     private void eventActionInterface(MouseEvent event) {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(JoueurEquipeController.this.getClass().getResource("AddEvent.fxml"));
+        btn_statH.getScene().getWindow().hide();
+        try {
+
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
     }
 
     @FXML
     private void statActionInterface(MouseEvent event) {
-    FXMLLoader loader = new FXMLLoader();
+        FXMLLoader loader = new FXMLLoader();
         loader.setLocation(JoueurEquipeController.this.getClass().getResource("Repot.fxml"));
         btn_statH.getScene().getWindow().hide();
         try {
@@ -596,6 +618,21 @@ public class JoueurEquipeController implements Initializable {
 
     @FXML
     private void userProfileInt(MouseEvent event) {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(JoueurEquipeController.this.getClass().getResource("GestionManagerFootball.fxml"));
+        btn_statH.getScene().getWindow().hide();
+        try {
+
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
     }
 
     @FXML
@@ -610,6 +647,16 @@ public class JoueurEquipeController implements Initializable {
 
     @FXML
     private void LogoutInt(MouseEvent event) {
+               try {
+            btnlog_out.getScene().getWindow().hide();
+            Parent root = FXMLLoader.load(getClass().getResource("FXMLLogin.fxml"));
+            Stage mainStage = new Stage();
+            Scene scene = new Scene(root);
+            mainStage.setScene(scene);
+            mainStage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(JoueurUserIntController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @FXML
@@ -619,10 +666,10 @@ public class JoueurEquipeController implements Initializable {
 
     @FXML
     private void EventEntred(MouseEvent event) {
-             lbMatch.setVisible(true);
+        lbMatch.setVisible(true);
     }
 
-      @FXML
+    @FXML
     private void statExit(MouseEvent event) {
         lblStats.setVisible(false);
     }

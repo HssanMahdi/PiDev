@@ -5,6 +5,7 @@
  */
 package GUI;
 
+import entites.Adherent;
 import entites.RatingJoueur;
 import services.ServiceRating;
 import java.net.URL;
@@ -34,7 +35,9 @@ public class RatingJRController implements Initializable {
     private Pane panRat;
     int idRating;
     int joueurID;
-    int userID;
+    FXMLLoginController log= new FXMLLoginController();
+    Adherent u = log.user;
+    int userID=u.getId_user();
     double valueRat;
 
     /**
@@ -62,12 +65,14 @@ public class RatingJRController implements Initializable {
 
     @FXML
     private void Valid(ActionEvent event) {
-        if(sr.UserExist(joueurID, userID)){
-            rt.setId_joueur(joueurID);
+        rt.setId_joueur(joueurID);
         rt.setRatingValue(rat.getRating());
         rt.setId_joueur(joueurID);
         rt.setId_user(userID);
+        if(sr.UserExist(joueurID, userID)){  
         sr.updateRating(rt);
+        }else{
+        sr.addRating(rt);
         }
       
 
@@ -77,8 +82,6 @@ public class RatingJRController implements Initializable {
         idRating = id;
 
         valueRat = value;
-
-        userID = idUser;
 
         joueurID = idJoueur;
 

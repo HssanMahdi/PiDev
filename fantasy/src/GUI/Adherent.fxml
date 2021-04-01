@@ -20,7 +20,7 @@
          <children>
             <ImageView fitHeight="400.0" fitWidth="900.0" layoutX="-177.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@image/dada1.png" />
+                  <Image url="@../uploads/dada1.png" />
                </image>
                <effect>
                   <Glow />

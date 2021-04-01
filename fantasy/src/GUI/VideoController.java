@@ -10,6 +10,8 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -75,6 +77,8 @@ public class VideoController implements Initializable {
     private Label lblProfile;
     @FXML
     private Label lblLogout;
+    @FXML
+    private FontAwesomeIconView btn;
 
     /**
      * Initializes the controller class.
@@ -135,7 +139,7 @@ public class VideoController implements Initializable {
         lb1.setVisible(true);
     }
 
-    @FXML
+     @FXML
     private void interfaceEquipe(ActionEvent event) {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(VideoController.this.getClass().getResource("DisplayEquipe.fxml"));
@@ -196,7 +200,7 @@ public class VideoController implements Initializable {
         stage.show();
     }
 
-   @FXML
+    @FXML
     private void highlsExit(MouseEvent event) {
         lbHL.setVisible(false);
     }
@@ -223,17 +227,31 @@ public class VideoController implements Initializable {
         Stage stage = new Stage();
         stage.setScene(new Scene(parent));
         stage.show();
-        
-    }
 
+    }
 
     @FXML
     private void eventActionInterface(MouseEvent event) {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(VideoController.this.getClass().getResource("AddEvent.fxml"));
+        btn_statH.getScene().getWindow().hide();
+        try {
+
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
     }
 
     @FXML
     private void statActionInterface(MouseEvent event) {
-    FXMLLoader loader = new FXMLLoader();
+        FXMLLoader loader = new FXMLLoader();
         loader.setLocation(VideoController.this.getClass().getResource("Repot.fxml"));
         btn_statH.getScene().getWindow().hide();
         try {
@@ -262,6 +280,21 @@ public class VideoController implements Initializable {
 
     @FXML
     private void userProfileInt(MouseEvent event) {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(VideoController.this.getClass().getResource("GestionManagerFootball.fxml"));
+        btn_statH.getScene().getWindow().hide();
+        try {
+
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
     }
 
     @FXML
@@ -276,6 +309,16 @@ public class VideoController implements Initializable {
 
     @FXML
     private void LogoutInt(MouseEvent event) {
+               try {
+            btn.getScene().getWindow().hide();
+            Parent root = FXMLLoader.load(getClass().getResource("FXMLLogin.fxml"));
+            Stage mainStage = new Stage();
+            Scene scene = new Scene(root);
+            mainStage.setScene(scene);
+            mainStage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(JoueurUserIntController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @FXML
@@ -285,10 +328,10 @@ public class VideoController implements Initializable {
 
     @FXML
     private void EventEntred(MouseEvent event) {
-             lbMatch.setVisible(true);
+        lbMatch.setVisible(true);
     }
 
-      @FXML
+    @FXML
     private void statExit(MouseEvent event) {
         lblStats.setVisible(false);
     }

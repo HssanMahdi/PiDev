@@ -14,6 +14,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -90,6 +92,8 @@ public class DisplayHighlsController implements Initializable {
     private FontAwesomeIconView btn_highInt;
     @FXML
     private Label lblStats;
+    @FXML
+    private FontAwesomeIconView btnlog_out;
 
     /**
      * Initializes the controller class.
@@ -319,17 +323,7 @@ public class DisplayHighlsController implements Initializable {
         lblA.setVisible(true);
     }
 
-    @FXML
-    private void statExit(MouseEvent event) {
-        lblStats.setVisible(false);
-    }
-
-    @FXML
-    private void statEntred(MouseEvent event) {
-        lblStats.setVisible(true);
-    }
-
-    @FXML
+        @FXML
     private void interfaceEquipe(ActionEvent event) {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(DisplayHighlsController.this.getClass().getResource("DisplayEquipe.fxml"));
@@ -402,32 +396,46 @@ public class DisplayHighlsController implements Initializable {
 
     @FXML
     private void actionHighls(MouseEvent event) {
-//        FXMLLoader loader = new FXMLLoader();
-//        loader.setLocation(DisplayHighlsController.this.getClass().getResource("DisplayHighls.fxml"));
-//        btn_highInt.getScene().getWindow().hide();
-//        try {
-//
-//            loader.load();
-//
-//        } catch (IOException ex) {
-//            System.out.println(ex);
-//        }
-//
-//        Parent parent = loader.getRoot();
-//        Stage stage = new Stage();
-//        stage.setScene(new Scene(parent));
-//        stage.show();
-        
-    }
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(DisplayHighlsController.this.getClass().getResource("DisplayHighls.fxml"));
+        btn_highInt.getScene().getWindow().hide();
+        try {
 
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
+
+    }
 
     @FXML
     private void eventActionInterface(MouseEvent event) {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(DisplayHighlsController.this.getClass().getResource("AddEvent.fxml"));
+        btn_statH.getScene().getWindow().hide();
+        try {
+
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
     }
 
     @FXML
     private void statActionInterface(MouseEvent event) {
-    FXMLLoader loader = new FXMLLoader();
+        FXMLLoader loader = new FXMLLoader();
         loader.setLocation(DisplayHighlsController.this.getClass().getResource("Repot.fxml"));
         btn_statH.getScene().getWindow().hide();
         try {
@@ -456,6 +464,21 @@ public class DisplayHighlsController implements Initializable {
 
     @FXML
     private void userProfileInt(MouseEvent event) {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(DisplayHighlsController.this.getClass().getResource("GestionManagerFootball.fxml"));
+        btn_statH.getScene().getWindow().hide();
+        try {
+
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
     }
 
     @FXML
@@ -470,6 +493,16 @@ public class DisplayHighlsController implements Initializable {
 
     @FXML
     private void LogoutInt(MouseEvent event) {
+               try {
+            btnlog_out.getScene().getWindow().hide();
+            Parent root = FXMLLoader.load(getClass().getResource("FXMLLogin.fxml"));
+            Stage mainStage = new Stage();
+            Scene scene = new Scene(root);
+            mainStage.setScene(scene);
+            mainStage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(JoueurUserIntController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @FXML
@@ -479,7 +512,17 @@ public class DisplayHighlsController implements Initializable {
 
     @FXML
     private void EventEntred(MouseEvent event) {
-             lbMatch.setVisible(true);
+        lbMatch.setVisible(true);
+    }
+
+    @FXML
+    private void statExit(MouseEvent event) {
+        lblStats.setVisible(false);
+    }
+
+    @FXML
+    private void statEntred(MouseEvent event) {
+        lblStats.setVisible(true);
     }
 
 }

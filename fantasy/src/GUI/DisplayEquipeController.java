@@ -18,6 +18,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -107,6 +109,8 @@ public class DisplayEquipeController implements Initializable {
     private Label lblProfile;
     @FXML
     private Label lblLogout;
+    @FXML
+    private FontAwesomeIconView btnlog_out;
 
     /**
      * Initializes the controller class.
@@ -120,7 +124,6 @@ public class DisplayEquipeController implements Initializable {
         List<Equipe> listEquipe = SA.getEquipes();
 
         afficher(listEquipe);
-         
 
         // TODO
     }
@@ -332,7 +335,7 @@ public class DisplayEquipeController implements Initializable {
                 imgView.setImage(image);
                 imgView.setPreserveRatio(true);
                 String s = f.getName();
-                String ur = "C:\\wamp\\www\\PIProjet\\" + s;
+                String ur = "C:\\wamp64\\www\\PIProjet\\" + s;
                 logoEq.setText(ur);
 
             }
@@ -345,7 +348,7 @@ public class DisplayEquipeController implements Initializable {
     private void Search(MouseEvent event) {
         String charac = search.getText();
 
-        List<Equipe> a =  SA.SearchTeam(charac);
+        List<Equipe> a = SA.SearchTeam(charac);
         ObservableList<Equipe> obs = FXCollections.observableArrayList(a);
         afficher(obs);
     }
@@ -372,7 +375,7 @@ public class DisplayEquipeController implements Initializable {
     }
 
     private void DashboardAction(ActionEvent event) {
-          FXMLLoader loader = new FXMLLoader();
+        FXMLLoader loader = new FXMLLoader();
         loader.setLocation(DisplayEquipeController.this.getClass().getResource("DisplayHighls.fxml"));
         btnDashboard.getScene().getWindow().hide();
         try {
@@ -391,7 +394,7 @@ public class DisplayEquipeController implements Initializable {
 
     @FXML
     private void interfaceEquipe(ActionEvent event) {
-            FXMLLoader loader = new FXMLLoader();
+        FXMLLoader loader = new FXMLLoader();
         loader.setLocation(DisplayEquipeController.this.getClass().getResource("DisplayEquipe.fxml"));
         btn_equipe.getScene().getWindow().hide();
         try {
@@ -433,7 +436,7 @@ public class DisplayEquipeController implements Initializable {
 
     @FXML
     private void interfaceHighls(ActionEvent event) {
-                FXMLLoader loader = new FXMLLoader();
+        FXMLLoader loader = new FXMLLoader();
         loader.setLocation(DisplayEquipeController.this.getClass().getResource("DisplayHighls.fxml"));
         btn_highls.getScene().getWindow().hide();
         try {
@@ -449,7 +452,8 @@ public class DisplayEquipeController implements Initializable {
         stage.setScene(new Scene(parent));
         stage.show();
     }
-@FXML
+
+    @FXML
     private void highlsExit(MouseEvent event) {
         lbHL.setVisible(false);
     }
@@ -476,17 +480,31 @@ public class DisplayEquipeController implements Initializable {
         Stage stage = new Stage();
         stage.setScene(new Scene(parent));
         stage.show();
-        
-    }
 
+    }
 
     @FXML
     private void eventActionInterface(MouseEvent event) {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(DisplayEquipeController.this.getClass().getResource("AddEvent.fxml"));
+        btn_statH.getScene().getWindow().hide();
+        try {
+
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
     }
 
     @FXML
     private void statActionInterface(MouseEvent event) {
-    FXMLLoader loader = new FXMLLoader();
+        FXMLLoader loader = new FXMLLoader();
         loader.setLocation(DisplayEquipeController.this.getClass().getResource("Repot.fxml"));
         btn_statH.getScene().getWindow().hide();
         try {
@@ -515,6 +533,21 @@ public class DisplayEquipeController implements Initializable {
 
     @FXML
     private void userProfileInt(MouseEvent event) {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(DisplayEquipeController.this.getClass().getResource("GestionManagerFootball.fxml"));
+        btn_statH.getScene().getWindow().hide();
+        try {
+
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
     }
 
     @FXML
@@ -529,6 +562,16 @@ public class DisplayEquipeController implements Initializable {
 
     @FXML
     private void LogoutInt(MouseEvent event) {
+               try {
+            btnlog_out.getScene().getWindow().hide();
+            Parent root = FXMLLoader.load(getClass().getResource("FXMLLogin.fxml"));
+            Stage mainStage = new Stage();
+            Scene scene = new Scene(root);
+            mainStage.setScene(scene);
+            mainStage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(JoueurUserIntController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @FXML
@@ -538,10 +581,10 @@ public class DisplayEquipeController implements Initializable {
 
     @FXML
     private void EventEntred(MouseEvent event) {
-             lbMatch.setVisible(true);
+        lbMatch.setVisible(true);
     }
 
-       @FXML
+    @FXML
     private void statExit(MouseEvent event) {
         lblStats.setVisible(false);
     }
@@ -550,6 +593,5 @@ public class DisplayEquipeController implements Initializable {
     private void statEntred(MouseEvent event) {
         lblStats.setVisible(true);
     }
-
 
 }

@@ -28,7 +28,7 @@ public class UploadImage {
         String s = f.getName();
 //            tfLogo.setText(s);
 
-        File Copyfile = new File("C:\\wamp\\www\\PIProjet\\" + s);
+        File Copyfile = new File("C:\\wamp64\\www\\PIProjet\\" + s);
         try {
 
             inStream = new FileInputStream(f);

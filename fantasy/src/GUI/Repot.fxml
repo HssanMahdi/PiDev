@@ -68,7 +68,21 @@
       <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="720.0" layoutY="72.0" rotate="-90.0" />
       <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="885.0" layoutY="72.0" rotate="-90.0" />
       <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="1036.0" layoutY="72.0" rotate="-90.0" />
-      <BorderPane layoutX="118.0" layoutY="70.0" prefHeight="27.0" prefWidth="971.0">
+      <Pane layoutX="106.5" layoutY="99.0" prefHeight="647.0" prefWidth="2.7" style="-fx-background-color: #c00909;" />
+      <Button fx:id="backbtn" layoutX="38.0" layoutY="675.0" mnemonicParsing="false" onAction="#back" onMouseEntered="#backEntred" onMouseExited="#backExit" prefHeight="27.0" prefWidth="31.0" style="-fx-background-color: white;">
+         <graphic>
+            <FontAwesomeIconView fill="#c72a2a" glyphName="ANGLE_DOUBLE_LEFT" size="25" />
+         </graphic>
+         <effect>
+            <Reflection />
+         </effect>
+      </Button>
+      <Label fx:id="lb1" alignment="CENTER" contentDisplay="CENTER" layoutX="23.0" layoutY="710.0" prefHeight="21.0" prefWidth="71.0" style="-fx-background-color: #ffe7e7; -fx-background-radius: 3em; -fx-border-radius: 3em;" text="Précedent" visible="false">
+         <font>
+            <Font name="Times New Roman Bold" size="13.0" />
+         </font>
+      </Label>
+      <BorderPane layoutX="130.0" layoutY="72.0" prefHeight="27.0" prefWidth="971.0">
          <center>
             <HBox prefHeight="100.0" prefWidth="200.0" spacing="50.0" BorderPane.alignment="CENTER">
                <children>
@@ -127,23 +141,9 @@
             </HBox>
          </center>
       </BorderPane>
-      <Pane layoutX="106.5" layoutY="99.0" prefHeight="647.0" prefWidth="2.7" style="-fx-background-color: #c00909;" />
-      <Button fx:id="backbtn" layoutX="38.0" layoutY="675.0" mnemonicParsing="false" onAction="#back" onMouseEntered="#backEntred" onMouseExited="#backExit" prefHeight="27.0" prefWidth="31.0" style="-fx-background-color: white;">
-         <graphic>
-            <FontAwesomeIconView fill="#c72a2a" glyphName="ANGLE_DOUBLE_LEFT" size="25" />
-         </graphic>
-         <effect>
-            <Reflection />
-         </effect>
-      </Button>
-      <Label fx:id="lb1" alignment="CENTER" contentDisplay="CENTER" layoutX="23.0" layoutY="710.0" prefHeight="21.0" prefWidth="71.0" style="-fx-background-color: #ffe7e7; -fx-background-radius: 3em; -fx-border-radius: 3em;" text="Précedent" visible="false">
-         <font>
-            <Font name="Times New Roman Bold" size="13.0" />
-         </font>
-      </Label>
-      <BorderPane layoutX="14.0" layoutY="109.0" prefHeight="550.0" prefWidth="79.0">
+      <BorderPane layoutX="16.0" layoutY="107.0" prefHeight="604.0" prefWidth="84.0">
          <center>
-            <VBox prefHeight="560.0" prefWidth="79.0" spacing="57.0" BorderPane.alignment="CENTER">
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="60.0" BorderPane.alignment="CENTER">
                <padding>
                   <Insets top="45.0" />
                </padding>
@@ -196,7 +196,7 @@
                         <Insets top="-50.0" />
                      </VBox.margin>
                   </Label>
-                  <FontAwesomeIconView fill="#c22d2d" glyphName="USER" onMouseClicked="#userProfileInt" onMouseEntered="#userEnred" onMouseExited="#userExit" size="25">
+                  <FontAwesomeIconView fill="#c22d2d" glyphName="USER" onMouseClicked="#userProfileInt" onMouseEntered="#userEnred" onMouseExited="#userExit" size="25" text="">
                      <VBox.margin>
                         <Insets left="30.0" />
                      </VBox.margin>
@@ -212,7 +212,7 @@
                         <Insets top="-50.0" />
                      </VBox.margin>
                   </Label>
-                  <FontAwesomeIconView fill="#c22d2d" glyphName="SIGN_OUT" onMouseClicked="#LogoutInt" onMouseEntered="#logEntred" onMouseExited="#logExit" size="25">
+                  <FontAwesomeIconView fx:id="btn" fill="#c22d2d" glyphName="SIGN_OUT" onMouseClicked="#LogoutInt" onMouseEntered="#logEntred" onMouseExited="#logExit" size="25" text="">
                      <effect>
                         <Reflection />
                      </effect>

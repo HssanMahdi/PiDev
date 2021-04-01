@@ -33,6 +33,8 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import entites.Adherent;
 import entites.Groupe;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import services.GroupeCRUD;
 
 /**
@@ -56,8 +58,6 @@ public class DisplaylesGroupedeAdherent implements Initializable {
     @FXML
     private Button btn_equipe;
     @FXML
-    private Button btn_joueur;
-    @FXML
     private Button btn_stat;
     @FXML
     private Button btn_stotr;
@@ -70,22 +70,30 @@ public class DisplaylesGroupedeAdherent implements Initializable {
     @FXML
     private FontAwesomeIconView event_btn;
     @FXML
-    private Label lbGroupe;
+    private Button dash_id;
     @FXML
-    private Label lbForm;
+    private Button btn_formACT;
     @FXML
-    private Label lbMatch;
+    private FontAwesomeIconView btnlog_out;
     @FXML
-    private Label lbdecnx;
+    private Label lbGroupe1;
     @FXML
-    private Label lbGroupe1111;
+    private Label lbForm1;
+    @FXML
+    private Label lbMatch1;
+    @FXML
+    private Label lbdecnx1;
+    @FXML
+    private Label lbGroupe11111;
+    @FXML
+    private Button btncree;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
- 
+            
         afficher();
     
     }   
@@ -369,13 +377,24 @@ public class DisplaylesGroupedeAdherent implements Initializable {
         });
     }
 
-   
-    @FXML
-    private void interfaceEquipe(ActionEvent event) {
-    }
 
-    @FXML
-    private void interfaceJoueur(ActionEvent event) {
+       @FXML
+    private void interfaceEquipe(ActionEvent event) {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(DisplaylesGroupedeAdherent.this.getClass().getResource("EquipeUserInt.fxml"));
+        btn_equipe.getScene().getWindow().hide();
+        try {
+
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
     }
 
     @FXML
@@ -384,16 +403,58 @@ public class DisplaylesGroupedeAdherent implements Initializable {
 
     @FXML
     private void interfaceHighls(ActionEvent event) {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(DisplaylesGroupedeAdherent.this.getClass().getResource("HighlsUser.fxml"));
+        btn_equipe.getScene().getWindow().hide();
+        try {
+
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
+    }
+
+
+    @FXML
+    private void actualiteInterface(ActionEvent event) {
     }
 
     @FXML
+    private void InterfaceFormation(ActionEvent event) {
+          FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(DisplaylesGroupedeAdherent.this.getClass().getResource("AfficherFormation.fxml"));
+        form_btn.getScene().getWindow().hide();
+        try {
+
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
+    }
+
+    @FXML
+    private void storeInterface(ActionEvent event) {
+    }
+
+        @FXML
     private void grpExist(MouseEvent event) {
-        lbGroupe.setVisible(false);
+        lbGroupe1.setVisible(false);
     }
 
     @FXML
     private void grpRntred(MouseEvent event) {
-        lbGroupe.setVisible(true);
+        lbGroupe1.setVisible(true);
     }
 
     @FXML
@@ -416,12 +477,12 @@ public class DisplaylesGroupedeAdherent implements Initializable {
 
     @FXML
     private void formExi(MouseEvent event) {
-        lbForm.setVisible(false);
+        lbForm1.setVisible(false);
     }
 
     @FXML
     private void formEnt(MouseEvent event) {
-        lbForm.setVisible(true);
+        lbForm1.setVisible(true);
     }
 
     @FXML
@@ -444,12 +505,12 @@ public class DisplaylesGroupedeAdherent implements Initializable {
 
     @FXML
     private void evnExit(MouseEvent event) {
-        lbMatch.setVisible(false);
+        lbMatch1.setVisible(false);
     }
 
     @FXML
     private void evnEntr(MouseEvent event) {
-        lbMatch.setVisible(true);
+        lbMatch1.setVisible(true);
     }
 
     @FXML
@@ -472,22 +533,71 @@ public class DisplaylesGroupedeAdherent implements Initializable {
 
     @FXML
     private void actionExit(MouseEvent event) {
-        lbGroupe1111.setVisible(false);
+        lbGroupe11111.setVisible(false);
     }
 
     @FXML
     private void actionentred(MouseEvent event) {
-        lbGroupe1111.setVisible(true);
+        lbGroupe11111.setVisible(true);
     }
 
     @FXML
     private void logExit(MouseEvent event) {
-        lbdecnx.setVisible(false);
+        lbdecnx1.setVisible(false);
     }
 
     @FXML
     private void logEntr(MouseEvent event) {
-        lbdecnx.setVisible(true);
+        lbdecnx1.setVisible(true);
     }
-        
+
+    @FXML
+    private void lbgroupe1111action(MouseEvent event) {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(DisplaylesGroupedeAdherent.this.getClass().getResource("GestionUser.fxml"));
+        lbGroupe11111.getScene().getWindow().hide();
+        try {
+
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
+    }
+
+    @FXML
+    private void deconxAction(MouseEvent event) {
+        try {
+            btnlog_out.getScene().getWindow().hide();
+            Parent root = FXMLLoader.load(getClass().getResource("FXMLLogin.fxml"));
+            Stage mainStage = new Stage();
+            Scene scene = new Scene(root);
+            mainStage.setScene(scene);
+            mainStage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(JoueurUserIntController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void btncreeaction(MouseEvent event) {
+        FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("CreeGroupe.fxml"));
+            try {
+                loader.load();
+            } catch (IOException ex) {
+                System.out.println(ex);}
+
+            CreeGroupeController controller = loader.getController();
+            btncree.getScene().getWindow().hide();
+            Parent parent = loader.getRoot();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(parent));
+            stage.show();
+    }
+
 }

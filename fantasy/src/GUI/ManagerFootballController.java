@@ -94,9 +94,7 @@ public class ManagerFootballController implements Initializable {
     private Label lb;
     @FXML
     private Label lb3;
-    @FXML
     private Label lb4;
-    @FXML
     private Label lb5;
     @FXML
     private FontAwesomeIconView btnlog_out;
@@ -104,6 +102,8 @@ public class ManagerFootballController implements Initializable {
     private Label lb6;
     @FXML
     private FontAwesomeIconView btn1;
+    @FXML
+    private FontAwesomeIconView btnstat;
 
     /**
      * Initializes the controller class.
@@ -277,23 +277,63 @@ public class ManagerFootballController implements Initializable {
 
     @FXML
     private void interfaceEquipe(ActionEvent event) {
-        // TODO
-    }
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(ManagerFootballController.this.getClass().getResource("EquipeUserInt.fxml"));
+        btn_equipe.getScene().getWindow().hide();
+        try {
 
-    @FXML
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
+    }
+        @FXML
     private void interfaceJoueur(ActionEvent event) {
-        // TODO
+              FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(ManagerFootballController.this.getClass().getResource("AfficherFormation.fxml"));
+        btn_joueur.getScene().getWindow().hide();
+        try {
+
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
     }
 
     @FXML
     private void interfaceStat(ActionEvent event) {
-        // TODO
     }
 
     @FXML
     private void interfaceHighls(ActionEvent event) {
-        // TODO
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(ManagerFootballController.this.getClass().getResource("HighlsUser.fxml"));
+        btn_equipe.getScene().getWindow().hide();
+        try {
+
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
     }
+
 
     @FXML
     private void AdminExisted(MouseEvent event) {
@@ -340,7 +380,6 @@ public class ManagerFootballController implements Initializable {
         afficher(listManager);
     }
 
-    @FXML
     private void AdminSystem(MouseEvent event) throws IOException { 
         btn1.getScene().getWindow().hide();
         Parent root = FXMLLoader.load(getClass().getResource("AdminSysteme.fxml"));
@@ -371,23 +410,19 @@ public class ManagerFootballController implements Initializable {
          lb3.setVisible(true);
     }
 
-    @FXML
     private void commandeExited(MouseEvent event) {
          lb4.setVisible(false);
     }
 
-    @FXML
     private void commandeEntred(MouseEvent event) {
          lb4.setVisible(true);
     }
     
 
-    @FXML
     private void categorieExited(MouseEvent event) {
          lb5.setVisible(false);
     }
 
-    @FXML
     private void categorieEntred(MouseEvent event) {
          lb5.setVisible(true);
     }
@@ -410,6 +445,10 @@ public class ManagerFootballController implements Initializable {
         Scene scene = new Scene(root);
         mainStage.setScene(scene);
         mainStage.show();
+    }
+
+    @FXML
+    private void GestionManager(MouseEvent event) {
     }
 
    

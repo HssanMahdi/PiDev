@@ -46,7 +46,8 @@ public class AddHighlightsController implements Initializable {
     private TextField tfVid;
     @FXML
     private Button browsebtn;
-    ManagerFootball mn = new ManagerFootball(1, "Ghada", "ghadahajjaji99@gmail.com", "azz", "MF");
+    FXMLLoginController log= new FXMLLoginController();
+    ManagerFootball mn = log.manager;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -68,7 +69,7 @@ public class AddHighlightsController implements Initializable {
         if (f != null) {
 
             String s = f.getName();
-            String ur = "C:\\wamp\\www\\PIProjet\\" + s;
+            String ur = "C:\\wamp64\\www\\PIProjet\\" + s;
             tfVid.setText(ur);
             Media MD;
             MediaPlayer MDP;

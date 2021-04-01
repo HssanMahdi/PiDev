@@ -72,11 +72,18 @@
          </image>
       </ImageView>
       <Pane layoutX="110.0" layoutY="99.0" prefHeight="3.0" prefWidth="1108.0" style="-fx-background-color: #dacece;" />
-      <BorderPane layoutX="132.0" layoutY="72.0" prefHeight="27.0" prefWidth="971.0">
+      <Pane layoutX="107.0" layoutY="99.0" prefHeight="650.0" prefWidth="2.7" style="-fx-background-color: #c00909;" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="223.0" layoutY="71.0" rotate="-90.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="397.0" layoutY="71.0" rotate="-90.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="573.0" layoutY="71.0" rotate="-90.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="734.0" layoutY="71.0" rotate="-90.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="890.0" layoutY="71.0" rotate="-90.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="1043.0" layoutY="71.0" rotate="-90.0" />
+      <BorderPane layoutX="123.0" layoutY="71.0" prefHeight="30.0" prefWidth="997.0">
          <center>
             <HBox prefHeight="100.0" prefWidth="200.0" spacing="50.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="138.0" style="-fx-background-color: white;" styleClass="dash" stylesheets="@../CSS/style.css" text="Dashboard" textFill="#c00909">
+                  <Button fx:id="dash_id" mnemonicParsing="false" onAction="#actualiteInterface" prefHeight="26.0" prefWidth="138.0" style="-fx-background-color: white;" styleClass="dash" stylesheets="@../CSS/style.css" text="Dashboard" textFill="#c00909">
                      <graphic>
                         <FontAwesomeIconView fill="#c00909" glyphName="TELEVISION" />
                      </graphic>
@@ -100,15 +107,15 @@
                         <Font name="Times New Roman Bold" size="14.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btn_joueur" mnemonicParsing="false" onAction="#interfaceJoueur" prefHeight="26.0" prefWidth="122.0" style="-fx-background-color: white;" styleClass="eq" stylesheets="@../CSS/style.css" text="Formation">
+                  <Button fx:id="btn_formACT" mnemonicParsing="false" onAction="#InterfaceFormation" prefHeight="26.0" prefWidth="111.0" style="-fx-background-color: white;" styleClass="eq" stylesheets="@../CSS/style.css" text=" Formation">
                      <graphic>
                         <FontAwesomeIconView glyphName="SOCCER_BALL_ALT" />
                      </graphic>
                      <font>
-                        <Font name="Times New Roman" size="14.0" />
+                        <Font name="Times New Roman Bold" size="14.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btn_stotr" mnemonicParsing="false" prefHeight="26.0" prefWidth="111.0" style="-fx-background-color: white;" styleClass="eq" stylesheets="@../CSS/style.css" text=" Store">
+                  <Button fx:id="btn_stotr" mnemonicParsing="false" onAction="#storeInterface" prefHeight="26.0" prefWidth="111.0" style="-fx-background-color: white;" styleClass="eq" stylesheets="@../CSS/style.css" text=" Store">
                      <graphic>
                         <FontAwesomeIconView glyphName="CART_PLUS" />
                      </graphic>
@@ -131,8 +138,7 @@
             </HBox>
          </center>
       </BorderPane>
-      <Pane layoutX="107.0" layoutY="99.0" prefHeight="650.0" prefWidth="2.7" style="-fx-background-color: #c00909;" />
-      <BorderPane layoutX="14.0" layoutY="136.0" prefHeight="562.0" prefWidth="84.0">
+      <BorderPane layoutX="14.0" layoutY="142.0" prefHeight="562.0" prefWidth="84.0">
          <center>
             <VBox prefHeight="200.0" prefWidth="100.0" spacing="90.0" BorderPane.alignment="CENTER">
                <children>
@@ -160,7 +166,7 @@
                         <Reflection />
                      </effect>
                   </FontAwesomeIconView>
-                  <FontAwesomeIconView fill="#c22d2d" glyphName="USER" onMouseEntered="#actionentred" onMouseExited="#actionExit" size="25">
+                  <FontAwesomeIconView fill="#c22d2d" glyphName="USER" onMouseClicked="#lbgroupe1111action" onMouseEntered="#actionentred" onMouseExited="#actionExit" size="25">
                      <VBox.margin>
                         <Insets left="30.0" />
                      </VBox.margin>
@@ -168,7 +174,7 @@
                         <Reflection />
                      </effect>
                   </FontAwesomeIconView>
-                  <FontAwesomeIconView fill="#c22d2d" glyphName="SHARE_SQUARE_ALT" onMouseEntered="#logEntr" onMouseExited="#logExit" size="25">
+                  <FontAwesomeIconView fx:id="btnlog_out" fill="#c22d2d" glyphName="SIGN_OUT" onMouseClicked="#deconxAction" onMouseEntered="#logEntr" onMouseExited="#logExit" size="25">
                      <effect>
                         <Reflection />
                      </effect>
@@ -183,36 +189,31 @@
             </VBox>
          </center>
       </BorderPane>
-      <Label fx:id="lbGroupe" alignment="CENTER" contentDisplay="CENTER" layoutX="27.0" layoutY="239.0" prefHeight="23.0" prefWidth="68.0" style="-fx-background-color: #ffe7e7; -fx-background-radius: 3em; -fx-border-radius: 3em;" text="Groupe" visible="false">
+      <Label fx:id="lbGroupe1" alignment="CENTER" contentDisplay="CENTER" layoutX="27.0" layoutY="245.0" prefHeight="23.0" prefWidth="68.0" style="-fx-background-color: #ffe7e7; -fx-background-radius: 3em; -fx-border-radius: 3em;" text="Groupe" visible="false">
          <font>
             <Font name="Times New Roman Bold" size="13.0" />
          </font>
       </Label>
-      <Label fx:id="lbForm" alignment="CENTER" contentDisplay="CENTER" layoutX="27.0" layoutY="358.0" prefHeight="23.0" prefWidth="68.0" style="-fx-background-color: #ffe7e7; -fx-background-radius: 3em; -fx-border-radius: 3em;" text="Formation" visible="false">
+      <Label fx:id="lbForm1" alignment="CENTER" contentDisplay="CENTER" layoutX="27.0" layoutY="364.0" prefHeight="23.0" prefWidth="68.0" style="-fx-background-color: #ffe7e7; -fx-background-radius: 3em; -fx-border-radius: 3em;" text="Formation" visible="false">
          <font>
             <Font name="Times New Roman Bold" size="13.0" />
          </font>
       </Label>
-      <Label fx:id="lbMatch" alignment="CENTER" contentDisplay="CENTER" layoutX="27.0" layoutY="482.0" prefHeight="23.0" prefWidth="68.0" style="-fx-background-color: #ffe7e7; -fx-background-radius: 3em; -fx-border-radius: 3em;" text="Match" visible="false">
+      <Label fx:id="lbMatch1" alignment="CENTER" contentDisplay="CENTER" layoutX="27.0" layoutY="488.0" prefHeight="23.0" prefWidth="68.0" style="-fx-background-color: #ffe7e7; -fx-background-radius: 3em; -fx-border-radius: 3em;" text="Match" visible="false">
          <font>
             <Font name="Times New Roman Bold" size="13.0" />
          </font>
       </Label>
-      <Label fx:id="lbdecnx" alignment="CENTER" contentDisplay="CENTER" layoutX="27.0" layoutY="689.0" prefHeight="23.0" prefWidth="68.0" style="-fx-background-color: #ffe7e7; -fx-background-radius: 3em; -fx-border-radius: 3em;" text="Logout" visible="false">
+      <Label fx:id="lbdecnx1" alignment="CENTER" contentDisplay="CENTER" layoutX="27.0" layoutY="695.0" prefHeight="23.0" prefWidth="68.0" style="-fx-background-color: #ffe7e7; -fx-background-radius: 3em; -fx-border-radius: 3em;" text="Logout" visible="false">
          <font>
             <Font name="Times New Roman Bold" size="13.0" />
          </font>
       </Label>
-      <Label fx:id="lbGroupe1111" alignment="CENTER" contentDisplay="CENTER" layoutX="27.0" layoutY="588.0" prefHeight="23.0" prefWidth="68.0" style="-fx-background-color: #ffe7e7; -fx-background-radius: 3em; -fx-border-radius: 3em;" text="Groupe" visible="false">
+      <Button fx:id="btncree" layoutX="633.0" layoutY="642.0" mnemonicParsing="false" onMouseClicked="#btncreeaction" stylesheets="@../CSS/ButtonStyles.css" text="Crée Groupe" />
+      <Label fx:id="lbGroupe11111" alignment="CENTER" contentDisplay="CENTER" layoutX="27.0" layoutY="594.0" prefHeight="23.0" prefWidth="68.0" style="-fx-background-color: #ffe7e7; -fx-background-radius: 3em; -fx-border-radius: 3em;" text="Profile" visible="false">
          <font>
             <Font name="Times New Roman Bold" size="13.0" />
          </font>
       </Label>
-      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="223.0" layoutY="71.0" rotate="-90.0" />
-      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="397.0" layoutY="71.0" rotate="-90.0" />
-      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="573.0" layoutY="71.0" rotate="-90.0" />
-      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="734.0" layoutY="71.0" rotate="-90.0" />
-      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="890.0" layoutY="71.0" rotate="-90.0" />
-      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="1043.0" layoutY="71.0" rotate="-90.0" />
    </children>
 </AnchorPane>

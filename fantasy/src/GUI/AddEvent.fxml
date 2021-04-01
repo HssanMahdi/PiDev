@@ -93,7 +93,10 @@
       <FontAwesomeIconView fill="WHITE" glyphName="CHECK_SQUARE_ALT" layoutX="247.0" layoutY="693.0" size="15" />
       <Pane layoutX="477.0" layoutY="100.0" prefHeight="3.0" prefWidth="740.0" style="-fx-background-color: #dacece;" />
       <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="223.0" layoutY="108.0" rotate="90.0" />
-      <BorderPane layoutX="127.0" layoutY="72.0" prefHeight="27.0" prefWidth="971.0">
+      <Pane layoutX="107.0" layoutY="100.0" prefHeight="652.0" prefWidth="2.7" style="-fx-background-color: #c00909;" />
+      <Pane layoutX="1160.0" layoutY="70.0" prefHeight="30.0" prefWidth="3.0" style="-fx-background-color: #dacece;" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="1043.0" layoutY="71.0" rotate="-90.0" />
+      <BorderPane layoutX="130.0" layoutY="71.0" prefHeight="27.0" prefWidth="971.0">
          <center>
             <HBox prefHeight="100.0" prefWidth="200.0" spacing="50.0" BorderPane.alignment="CENTER">
                <children>
@@ -113,20 +116,20 @@
                         <FontAwesomeIconView glyphName="GAMEPAD" />
                      </graphic>
                   </Button>
+                  <Button fx:id="btn_joueur" mnemonicParsing="false" onAction="#interfaceJoueur" prefHeight="26.0" prefWidth="122.0" style="-fx-background-color: white;" styleClass="eq" stylesheets="@../CSS/style.css" text=" Joueur">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="SOCCER_BALL_ALT" />
+                     </graphic>
+                     <font>
+                        <Font name="Times New Roman" size="14.0" />
+                     </font>
+                  </Button>
                   <Button fx:id="btn_stat" mnemonicParsing="false" onAction="#interfaceStat" prefHeight="26.0" prefWidth="120.0" style="-fx-background-color: white;" styleClass="eq" stylesheets="@../CSS/style.css" text=" Statistique">
                      <graphic>
                         <FontAwesomeIconView glyphName="LINE_CHART" />
                      </graphic>
                      <font>
                         <Font name="Times New Roman Bold" size="14.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="btn_joueur" mnemonicParsing="false" onAction="#interfaceJoueur" prefHeight="26.0" prefWidth="122.0" style="-fx-background-color: white;" styleClass="eq" stylesheets="@../CSS/style.css" text="Formation">
-                     <graphic>
-                        <FontAwesomeIconView glyphName="SOCCER_BALL_ALT" />
-                     </graphic>
-                     <font>
-                        <Font name="Times New Roman" size="14.0" />
                      </font>
                   </Button>
                   <Button fx:id="btn_stotr" mnemonicParsing="false" prefHeight="26.0" prefWidth="111.0" style="-fx-background-color: white;" styleClass="eq" stylesheets="@../CSS/style.css" text=" Store">
@@ -152,84 +155,96 @@
             </HBox>
          </center>
       </BorderPane>
-      <BorderPane layoutX="12.0" layoutY="137.0" prefHeight="562.0" prefWidth="84.0">
+      <BorderPane layoutX="14.0" layoutY="132.0" prefHeight="604.0" prefWidth="84.0">
          <center>
-            <VBox prefHeight="200.0" prefWidth="100.0" spacing="90.0" BorderPane.alignment="CENTER">
-               <children>
-                  <FontAwesomeIconView fx:id="grp_btn" fill="#c22d2d" glyphName="USERS" onMouseClicked="#GroupeInt" onMouseEntered="#grpRntred" onMouseExited="#grpExist" size="25">
-                     <VBox.margin>
-                        <Insets left="30.0" />
-                     </VBox.margin>
-                     <effect>
-                        <Reflection />
-                     </effect>
-                  </FontAwesomeIconView>
-                  <FontAwesomeIconView fx:id="form_btn" fill="#c22d2d" glyphName="SOCCER_BALL_ALT" onMouseClicked="#formationInt" onMouseEntered="#formEnt" onMouseExited="#formExi" size="25">
-                     <VBox.margin>
-                        <Insets left="30.0" />
-                     </VBox.margin>
-                     <effect>
-                        <Reflection />
-                     </effect>
-                  </FontAwesomeIconView>
-                  <FontAwesomeIconView fx:id="event_btn" fill="#c22d2d" glyphName="CALENDAR_ALT" onMouseClicked="#EventAct" onMouseEntered="#evnEntr" onMouseExited="#evnExit" size="25">
-                     <VBox.margin>
-                        <Insets left="30.0" />
-                     </VBox.margin>
-                     <effect>
-                        <Reflection />
-                     </effect>
-                  </FontAwesomeIconView>
-                  <FontAwesomeIconView fill="#c22d2d" glyphName="USER" onMouseEntered="#actionentred" onMouseExited="#actionExit" size="25">
-                     <VBox.margin>
-                        <Insets left="30.0" />
-                     </VBox.margin>
-                     <effect>
-                        <Reflection />
-                     </effect>
-                  </FontAwesomeIconView>
-                  <FontAwesomeIconView fill="#c22d2d" glyphName="SHARE_SQUARE_ALT" onMouseEntered="#logEntr" onMouseExited="#logExit" size="25">
-                     <effect>
-                        <Reflection />
-                     </effect>
-                     <VBox.margin>
-                        <Insets left="30.0" />
-                     </VBox.margin>
-                  </FontAwesomeIconView>
-               </children>
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="60.0" BorderPane.alignment="CENTER">
                <padding>
                   <Insets top="45.0" />
                </padding>
+               <children>
+                  <FontAwesomeIconView fx:id="btn_highInt" fill="#c22d2d" glyphName="FILM" onMouseClicked="#actionHighls" onMouseEntered="#highlsEntred" onMouseExited="#highlsExit" size="25">
+                     <VBox.margin>
+                        <Insets left="30.0" />
+                     </VBox.margin>
+                     <effect>
+                        <Reflection />
+                     </effect>
+                  </FontAwesomeIconView>
+                  <Label fx:id="lbHL" alignment="CENTER" prefHeight="16.0" prefWidth="84.0" style="-fx-background-color: ffe7e7; -fx-background-radius: 3em;" text="Highlights" visible="false">
+                     <font>
+                        <Font name="Times New Roman Bold" size="13.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="-50.0" />
+                     </VBox.margin>
+                  </Label>
+                  <FontAwesomeIconView fx:id="btn_matchEv" fill="#c22d2d" glyphName="CALENDAR_PLUS_ALT" onMouseClicked="#eventActionInterface" onMouseEntered="#EventEntred" onMouseExited="#EventExit" size="25">
+                     <VBox.margin>
+                        <Insets left="30.0" />
+                     </VBox.margin>
+                     <effect>
+                        <Reflection />
+                     </effect>
+                  </FontAwesomeIconView>
+                  <Label fx:id="lbMatch" alignment="CENTER" prefHeight="16.0" prefWidth="82.0" style="-fx-background-color: ffe7e7; -fx-background-radius: 3em;" text="Match" visible="false">
+                     <font>
+                        <Font name="Times New Roman Bold" size="13.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="-50.0" />
+                     </VBox.margin>
+                  </Label>
+                  <FontAwesomeIconView fx:id="btn_statH" fill="#c22d2d" glyphName="SIGNAL" onMouseClicked="#statActionInterface" onMouseEntered="#statEntred" onMouseExited="#statExit" size="25">
+                     <VBox.margin>
+                        <Insets left="30.0" />
+                     </VBox.margin>
+                     <effect>
+                        <Reflection />
+                     </effect>
+                  </FontAwesomeIconView>
+                  <Label fx:id="lblStats" alignment="CENTER" prefHeight="19.0" prefWidth="88.0" style="-fx-background-color: ffe7e7; -fx-background-radius: 3em;" text="Statistique" visible="false" wrapText="true">
+                     <font>
+                        <Font name="Times New Roman Bold" size="13.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="-50.0" />
+                     </VBox.margin>
+                  </Label>
+                  <FontAwesomeIconView fill="#c22d2d" glyphName="USER" onMouseClicked="#userProfileInt" onMouseEntered="#userEnred" onMouseExited="#userExit" size="25" text="">
+                     <VBox.margin>
+                        <Insets left="30.0" />
+                     </VBox.margin>
+                     <effect>
+                        <Reflection />
+                     </effect>
+                  </FontAwesomeIconView>
+                  <Label fx:id="lblProfile" alignment="CENTER" prefHeight="21.0" prefWidth="84.0" style="-fx-background-color: ffe7e7; -fx-background-radius: 3em;" text="Profile" visible="false">
+                     <font>
+                        <Font name="Times New Roman Bold" size="13.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="-50.0" />
+                     </VBox.margin>
+                  </Label>
+                  <FontAwesomeIconView fx:id="btnlog_out" fill="#c22d2d" glyphName="SIGN_OUT" onMouseClicked="#LogoutInt" onMouseEntered="#logEntred" onMouseExited="#logExit" size="25" text="">
+                     <effect>
+                        <Reflection />
+                     </effect>
+                     <VBox.margin>
+                        <Insets left="30.0" />
+                     </VBox.margin>
+                  </FontAwesomeIconView>
+                  <Label fx:id="lblLogout" alignment="CENTER" prefHeight="23.0" prefWidth="84.0" style="-fx-background-color: ffe7e7; -fx-background-radius: 3em;" text="Logout" visible="false">
+                     <font>
+                        <Font name="Times New Roman Bold" size="13.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="-50.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
             </VBox>
          </center>
       </BorderPane>
-      <Pane layoutX="107.0" layoutY="100.0" prefHeight="652.0" prefWidth="2.7" style="-fx-background-color: #c00909;" />
-      <Pane layoutX="1160.0" layoutY="70.0" prefHeight="30.0" prefWidth="3.0" style="-fx-background-color: #dacece;" />
-      <Label fx:id="lbGroupe" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="240.0" prefHeight="23.0" prefWidth="68.0" style="-fx-background-color: #ffe7e7; -fx-background-radius: 3em; -fx-border-radius: 3em;" text="Groupe" visible="false">
-         <font>
-            <Font name="Times New Roman Bold" size="13.0" />
-         </font>
-      </Label>
-      <Label fx:id="lbForm" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="359.0" prefHeight="23.0" prefWidth="68.0" style="-fx-background-color: #ffe7e7; -fx-background-radius: 3em; -fx-border-radius: 3em;" text="Formation" visible="false">
-         <font>
-            <Font name="Times New Roman Bold" size="13.0" />
-         </font>
-      </Label>
-      <Label fx:id="lbMatch" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="483.0" prefHeight="23.0" prefWidth="68.0" style="-fx-background-color: #ffe7e7; -fx-background-radius: 3em; -fx-border-radius: 3em;" text="Match" visible="false">
-         <font>
-            <Font name="Times New Roman Bold" size="13.0" />
-         </font>
-      </Label>
-      <Label fx:id="lbdecnx" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="690.0" prefHeight="23.0" prefWidth="68.0" style="-fx-background-color: #ffe7e7; -fx-background-radius: 3em; -fx-border-radius: 3em;" text="Logout" visible="false">
-         <font>
-            <Font name="Times New Roman Bold" size="13.0" />
-         </font>
-      </Label>
-      <Label fx:id="lbGroupe1111" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="589.0" prefHeight="23.0" prefWidth="68.0" style="-fx-background-color: #ffe7e7; -fx-background-radius: 3em; -fx-border-radius: 3em;" text="Groupe" visible="false">
-         <font>
-            <Font name="Times New Roman Bold" size="13.0" />
-         </font>
-      </Label>
-      <FontAwesomeIconView fill="WHITE" glyphName="PLAY" layoutX="1043.0" layoutY="71.0" rotate="-90.0" />
    </children>
 </AnchorPane>

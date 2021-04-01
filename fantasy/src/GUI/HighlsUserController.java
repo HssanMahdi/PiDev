@@ -13,6 +13,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -65,7 +67,27 @@ public class HighlsUserController implements Initializable {
     @FXML
     private Label lblA;
     @FXML
-    private Button btn_stotr1;
+    private Button dash_id;
+    @FXML
+    private Button btn_formACT;
+    @FXML
+    private FontAwesomeIconView grp_btn;
+    @FXML
+    private FontAwesomeIconView form_btn;
+    @FXML
+    private FontAwesomeIconView event_btn;
+    @FXML
+    private FontAwesomeIconView btnlog_out;
+    @FXML
+    private Label lbGroupe1;
+    @FXML
+    private Label lbForm1;
+    @FXML
+    private Label lbMatch1;
+    @FXML
+    private Label lbdecnx1;
+    @FXML
+    private Label lbGroupe11111;
 
     /**
      * Initializes the controller class.
@@ -181,7 +203,7 @@ public class HighlsUserController implements Initializable {
         }
     }
 
-    @FXML
+       @FXML
     private void interfaceEquipe(ActionEvent event) {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(HighlsUserController.this.getClass().getResource("EquipeUserInt.fxml"));
@@ -200,14 +222,13 @@ public class HighlsUserController implements Initializable {
         stage.show();
     }
 
-
     @FXML
     private void interfaceStat(ActionEvent event) {
     }
 
     @FXML
     private void interfaceHighls(ActionEvent event) {
-         FXMLLoader loader = new FXMLLoader();
+        FXMLLoader loader = new FXMLLoader();
         loader.setLocation(HighlsUserController.this.getClass().getResource("HighlsUser.fxml"));
         btn_equipe.getScene().getWindow().hide();
         try {
@@ -223,5 +244,167 @@ public class HighlsUserController implements Initializable {
         stage.setScene(new Scene(parent));
         stage.show();
     }
-    
+
+
+    @FXML
+    private void actualiteInterface(ActionEvent event) {
+    }
+
+    @FXML
+    private void InterfaceFormation(ActionEvent event) {
+          FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(HighlsUserController.this.getClass().getResource("AfficherFormation.fxml"));
+        form_btn.getScene().getWindow().hide();
+        try {
+
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
+    }
+
+    @FXML
+    private void storeInterface(ActionEvent event) {
+    }
+
+        @FXML
+    private void grpExist(MouseEvent event) {
+        lbGroupe1.setVisible(false);
+    }
+
+    @FXML
+    private void grpRntred(MouseEvent event) {
+        lbGroupe1.setVisible(true);
+    }
+
+    @FXML
+    private void GroupeInt(MouseEvent event) {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(HighlsUserController.this.getClass().getResource("DisplaylesGroupedeAdherent.fxml"));
+        grp_btn.getScene().getWindow().hide();
+        try {
+
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
+    }
+
+    @FXML
+    private void formExi(MouseEvent event) {
+        lbForm1.setVisible(false);
+    }
+
+    @FXML
+    private void formEnt(MouseEvent event) {
+        lbForm1.setVisible(true);
+    }
+
+    @FXML
+    private void formationInt(MouseEvent event) {
+            FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(HighlsUserController.this.getClass().getResource("AfficherFormation.fxml"));
+        form_btn.getScene().getWindow().hide();
+        try {
+
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
+    }
+
+    @FXML
+    private void evnExit(MouseEvent event) {
+        lbMatch1.setVisible(false);
+    }
+
+    @FXML
+    private void evnEntr(MouseEvent event) {
+        lbMatch1.setVisible(true);
+    }
+
+    @FXML
+    private void EventAct(MouseEvent event) {
+             FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(HighlsUserController.this.getClass().getResource("EventforUser.fxml"));
+        event_btn.getScene().getWindow().hide();
+        try {
+
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
+    }
+
+    @FXML
+    private void actionExit(MouseEvent event) {
+        lbGroupe11111.setVisible(false);
+    }
+
+    @FXML
+    private void actionentred(MouseEvent event) {
+        lbGroupe11111.setVisible(true);
+    }
+
+    @FXML
+    private void logExit(MouseEvent event) {
+        lbdecnx1.setVisible(false);
+    }
+
+    @FXML
+    private void logEntr(MouseEvent event) {
+        lbdecnx1.setVisible(true);
+    }
+
+    @FXML
+    private void lbgroupe1111action(MouseEvent event) {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(HighlsUserController.this.getClass().getResource("GestionUser.fxml"));
+        lbGroupe11111.getScene().getWindow().hide();
+        try {
+
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
+    }
+
+    @FXML
+    private void deconxAction(MouseEvent event) {
+        try {
+            btnlog_out.getScene().getWindow().hide();
+            Parent root = FXMLLoader.load(getClass().getResource("FXMLLogin.fxml"));
+            Stage mainStage = new Stage();
+            Scene scene = new Scene(root);
+            mainStage.setScene(scene);
+            mainStage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(JoueurUserIntController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }

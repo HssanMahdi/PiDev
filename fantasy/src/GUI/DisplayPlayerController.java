@@ -26,6 +26,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -97,7 +99,8 @@ public class DisplayPlayerController implements Initializable {
     private Button sort;
     ServiceEquipe SE = new ServiceEquipe();
     File f;
-    ManagerFootball mn = new ManagerFootball(1, "Ghada", "ghada.hajjaji@esprit.tn", "azz", "MF");
+    FXMLLoginController log= new FXMLLoginController();
+    ManagerFootball mn = log.manager;
     @FXML
     private TextField tfLogo;
     List<Joueur> listJoueur = SJ.getJoueurs();
@@ -135,6 +138,8 @@ public class DisplayPlayerController implements Initializable {
     private Label lblProfile;
     @FXML
     private Label lblLogout;
+    @FXML
+    private FontAwesomeIconView btnlog_out;
 
     /**
      * Initializes the controller class.
@@ -147,7 +152,7 @@ public class DisplayPlayerController implements Initializable {
 
         afficher(listJoueur);
 
-        ObservableList<String> list = FXCollections.observableArrayList("mil", "Att", "Des", "G");
+        ObservableList<String> list = FXCollections.observableArrayList("MIL", "ATT", "DEF", "G");
         positionComoBox.setItems(list);
         ObservableList<String> options = FXCollections.observableArrayList(
                 "Position",
@@ -382,7 +387,7 @@ public class DisplayPlayerController implements Initializable {
                 imgView.setImage(image);
                 imgView.setPreserveRatio(true);
                 String s = f.getName();
-                String ur = "C:\\wamp\\www\\PIProjet\\" + s;
+                String ur = "C:\\wamp64\\www\\PIProjet\\" + s;
                 tfLogo.setText(ur);
             }
         } catch (FileNotFoundException ex) {
@@ -569,6 +574,21 @@ public class DisplayPlayerController implements Initializable {
 
     @FXML
     private void eventActionInterface(MouseEvent event) {
+              FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(DisplayPlayerController.this.getClass().getResource("AddEvent.fxml"));
+        btn_statH.getScene().getWindow().hide();
+        try {
+
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
     }
 
     @FXML
@@ -602,6 +622,21 @@ public class DisplayPlayerController implements Initializable {
 
     @FXML
     private void userProfileInt(MouseEvent event) {
+             FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(DisplayPlayerController.this.getClass().getResource("GestionManagerFootball.fxml"));
+        btn_statH.getScene().getWindow().hide();
+        try {
+
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
     }
 
     @FXML
@@ -616,6 +651,16 @@ public class DisplayPlayerController implements Initializable {
 
     @FXML
     private void LogoutInt(MouseEvent event) {
+              try {
+            btnlog_out.getScene().getWindow().hide();
+            Parent root = FXMLLoader.load(getClass().getResource("FXMLLogin.fxml"));
+            Stage mainStage = new Stage();
+            Scene scene = new Scene(root);
+            mainStage.setScene(scene);
+            mainStage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(JoueurUserIntController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @FXML

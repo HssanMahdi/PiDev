@@ -107,7 +107,7 @@ public class ModifJoueurEquipeController implements Initializable {
                 image = new Image(new FileInputStream(file));
                 imgView.setImage(image);
                 imgView.setPreserveRatio(true);
-                String url = "C:\\wamp\\www\\PIProjet\\" + f.getName();
+                String url = "C:\\wamp64\\www\\PIProjet\\" + f.getName();
                 tfLogo.setText(file);
             }
         } catch (FileNotFoundException ex) {
@@ -137,7 +137,7 @@ public class ModifJoueurEquipeController implements Initializable {
         SJ.updateJoueur(j);
     }}
         private boolean validateFields() {
-        if (positionComoBox.getSelectionModel().isEmpty() | combo.getSelectionModel().isEmpty() | tfNom.getText().isEmpty() | tfPrenom.getText().isEmpty()
+        if ( tfNom.getText().isEmpty() | tfPrenom.getText().isEmpty()
                 | tfLogo.getText().isEmpty() | tfPrix.getText().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("valider les champs");

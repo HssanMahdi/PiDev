@@ -19,16 +19,16 @@
    <children>
       <ImageView fitHeight="114.0" fitWidth="1225.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@image/159405890_151210190203123_6477601702546764981_n.png" />
+            <Image url="@../uploads/159405890_151210190203123_6477601702546764981_n.png" />
          </image>
       </ImageView>
       <Pane layoutX="117.0" layoutY="106.0" prefHeight="675.0" prefWidth="5.0" style="-fx-background-color: #c00909;" />
       <Pane layoutX="121.0" layoutY="104.0" prefHeight="5.0" prefWidth="1104.0" style="-fx-background-color: #dacece;" />
-      <BorderPane layoutX="160.0" layoutY="77.0" prefHeight="27.0" prefWidth="971.0" stylesheets="@../../../../../Downloads/style%20(1).css">
+      <BorderPane layoutX="160.0" layoutY="77.0" prefHeight="27.0" prefWidth="971.0" stylesheets="@../CSS/style.css">
          <center>
-            <HBox prefHeight="100.0" prefWidth="200.0" spacing="50.0" BorderPane.alignment="CENTER">
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="50.0" stylesheets="@../CSS/style.css" BorderPane.alignment="CENTER">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="19.0" prefWidth="132.0" style="-fx-background-color: white;" styleClass="dash" stylesheets="@../CSS/style%20(1).css" text="Dashboard" textFill="#c00909">
+                  <Button mnemonicParsing="false" prefHeight="19.0" prefWidth="132.0" style="-fx-background-color: white;" styleClass="dash" stylesheets="@../CSS/style.css" text="Dashboard" textFill="#c00909">
                      <graphic>
                         <FontAwesomeIconView fill="#c00909" glyphName="TELEVISION" />
                      </graphic>
@@ -36,7 +36,7 @@
                         <Font name="Times New Roman Bold" size="14.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btn_equipe" mnemonicParsing="false" onAction="#interfaceEquipe" prefHeight="26.0" prefWidth="123.0" style="-fx-background-color: white;" styleClass="eq" stylesheets="@../CSS/style%20(1).css" text=" Equipe">
+                  <Button fx:id="btn_equipe" mnemonicParsing="false" onAction="#interfaceEquipe" prefHeight="26.0" prefWidth="123.0" style="-fx-background-color: white;" styleClass="eq" stylesheets="@../CSS/style.css" text=" Equipe">
                      <font>
                         <Font name="Times New Roman Bold" size="14.0" />
                      </font>
@@ -44,7 +44,7 @@
                         <FontAwesomeIconView glyphName="GAMEPAD" />
                      </graphic>
                   </Button>
-                  <Button fx:id="btn_joueur" mnemonicParsing="false" onAction="#interfaceJoueur" prefHeight="26.0" prefWidth="122.0" style="-fx-background-color: white;" styleClass="eq" stylesheets="@../CSS/style%20(1).css" text=" Joueur">
+                  <Button fx:id="btn_joueur" mnemonicParsing="false" onAction="#interfaceJoueur" prefHeight="26.0" prefWidth="122.0" style="-fx-background-color: white;" styleClass="eq" stylesheets="@../CSS/style.css" text=" Joueur">
                      <graphic>
                         <FontAwesomeIconView glyphName="SOCCER_BALL_ALT" />
                      </graphic>
@@ -52,7 +52,7 @@
                         <Font name="Times New Roman" size="14.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btn_stat" mnemonicParsing="false" onAction="#interfaceStat" prefHeight="26.0" prefWidth="120.0" style="-fx-background-color: white;" styleClass="eq" stylesheets="@../CSS/style%20(1).css" text=" Statistique">
+                  <Button fx:id="btn_stat" mnemonicParsing="false" onAction="#interfaceStat" prefHeight="26.0" prefWidth="120.0" style="-fx-background-color: white;" styleClass="eq" stylesheets="@../CSS/style.css" text=" Statistique">
                      <graphic>
                         <FontAwesomeIconView glyphName="LINE_CHART" />
                      </graphic>
@@ -60,7 +60,7 @@
                         <Font name="Times New Roman Bold" size="14.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btn_stotr" mnemonicParsing="false" prefHeight="26.0" prefWidth="111.0" style="-fx-background-color: white;" styleClass="eq" stylesheets="@../CSS/style%20(1).css" text=" Store">
+                  <Button fx:id="btn_stotr" mnemonicParsing="false" prefHeight="26.0" prefWidth="111.0" style="-fx-background-color: white;" styleClass="eq" stylesheets="@../CSS/style.css" text=" Store">
                      <graphic>
                         <FontAwesomeIconView glyphName="CART_PLUS" />
                      </graphic>
@@ -68,7 +68,7 @@
                         <Font name="Times New Roman Bold" size="14.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btn_highls" mnemonicParsing="false" onAction="#interfaceHighls" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: white;" styleClass="eq" stylesheets="@../CSS/style%20(1).css" text=" Highlights">
+                  <Button fx:id="btn_highls" mnemonicParsing="false" onAction="#interfaceHighls" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: white;" styleClass="eq" stylesheets="@../CSS/style.css" text=" Highlights">
                      <font>
                         <Font name="Times New Roman Bold" size="14.0" />
                      </font>
@@ -162,7 +162,7 @@
             </Label>
             <ImageView fitHeight="44.0" fitWidth="53.0" layoutX="309.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@image/line-pie-chart-icon-vector-18256450.png" />
+                  <Image url="@../uploads/line-pie-chart-icon-vector-18256450.png" />
                </image>
             </ImageView>
             <Pane layoutX="746.0" layoutY="260.0" prefHeight="200.0" prefWidth="5.0" />
@@ -175,7 +175,7 @@
       <Pane layoutX="507.0" layoutY="584.0" prefHeight="5.0" prefWidth="606.0" style="-fx-background-color: #e51313;" />
       <ImageView fitHeight="466.0" fitWidth="447.0" layoutX="182.0" layoutY="334.0" opacity="0.3" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@image/usr1.png" />
+            <Image url="@../uploads/usr1.png" />
          </image>
       </ImageView>
       <FontAwesomeIconView fx:id="btnlog_out" fill="#d73030" glyphName="SIGN_OUT" layoutX="48.0" layoutY="714.0" onMouseClicked="#logout" onMouseEntered="#log_outEntred" onMouseExited="#log_outExited" size="25" text="">

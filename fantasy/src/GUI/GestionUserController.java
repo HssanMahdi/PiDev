@@ -11,6 +11,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Base64;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -44,35 +46,44 @@ public class GestionUserController implements Initializable {
     int iduser;
     @FXML
     private CheckBox checkbox;
-    @FXML
     private Label lb4;
-    @FXML
-    private FontAwesomeIconView btnM;
-    @FXML
     private Label lb;
-    @FXML
     private Label lb1;
-    @FXML
     private Label lb2;
 
     @FXML
     private Button btn_equipe;
-    @FXML
-    private Button btn_joueur;
     @FXML
     private Button btn_stat;
     @FXML
     private Button btn_stotr;
     @FXML
     private Button btn_highls;
-    @FXML
     private Label lb3;
-    @FXML
     private Label lb5;
     @FXML
     private FontAwesomeIconView btnlog_out;
-    @FXML
     private Label lb6;
+    @FXML
+    private Button dash_id;
+    @FXML
+    private Button btn_formACT;
+    @FXML
+    private FontAwesomeIconView grp_btn;
+    @FXML
+    private FontAwesomeIconView form_btn;
+    @FXML
+    private FontAwesomeIconView event_btn;
+    @FXML
+    private Label lbGroupe1;
+    @FXML
+    private Label lbForm1;
+    @FXML
+    private Label lbMatch1;
+    @FXML
+    private Label lbdecnx1;
+    @FXML
+    private Label lbGroupe11111;
 
     /**
      * Initializes the controller class.
@@ -124,42 +135,23 @@ public class GestionUserController implements Initializable {
         return Base64.getEncoder().encodeToString(pw.getBytes());
     }
 
-    @FXML
-    private void AdminExisted(MouseEvent event) {
-        lb.setVisible(false);
-    }
-
-    @FXML
-    private void AdminEntred(MouseEvent event) {
-        lb.setVisible(true);
-    }
-
-    @FXML
-    private void ManagerExited(MouseEvent event) {
-        lb1.setVisible(false);
-    }
-
-    @FXML
-    private void ManagerEntred(MouseEvent event) {
-        lb1.setVisible(true);
-    }
-
-    @FXML
-    private void StatExited(MouseEvent event) {
-        lb2.setVisible(false);
-    }
-
-    @FXML
-    private void StatEntred(MouseEvent event) {
-        lb2.setVisible(true);
-    }
-
-    @FXML
+       @FXML
     private void interfaceEquipe(ActionEvent event) {
-    }
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(GestionUserController.this.getClass().getResource("EquipeUserInt.fxml"));
+        btn_equipe.getScene().getWindow().hide();
+        try {
 
-    @FXML
-    private void interfaceJoueur(ActionEvent event) {
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
     }
 
     @FXML
@@ -168,56 +160,184 @@ public class GestionUserController implements Initializable {
 
     @FXML
     private void interfaceHighls(ActionEvent event) {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(GestionUserController.this.getClass().getResource("HighlsUser.fxml"));
+        btn_equipe.getScene().getWindow().hide();
+        try {
+
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
+    }
+
+
+    @FXML
+    private void actualiteInterface(ActionEvent event) {
     }
 
     @FXML
-    private void produitExited(MouseEvent event) {
-         lb3.setVisible(false);
+    private void InterfaceFormation(ActionEvent event) {
+          FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(GestionUserController.this.getClass().getResource("AfficherFormation.fxml"));
+        form_btn.getScene().getWindow().hide();
+        try {
+
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
     }
 
     @FXML
-    private void produitEntred(MouseEvent event) {
-         lb3.setVisible(true);
+    private void storeInterface(ActionEvent event) {
+    }
+
+        @FXML
+    private void grpExist(MouseEvent event) {
+        lbGroupe1.setVisible(false);
     }
 
     @FXML
-    private void commandeExited(MouseEvent event) {
-         lb4.setVisible(false);
+    private void grpRntred(MouseEvent event) {
+        lbGroupe1.setVisible(true);
     }
 
     @FXML
-    private void commandeEntred(MouseEvent event) {
-         lb4.setVisible(true);
+    private void GroupeInt(MouseEvent event) {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(GestionUserController.this.getClass().getResource("DisplaylesGroupedeAdherent.fxml"));
+        grp_btn.getScene().getWindow().hide();
+        try {
+
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
     }
 
     @FXML
-    private void categorieExited(MouseEvent event) {
-         lb5.setVisible(false);
+    private void formExi(MouseEvent event) {
+        lbForm1.setVisible(false);
     }
 
     @FXML
-    private void categorieEntred(MouseEvent event) {
-         lb5.setVisible(true);
+    private void formEnt(MouseEvent event) {
+        lbForm1.setVisible(true);
     }
 
     @FXML
-    private void log_outExited(MouseEvent event) {
-         lb6.setVisible(false);
+    private void formationInt(MouseEvent event) {
+            FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(GestionUserController.this.getClass().getResource("AfficherFormation.fxml"));
+        form_btn.getScene().getWindow().hide();
+        try {
+
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
     }
 
     @FXML
-    private void log_outEntred(MouseEvent event) {
-         lb6.setVisible(true);
+    private void evnExit(MouseEvent event) {
+        lbMatch1.setVisible(false);
     }
 
     @FXML
-    private void logout(MouseEvent event) throws IOException {
-        btnlog_out.getScene().getWindow().hide();
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLLogin.fxml"));
-        Stage mainStage = new Stage();
-        Scene scene = new Scene(root);
-        mainStage.setScene(scene);
-        mainStage.show();
+    private void evnEntr(MouseEvent event) {
+        lbMatch1.setVisible(true);
+    }
+
+    @FXML
+    private void EventAct(MouseEvent event) {
+             FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(GestionUserController.this.getClass().getResource("EventforUser.fxml"));
+        event_btn.getScene().getWindow().hide();
+        try {
+
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
+    }
+
+    @FXML
+    private void actionExit(MouseEvent event) {
+        lbGroupe11111.setVisible(false);
+    }
+
+    @FXML
+    private void actionentred(MouseEvent event) {
+        lbGroupe11111.setVisible(true);
+    }
+
+    @FXML
+    private void logExit(MouseEvent event) {
+        lbdecnx1.setVisible(false);
+    }
+
+    @FXML
+    private void logEntr(MouseEvent event) {
+        lbdecnx1.setVisible(true);
+    }
+
+    @FXML
+    private void lbgroupe1111action(MouseEvent event) {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(GestionUserController.this.getClass().getResource("GestionUser.fxml"));
+        lbGroupe11111.getScene().getWindow().hide();
+        try {
+
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
+    }
+
+    @FXML
+    private void deconxAction(MouseEvent event) {
+        try {
+            btnlog_out.getScene().getWindow().hide();
+            Parent root = FXMLLoader.load(getClass().getResource("FXMLLogin.fxml"));
+            Stage mainStage = new Stage();
+            Scene scene = new Scene(root);
+            mainStage.setScene(scene);
+            mainStage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(JoueurUserIntController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 }

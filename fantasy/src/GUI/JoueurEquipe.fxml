@@ -57,65 +57,6 @@
             <Font name="Times New Roman Bold" size="13.0" />
          </font>
       </Label>
-      <BorderPane layoutX="116.0" layoutY="72.0" prefHeight="27.0" prefWidth="971.0">
-         <center>
-            <HBox prefHeight="100.0" prefWidth="200.0" spacing="50.0" BorderPane.alignment="CENTER">
-               <children>
-                  <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="138.0" style="-fx-background-color: white;" styleClass="dash" stylesheets="@../CSS/style.css" text="Dashboard" textFill="#c00909">
-                     <graphic>
-                        <FontAwesomeIconView fill="#c00909" glyphName="TELEVISION" />
-                     </graphic>
-                     <font>
-                        <Font name="Times New Roman Bold" size="14.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="btn_equipe" mnemonicParsing="false" onAction="#interfaceEquipe" prefHeight="26.0" prefWidth="123.0" style="-fx-background-color: white;" styleClass="eq" stylesheets="@../CSS/style.css" text=" Equipe">
-                     <font>
-                        <Font name="Times New Roman Bold" size="14.0" />
-                     </font>
-                     <graphic>
-                        <FontAwesomeIconView glyphName="GAMEPAD" />
-                     </graphic>
-                  </Button>
-                  <Button fx:id="btn_joueur" mnemonicParsing="false" onAction="#interfaceJoueur" prefHeight="26.0" prefWidth="122.0" style="-fx-background-color: white;" styleClass="eq" stylesheets="@../CSS/style.css" text=" Joueur">
-                     <graphic>
-                        <FontAwesomeIconView glyphName="SOCCER_BALL_ALT" />
-                     </graphic>
-                     <font>
-                        <Font name="Times New Roman" size="14.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="btn_stat" mnemonicParsing="false" onAction="#interfaceStat" prefHeight="26.0" prefWidth="120.0" style="-fx-background-color: white;" styleClass="eq" stylesheets="@../CSS/style.css" text=" Statistique">
-                     <graphic>
-                        <FontAwesomeIconView glyphName="LINE_CHART" />
-                     </graphic>
-                     <font>
-                        <Font name="Times New Roman Bold" size="14.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="btn_stotr" mnemonicParsing="false" prefHeight="26.0" prefWidth="111.0" style="-fx-background-color: white;" styleClass="eq" stylesheets="@../CSS/style.css" text=" Store">
-                     <graphic>
-                        <FontAwesomeIconView glyphName="CART_PLUS" />
-                     </graphic>
-                     <font>
-                        <Font name="Times New Roman Bold" size="14.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="btn_highls" mnemonicParsing="false" onAction="#interfaceHighls" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: white;" styleClass="eq" stylesheets="@../CSS/style.css" text=" Highlights">
-                     <font>
-                        <Font name="Times New Roman Bold" size="14.0" />
-                     </font>
-                     <graphic>
-                        <FontAwesomeIconView glyphName="FILM" />
-                     </graphic>
-                  </Button>
-               </children>
-               <padding>
-                  <Insets left="30.0" />
-               </padding>
-            </HBox>
-         </center>
-      </BorderPane>
       <ScrollPane hbarPolicy="NEVER" layoutX="499.0" layoutY="197.0" prefHeight="542.0" prefWidth="666.0" style="-fx-border-color: #d43e3e;" stylesheets="@../CSS/style.css">
          <content>
             <VBox fx:id="JRContainer" prefWidth="662.0" spacing="10.0">
@@ -196,9 +137,68 @@
       <FontAwesomeIconView glyphName="SOCCER_BALL_ALT" layoutX="137.0" layoutY="573.0" size="17" />
       <Pane layoutX="104.0" layoutY="100.0" prefHeight="712.3" prefWidth="2.7" style="-fx-background-color: #c00909;" />
       <Pane layoutX="1160.0" layoutY="70.0" prefHeight="34.0" prefWidth="3.0" style="-fx-background-color: #dacece;" />
-      <BorderPane layoutX="15.0" layoutY="124.0" prefHeight="604.0" prefWidth="79.0">
+      <BorderPane layoutX="125.0" layoutY="72.0" prefHeight="27.0" prefWidth="971.0">
          <center>
-            <VBox prefHeight="200.0" prefWidth="100.0" spacing="57.0" BorderPane.alignment="CENTER">
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="50.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="138.0" style="-fx-background-color: white;" styleClass="dash" stylesheets="@../CSS/style.css" text="Dashboard" textFill="#c00909">
+                     <graphic>
+                        <FontAwesomeIconView fill="#c00909" glyphName="TELEVISION" />
+                     </graphic>
+                     <font>
+                        <Font name="Times New Roman Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn_equipe" mnemonicParsing="false" onAction="#interfaceEquipe" prefHeight="26.0" prefWidth="123.0" style="-fx-background-color: white;" styleClass="eq" stylesheets="@../CSS/style.css" text=" Equipe">
+                     <font>
+                        <Font name="Times New Roman Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="GAMEPAD" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btn_joueur" mnemonicParsing="false" onAction="#interfaceJoueur" prefHeight="26.0" prefWidth="122.0" style="-fx-background-color: white;" styleClass="eq" stylesheets="@../CSS/style.css" text=" Joueur">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="SOCCER_BALL_ALT" />
+                     </graphic>
+                     <font>
+                        <Font name="Times New Roman" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn_stat" mnemonicParsing="false" onAction="#interfaceStat" prefHeight="26.0" prefWidth="120.0" style="-fx-background-color: white;" styleClass="eq" stylesheets="@../CSS/style.css" text=" Statistique">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="LINE_CHART" />
+                     </graphic>
+                     <font>
+                        <Font name="Times New Roman Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn_stotr" mnemonicParsing="false" prefHeight="26.0" prefWidth="111.0" style="-fx-background-color: white;" styleClass="eq" stylesheets="@../CSS/style.css" text=" Store">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="CART_PLUS" />
+                     </graphic>
+                     <font>
+                        <Font name="Times New Roman Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn_highls" mnemonicParsing="false" onAction="#interfaceHighls" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: white;" styleClass="eq" stylesheets="@../CSS/style.css" text=" Highlights">
+                     <font>
+                        <Font name="Times New Roman Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="FILM" />
+                     </graphic>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+            </HBox>
+         </center>
+      </BorderPane>
+      <BorderPane layoutX="17.0" layoutY="133.0" prefHeight="604.0" prefWidth="84.0">
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="60.0" BorderPane.alignment="CENTER">
                <padding>
                   <Insets top="45.0" />
                </padding>
@@ -251,7 +251,7 @@
                         <Insets top="-50.0" />
                      </VBox.margin>
                   </Label>
-                  <FontAwesomeIconView fill="#c22d2d" glyphName="USER" onMouseClicked="#userProfileInt" onMouseEntered="#userEnred" onMouseExited="#userExit" size="25">
+                  <FontAwesomeIconView fill="#c22d2d" glyphName="USER" onMouseClicked="#userProfileInt" onMouseEntered="#userEnred" onMouseExited="#userExit" size="25" text="">
                      <VBox.margin>
                         <Insets left="30.0" />
                      </VBox.margin>
@@ -267,7 +267,7 @@
                         <Insets top="-50.0" />
                      </VBox.margin>
                   </Label>
-                  <FontAwesomeIconView fill="#c22d2d" glyphName="SIGN_OUT" onMouseClicked="#LogoutInt" onMouseEntered="#logEntred" onMouseExited="#logExit" size="25">
+                  <FontAwesomeIconView fx:id="btnlog_out" fill="#c22d2d" glyphName="SIGN_OUT" onMouseClicked="#LogoutInt" onMouseEntered="#logEntred" onMouseExited="#logExit" size="25" text="">
                      <effect>
                         <Reflection />
                      </effect>

@@ -108,13 +108,40 @@ public class StatistiqueNbrUserController implements Initializable {
     }
 
 
-
-    @FXML
+ @FXML
     private void interfaceEquipe(ActionEvent event) {
-    }
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(StatistiqueNbrUserController.this.getClass().getResource("EquipeUserInt.fxml"));
+        btn_equipe.getScene().getWindow().hide();
+        try {
 
-    @FXML
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
+    }
+        @FXML
     private void interfaceJoueur(ActionEvent event) {
+              FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(StatistiqueNbrUserController.this.getClass().getResource("AfficherFormation.fxml"));
+        btn_joueur.getScene().getWindow().hide();
+        try {
+
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
     }
 
     @FXML
@@ -123,7 +150,23 @@ public class StatistiqueNbrUserController implements Initializable {
 
     @FXML
     private void interfaceHighls(ActionEvent event) {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(StatistiqueNbrUserController.this.getClass().getResource("HighlsUser.fxml"));
+        btn_equipe.getScene().getWindow().hide();
+        try {
+
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
     }
+
 
     @FXML
     private void AdminExisted(MouseEvent event) {

@@ -19,7 +19,7 @@ public class Fantasy extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("EventforUser.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Adherent.fxml"));
         
         Scene scene = new Scene(root);
         

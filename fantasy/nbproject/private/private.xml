@@ -3,12 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Mahdi/Documents/NetBeansProjects/PiDev/fantasy/src/GUI/AfficherlesAdherentdeGroupeController.java</file>
-            <file>file:/C:/Users/Mahdi/Documents/NetBeansProjects/PiDev/fantasy/src/GUI/FXMLLoginController.java</file>
-            <file>file:/C:/Users/Mahdi/Documents/NetBeansProjects/PiDev/fantasy/src/services/ServiceEquipe.java</file>
+            <file>file:/C:/Users/Mahdi/Documents/NetBeansProjects/PiDev/fantasy/src/GUI/DisplaylesGroupedeAdherent.java</file>
+            <file>file:/C:/Users/Mahdi/Documents/NetBeansProjects/PiDev/fantasy/src/GUI/VideoHighlsController.java</file>
             <file>file:/C:/Users/Mahdi/Documents/NetBeansProjects/PiDev/fantasy/src/GUI/Fantasy.java</file>
+            <file>file:/C:/Users/Mahdi/Documents/NetBeansProjects/PiDev/fantasy/src/GUI/GestionManagerFootball.fxml</file>
+            <file>file:/C:/Users/Mahdi/Documents/NetBeansProjects/PiDev/fantasy/src/GUI/HighlsUserController.java</file>
             <file>file:/C:/Users/Mahdi/Documents/NetBeansProjects/PiDev/fantasy/src/GUI/AfficherFormationController.java</file>
-            <file>file:/C:/Users/Mahdi/Documents/NetBeansProjects/PiDev/fantasy/src/GUI/GestionUserController.java</file>
         </group>
     </open-files>
 </project-private>

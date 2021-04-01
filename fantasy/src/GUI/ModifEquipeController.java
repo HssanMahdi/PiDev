@@ -73,7 +73,7 @@ public class ModifEquipeController implements Initializable {
                 image = new Image(new FileInputStream(file));
                 imgView.setImage(image);
                 imgView.setPreserveRatio(true);
-                String url = "C:\\wamp\\www\\PIProjet\\" + f.getName();
+                String url = "C:\\wamp64\\www\\PIProjet\\" + f.getName();
                 tfLogo.setText(file);
             }
         } catch (FileNotFoundException ex) {

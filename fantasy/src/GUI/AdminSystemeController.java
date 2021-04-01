@@ -13,11 +13,11 @@ import entites.AdminSysteme;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -100,9 +100,7 @@ public class AdminSystemeController implements Initializable {
     private FontAwesomeIconView btnM;
     @FXML
     private Label lb3;
-    @FXML
     private Label lb4;
-    @FXML
     private Label lb5;
     @FXML
     private FontAwesomeIconView btnlog_out;
@@ -334,10 +332,38 @@ public class AdminSystemeController implements Initializable {
 
     @FXML
     private void interfaceEquipe(ActionEvent event) {
-    }
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(AdminSystemeController.this.getClass().getResource("EquipeUserInt.fxml"));
+        btn_equipe.getScene().getWindow().hide();
+        try {
 
-    @FXML
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
+    }
+        @FXML
     private void interfaceJoueur(ActionEvent event) {
+              FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(AdminSystemeController.this.getClass().getResource("AfficherFormation.fxml"));
+        btn_joueur.getScene().getWindow().hide();
+        try {
+
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
     }
 
     @FXML
@@ -346,6 +372,21 @@ public class AdminSystemeController implements Initializable {
 
     @FXML
     private void interfaceHighls(ActionEvent event) {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(AdminSystemeController.this.getClass().getResource("HighlsUser.fxml"));
+        btn_equipe.getScene().getWindow().hide();
+        try {
+
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
     }
 
     @FXML
@@ -384,22 +425,18 @@ public class AdminSystemeController implements Initializable {
         lb3.setVisible(true);
     }
 
-    @FXML
     private void commandeExited(MouseEvent event) {
         lb4.setVisible(false);
     }
 
-    @FXML
     private void commandeEntred(MouseEvent event) {
         lb4.setVisible(true);
     }
 
-    @FXML
     private void categorieExited(MouseEvent event) {
         lb5.setVisible(false);
     }
 
-    @FXML
     private void categorieEntred(MouseEvent event) {
         lb5.setVisible(true);
     }
@@ -415,13 +452,17 @@ public class AdminSystemeController implements Initializable {
     }
 
     @FXML
-    private void logout(MouseEvent event) throws IOException {
-         btnlog_out.getScene().getWindow().hide();
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLLogin.fxml"));
-        Stage mainStage = new Stage();
-        Scene scene = new Scene(root);
-        mainStage.setScene(scene);
-        mainStage.show();
+    private void logout(MouseEvent event) {
+        try {
+            btnlog_out.getScene().getWindow().hide();
+            Parent root = FXMLLoader.load(getClass().getResource("FXMLLogin.fxml"));
+            Stage mainStage = new Stage();
+            Scene scene = new Scene(root);
+            mainStage.setScene(scene);
+            mainStage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(AdminSystemeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @FXML
@@ -429,5 +470,7 @@ public class AdminSystemeController implements Initializable {
         ExportPdf exp = new ExportPdf();
         exp.pdfsG();
     }
+
+
 
 }

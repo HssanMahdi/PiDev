@@ -7,6 +7,7 @@ package GUI;
 
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
+import entites.Joueur;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -34,6 +35,12 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import entites.MatchEvent;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.input.KeyEvent;
 import services.ServiceMatchEvent;
 
 /**
@@ -52,8 +59,6 @@ public class EventforUserController implements Initializable {
     private VBox Container;
     @FXML
     private Button btn_equipe;
-    @FXML
-    private Button btn_joueur;
     @FXML
     private Button btn_stat;
     @FXML
@@ -76,6 +81,22 @@ public class EventforUserController implements Initializable {
     private Label lbdecnx;
     @FXML
     private Label lbGroupe1111;
+    @FXML
+    private Button dash_id;
+    @FXML
+    private Button btn_formACT;
+    @FXML
+    private FontAwesomeIconView btnlog_out;
+    @FXML
+    private Label lbGroupe1;
+    @FXML
+    private Label lbForm1;
+    @FXML
+    private Label lbMatch1;
+    @FXML
+    private Label lbdecnx1;
+    @FXML
+    private Label lbGroupe11111;
     
     
     
@@ -202,7 +223,7 @@ public void afficher(List<MatchEvent> lsMatch) {
     }
 
 
-    @FXML
+       @FXML
     private void interfaceEquipe(ActionEvent event) {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(EventforUserController.this.getClass().getResource("EquipeUserInt.fxml"));
@@ -244,7 +265,34 @@ public void afficher(List<MatchEvent> lsMatch) {
         stage.show();
     }
 
+
     @FXML
+    private void actualiteInterface(ActionEvent event) {
+    }
+
+    @FXML
+    private void InterfaceFormation(ActionEvent event) {
+          FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(EventforUserController.this.getClass().getResource("AfficherFormation.fxml"));
+        form_btn.getScene().getWindow().hide();
+        try {
+
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
+    }
+
+    @FXML
+    private void storeInterface(ActionEvent event) {
+    }
+
+        @FXML
     private void grpExist(MouseEvent event) {
         lbGroupe.setVisible(false);
     }
@@ -367,7 +415,17 @@ public void afficher(List<MatchEvent> lsMatch) {
     }
 
     @FXML
-    private void interfaceJoueur(ActionEvent event) {
+    private void deconxAction(MouseEvent event) {
+        try {
+            btnlog_out.getScene().getWindow().hide();
+            Parent root = FXMLLoader.load(getClass().getResource("FXMLLogin.fxml"));
+            Stage mainStage = new Stage();
+            Scene scene = new Scene(root);
+            mainStage.setScene(scene);
+            mainStage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(JoueurUserIntController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 }

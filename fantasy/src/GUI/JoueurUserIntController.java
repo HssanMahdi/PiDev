@@ -9,6 +9,7 @@ import services.ServiceJoueur;
 import services.ServiceRating;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
+import entites.Adherent;
 import entites.Joueur;
 import entites.ManagerFootball;
 import entites.RatingJoueur;
@@ -19,6 +20,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -54,8 +57,9 @@ import org.controlsfx.control.Rating;
  * @author PC
  */
 public class JoueurUserIntController implements Initializable {
-
-    @FXML
+    
+    FXMLLoginController log= new FXMLLoginController();
+    Adherent us=log.user;
     private Button backbtn;
     @FXML
     private ScrollPane scrol;
@@ -85,11 +89,31 @@ public class JoueurUserIntController implements Initializable {
     @FXML
     private Button btn_stat;
     @FXML
-    private Button btn_stotr1;
-    @FXML
     private Button btn_stotr;
     @FXML
     private Button btn_highls;
+    @FXML
+    private Button dash_id;
+    @FXML
+    private Button btn_formACT;
+    @FXML
+    private FontAwesomeIconView grp_btn;
+    @FXML
+    private FontAwesomeIconView form_btn;
+    @FXML
+    private FontAwesomeIconView event_btn;
+    @FXML
+    private Label lbGroupe;
+    @FXML
+    private Label lbForm;
+    @FXML
+    private Label lbMatch;
+    @FXML
+    private Label lbdecnx;
+    @FXML
+    private Label lbGroupe1111;
+    @FXML
+    private FontAwesomeIconView btnlog_out;
 
     /**
      * Initializes the controller class.
@@ -235,7 +259,7 @@ public class JoueurUserIntController implements Initializable {
                     + "-fx-fill:black;"
             );
             avis.setOnMouseClicked((MouseEvent event) -> {
-                ManagerFootball us = new ManagerFootball(2, "Mahdi", "ghadahajjaji0@gmail.com", "123", "MF");
+                
                 Joueur nv = new Joueur(jr.getIdJoueur(), jr.getNomJoueur(), jr.getPrenomJoueur(), jr.getPosition(), jr.getScoreJoueur(), jr.getLogoJoueur(), jr.getPrixJoueur(), jr.getIdG());
                 FXMLLoader loader = new FXMLLoader();
                 loader.setLocation(JoueurUserIntController.this.getClass().getResource("RatingJR.fxml"));
@@ -278,7 +302,6 @@ public class JoueurUserIntController implements Initializable {
         }
     }
 
-    @FXML
     private void back(ActionEvent event) {
 
         FXMLLoader loader = new FXMLLoader();
@@ -332,12 +355,10 @@ public class JoueurUserIntController implements Initializable {
         loadData();
     }
 
-    @FXML
     private void backExit(MouseEvent event) {
         lb1.setVisible(false);
     }
 
-    @FXML
     private void backEntred(MouseEvent event) {
         lb1.setVisible(true);
     }
@@ -402,5 +423,170 @@ public class JoueurUserIntController implements Initializable {
         ObservableList<Joueur> obs = FXCollections.observableArrayList(a);
         afficher(obs);
     }
+
+    @FXML
+    private void actualiteInterface(ActionEvent event) {
+    }
+
+    @FXML
+    private void InterfaceFormation(ActionEvent event) {
+          FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(JoueurUserIntController.this.getClass().getResource("AfficherFormation.fxml"));
+        form_btn.getScene().getWindow().hide();
+        try {
+
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
+    }
+
+    @FXML
+    private void storeInterface(ActionEvent event) {
+    }
+
+        @FXML
+    private void grpExist(MouseEvent event) {
+        lbGroupe.setVisible(false);
+    }
+
+    @FXML
+    private void grpRntred(MouseEvent event) {
+        lbGroupe.setVisible(true);
+    }
+
+    @FXML
+    private void GroupeInt(MouseEvent event) {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(JoueurUserIntController.this.getClass().getResource("DisplaylesGroupedeAdherent.fxml"));
+        grp_btn.getScene().getWindow().hide();
+        try {
+
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
+    }
+
+    @FXML
+    private void formExi(MouseEvent event) {
+        lbForm.setVisible(false);
+    }
+
+    @FXML
+    private void formEnt(MouseEvent event) {
+        lbForm.setVisible(true);
+    }
+
+    @FXML
+    private void formationInt(MouseEvent event) {
+            FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(JoueurUserIntController.this.getClass().getResource("AfficherFormation.fxml"));
+        form_btn.getScene().getWindow().hide();
+        try {
+
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
+    }
+
+    @FXML
+    private void evnExit(MouseEvent event) {
+        lbMatch.setVisible(false);
+    }
+
+    @FXML
+    private void evnEntr(MouseEvent event) {
+        lbMatch.setVisible(true);
+    }
+
+    @FXML
+    private void EventAct(MouseEvent event) {
+             FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(JoueurUserIntController.this.getClass().getResource("EventforUser.fxml"));
+        event_btn.getScene().getWindow().hide();
+        try {
+
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
+    }
+
+    @FXML
+    private void actionExit(MouseEvent event) {
+        lbGroupe1111.setVisible(false);
+    }
+
+    @FXML
+    private void actionentred(MouseEvent event) {
+        lbGroupe1111.setVisible(true);
+    }
+
+    @FXML
+    private void logExit(MouseEvent event) {
+        lbdecnx.setVisible(false);
+    }
+
+    @FXML
+    private void logEntr(MouseEvent event) {
+        lbdecnx.setVisible(true);
+    }
+
+    @FXML
+    private void lbgroupe1111action(MouseEvent event) {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(JoueurUserIntController.this.getClass().getResource("GestionUser.fxml"));
+        lbGroupe1111.getScene().getWindow().hide();
+        try {
+
+            loader.load();
+
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+        Parent parent = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(parent));
+        stage.show();
+    }
+
+    @FXML
+    private void deconxAction(MouseEvent event) {
+        try {
+            btnlog_out.getScene().getWindow().hide();
+            Parent root = FXMLLoader.load(getClass().getResource("FXMLLogin.fxml"));
+            Stage mainStage = new Stage();
+            Scene scene = new Scene(root);
+            mainStage.setScene(scene);
+            mainStage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(JoueurUserIntController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+
+    
 
 }

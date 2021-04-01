@@ -17,7 +17,7 @@
          <children>
             <ImageView fitHeight="444.0" fitWidth="489.0" layoutX="142.0" layoutY="100.0" opacity="0.38" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@image/admin.png" />
+                  <Image url="@../uploads/admin.png" />
                </image>
             </ImageView>
             <Label fx:id="label" alignment="BOTTOM_CENTER" layoutX="89.0" layoutY="24.0" prefHeight="36.0" prefWidth="359.0" text="Modifier Manager Football" textFill="#e51313">

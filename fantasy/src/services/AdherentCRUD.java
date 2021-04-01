@@ -148,5 +148,26 @@ public class AdherentCRUD implements IAdherent {
         return u;
     }
 
-   
+  
+    public List<Adherent> aff() {
+        List<Adherent> adherentList = new ArrayList<>();
+        try {
+            String requete = "SELECT * FROM user WHERE type_user='ad' ";
+            Statement st = MyConnection.getInstance().getCnx()
+                    .createStatement();
+            ResultSet rs = st.executeQuery(requete);
+            while (rs.next()) {
+                Adherent as = new Adherent();
+                as.setIduser(rs.getInt("id_user"));
+                as.setNom_user(rs.getString("nom_user"));
+                as.setEmail(rs.getString("email"));
+                as.setPassword(rs.getString("password"));
+                as.setType_user(rs.getString("type_user"));
+                adherentList.add(as);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return adherentList;
+    } 
 }

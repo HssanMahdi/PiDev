@@ -5,12 +5,12 @@
  */
 package GUI;
 
-
 import entites.Adherent;
 import java.io.IOException;
 import java.net.URL;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -27,6 +27,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import services.AdherentCRUD;
+import services.FormationCRUD;
 import tools.Mail;
 
 /**
@@ -48,51 +49,49 @@ public class AdherentController implements Initializable {
     private Button btnaj;
 
     /**
-     * Initializes the controller class.
+//     * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-
-   
+    }
 
     @FXML
     private void AjouterAdherent(ActionEvent event) {
-     AdherentCRUD ad = new AdherentCRUD();
+        AdherentCRUD ad = new AdherentCRUD();
         Adherent a = new Adherent();
-        
-    if(validerChamps()){
-        
-        
-             String mdp =encrypt(tfMotdepasse.getText()) ;
-             a.setNom_user(tfNom.getText());
-             a.setEmail(tfEmail.getText());
-             a.setPassword(mdp);
-             ad.ajouterAdherent(a);
-             
-             
+
+        if (validerChamps()) {
+
+            String mdp = encrypt(tfMotdepasse.getText());
+            a.setNom_user(tfNom.getText());
+            a.setEmail(tfEmail.getText());
+            a.setPassword(mdp);
+            ad.ajouterAdherent(a);
+
 //         Password md = new Password();
 //          String mdpCrypte1 = Password.hashPassword(tfMotdepasse.getText());
+            Mail mail = new Mail();
+            List<Adherent> ls=ad.aff();
+            System.out.println(ls.get(ls.size()-1).getId_user());
+            FormationCRUD fcd = new FormationCRUD();
+            a.setIduser(ls.get(ls.size()-1).getId_user());
+            fcd.creeFormation(a);
+            mail.envoyer1(tfEmail.getText(), tfNom.getText(), tfMotdepasse.getText());
+            try {
+                btnaj.getScene().getWindow().hide();
+                Parent root = FXMLLoader.load(getClass().getResource("GestionUser.fxml"));
+                Scene scene = new Scene(root);
+                Stage mainStage = new Stage();
+                mainStage.setScene(scene);
+                mainStage.show();
+            } catch (IOException ex) {
+                Logger.getLogger(AdherentController.class.getName()).log(Level.SEVERE, null, ex);
+            }
 
+        }
+    }
 
-        Mail mail = new Mail();
-        mail.envoyer1(tfEmail.getText(),tfNom.getText() ,tfMotdepasse.getText());
-         try {
-        btnaj.getScene().getWindow().hide();
-        Parent root = FXMLLoader.load(getClass().getResource("GestionUser.fxml"));
-        Scene scene = new Scene(root);
-        Stage mainStage= new Stage();
-        mainStage.setScene(scene);
-        mainStage.show();
-         } catch (IOException ex) {
-             Logger.getLogger(AdherentController.class.getName()).log(Level.SEVERE, null, ex);
-         }
-        
-        
-
-    }}
-    
     private boolean validerChamps() {
         if (tfNom.getText().isEmpty() | tfEmail.getText().isEmpty() | tfMotdepasse.getText().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -106,8 +105,8 @@ public class AdherentController implements Initializable {
         }
         return true;
     }
-    
-     @FXML
+
+    @FXML
     private void precedent(ActionEvent event) throws IOException {
         btnBack.getScene().getWindow().hide();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLLogin.fxml"));
@@ -116,13 +115,15 @@ public class AdherentController implements Initializable {
         stage.setScene(new Scene(root));
         stage.show();
     }
-     public String encrypt(String pw){
-     
-     return Base64.getEncoder().encodeToString(pw.getBytes()) ;
+
+    public String encrypt(String pw) {
+
+        return Base64.getEncoder().encodeToString(pw.getBytes());
     }
-     public String decrypt(String pw){
-     
-     return new String (Base64.getMimeDecoder().decode(pw)) ;
+
+    public String decrypt(String pw) {
+
+        return new String(Base64.getMimeDecoder().decode(pw));
     }
-    
+
 }

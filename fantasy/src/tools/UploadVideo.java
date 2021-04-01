@@ -32,7 +32,7 @@ public class UploadVideo {
             try {
                 String name = f.getName();
 
-                File Copyfile = new File("C:\\wamp\\www\\PIProjet\\" + name);
+                File Copyfile = new File("C:\\wamp64\\www\\PIProjet\\" + name);
 
                 inStream = new FileInputStream(f);
                 outStream = new FileOutputStream(Copyfile);

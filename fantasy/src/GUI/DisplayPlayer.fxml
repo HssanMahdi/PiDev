@@ -123,7 +123,24 @@
             <FontAwesomeIconView fill="#3c7947" glyphName="FILE_EXCEL_ALT" size="18" />
          </graphic>
       </Button>
-      <BorderPane layoutX="124.0" layoutY="71.0" prefHeight="27.0" prefWidth="971.0">
+      <Pane layoutX="1168.0" layoutY="70.0" prefHeight="30.0" prefWidth="3.0" style="-fx-background-color: #dacece;" />
+      <Label fx:id="lb" alignment="CENTER" contentDisplay="CENTER" layoutX="1109.0" layoutY="72.0" prefHeight="23.0" prefWidth="68.0" style="-fx-background-color: #ffe7e7; -fx-background-radius: 3em; -fx-border-radius: 3em;" text="Actualiser" visible="false">
+         <font>
+            <Font name="Times New Roman Bold" size="13.0" />
+         </font>
+      </Label>
+      <Pane layoutX="105.8" layoutY="99.0" prefHeight="650.0" prefWidth="2.7" style="-fx-background-color: #c00909;" />
+      <Label fx:id="lbExcel" alignment="CENTER" contentDisplay="CENTER" layoutX="1012.0" layoutY="707.0" prefHeight="23.0" prefWidth="90.0" style="-fx-background-color: #ffe7e7; -fx-background-radius: 3em; -fx-border-radius: 3em;" text="Export Excel" visible="false">
+         <font>
+            <Font name="Times New Roman Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbPDF" alignment="CENTER" contentDisplay="CENTER" layoutX="1012.0" layoutY="707.0" prefHeight="23.0" prefWidth="90.0" style="-fx-background-color: #ffe7e7; -fx-background-radius: 3em; -fx-border-radius: 3em;" text="Export PDF" visible="false">
+         <font>
+            <Font name="Times New Roman Bold" size="13.0" />
+         </font>
+      </Label>
+      <BorderPane layoutX="130.0" layoutY="72.0" prefHeight="27.0" prefWidth="971.0">
          <center>
             <HBox prefHeight="100.0" prefWidth="200.0" spacing="50.0" BorderPane.alignment="CENTER">
                <children>
@@ -182,24 +199,7 @@
             </HBox>
          </center>
       </BorderPane>
-      <Pane layoutX="1168.0" layoutY="70.0" prefHeight="30.0" prefWidth="3.0" style="-fx-background-color: #dacece;" />
-      <Label fx:id="lb" alignment="CENTER" contentDisplay="CENTER" layoutX="1109.0" layoutY="72.0" prefHeight="23.0" prefWidth="68.0" style="-fx-background-color: #ffe7e7; -fx-background-radius: 3em; -fx-border-radius: 3em;" text="Actualiser" visible="false">
-         <font>
-            <Font name="Times New Roman Bold" size="13.0" />
-         </font>
-      </Label>
-      <Pane layoutX="105.8" layoutY="99.0" prefHeight="650.0" prefWidth="2.7" style="-fx-background-color: #c00909;" />
-      <Label fx:id="lbExcel" alignment="CENTER" contentDisplay="CENTER" layoutX="1012.0" layoutY="707.0" prefHeight="23.0" prefWidth="90.0" style="-fx-background-color: #ffe7e7; -fx-background-radius: 3em; -fx-border-radius: 3em;" text="Export Excel" visible="false">
-         <font>
-            <Font name="Times New Roman Bold" size="13.0" />
-         </font>
-      </Label>
-      <Label fx:id="lbPDF" alignment="CENTER" contentDisplay="CENTER" layoutX="1012.0" layoutY="707.0" prefHeight="23.0" prefWidth="90.0" style="-fx-background-color: #ffe7e7; -fx-background-radius: 3em; -fx-border-radius: 3em;" text="Export PDF" visible="false">
-         <font>
-            <Font name="Times New Roman Bold" size="13.0" />
-         </font>
-      </Label>
-      <BorderPane layoutX="14.0" layoutY="130.0" prefHeight="604.0" prefWidth="84.0">
+      <BorderPane layoutX="14.0" layoutY="129.0" prefHeight="604.0" prefWidth="84.0">
          <center>
             <VBox prefHeight="200.0" prefWidth="100.0" spacing="60.0" BorderPane.alignment="CENTER">
                <padding>
@@ -254,7 +254,7 @@
                         <Insets top="-50.0" />
                      </VBox.margin>
                   </Label>
-                  <FontAwesomeIconView fill="#c22d2d" glyphName="USER" onMouseClicked="#userProfileInt" onMouseEntered="#userEnred" onMouseExited="#userExit" size="25">
+                  <FontAwesomeIconView fill="#c22d2d" glyphName="USER" onMouseClicked="#userProfileInt" onMouseEntered="#userEnred" onMouseExited="#userExit" size="25" text="">
                      <VBox.margin>
                         <Insets left="30.0" />
                      </VBox.margin>
@@ -270,7 +270,7 @@
                         <Insets top="-50.0" />
                      </VBox.margin>
                   </Label>
-                  <FontAwesomeIconView fill="#c22d2d" glyphName="SIGN_OUT" onMouseClicked="#LogoutInt" onMouseEntered="#logEntred" onMouseExited="#logExit" size="25">
+                  <FontAwesomeIconView fx:id="btnlog_out" fill="#c22d2d" glyphName="SIGN_OUT" onMouseClicked="#LogoutInt" onMouseEntered="#logEntred" onMouseExited="#logExit" size="25" text="">
                      <effect>
                         <Reflection />
                      </effect>
