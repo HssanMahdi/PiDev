@@ -5,10 +5,13 @@
  */
 package interfaces;
 
+import entites.Produit;
+
 /**
  *
  * @author mhamdi iheb
  */
-public interface IProduit {
+public interface MyListener {
+     public void onClickListener(Produit p);
     
 }
